@@ -15,14 +15,25 @@
     std::string Teaching_Health_Care_Provider::hcp_type() const
     {
         return "Teacher";
-    }
+    }   
     bool Teaching_Health_Care_Provider::teach(Medical_Specialty m,std::shared_ptr<Health_Care_Provider> target)
     {
-        if((target->eligible_for(m) || !target->pay_license(fee)) && this == target.get()   ) return false;
+
+        if(!(this == target.get() || target->eligible_for(m) || !this->eligible_for(m)))
+        {
+            if(!target->pay_license(fee))
+            {
+                target->increase_wealth(fee);
+                return false;
+            }
+
+        }
+       
         increase_wealth(fee);
+        target->pay_license(fee);
         target->receive_license(m);
         return true;
-    }
+    }   
 
 
 

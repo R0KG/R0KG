@@ -11,6 +11,6 @@ std::string Smart_Health_Care_Provider::hcp_type() const
 }
 void Smart_Health_Care_Provider::receive_license(Medical_Specialty m)
 {
-    this->Health_Care_Provider::receive_license(m);
     this->increase_wealth(fee);
+    this->Health_Care_Provider::receive_license(m);
 }

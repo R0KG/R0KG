@@ -1,19 +1,15 @@
-#pragma once
+#ifndef HOSPITAL_H
+#define HOSPITAL_H
+
 #include<iostream>
-#include<string>
+#include<stdexcept>
 #include<set>
-#include<map>
-#include<algorithm>
 #include<memory>
-#include"illness.h"
-#include"patient.h"
-#include"hcp.h"
+#include<map>
 
-
-
-
-
-
+#include "illness.h"
+#include "patient.h"
+#include "hcp.h"
 class Hospital {
 std::string name;
 std::map<std::string,std::shared_ptr<Health_Care_Provider>> hcps ;
@@ -31,3 +27,4 @@ friend std::ostream& operator<<(std::ostream& o, const Hospital& p) ;
 
 };
 
+#endif

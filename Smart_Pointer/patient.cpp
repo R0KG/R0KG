@@ -1,4 +1,10 @@
-#include"patient.h"
+#include<iostream>
+#include<stdexcept>
+#include<set>
+#include<algorithm>
+#include "patient.h"
+#include "illness.h"
+
 
 
 Patient::Patient(std::string name ,int age ,const std::set<Illness>& illnesses,unsigned wealth): name{name},age{age},illnesses{illnesses},wealth{wealth}
@@ -55,9 +61,19 @@ bool operator==(const Patient & lhs,const Patient & rhs)
 }
 std::ostream& operator<<(std::ostream& o, const Patient& p)
 {
-    o << "[" << p.name << ", " << p.age <<"years, {";
-    for(auto i : p.illnesses){ std::cout << i;}
-    o << "}, " << p.wealth << "moneyz]";
+    bool first = true;
+    o << "[" << p.name << ", " << p.age <<" years, {";
+    for(auto i : p.illnesses)
+    {   
+        if(first){
+            o << i;
+            first = false;
+        } 
+        else{
+            o << ", " << i;
+        }
+    }
+    o << "}, " << p.wealth << " moneyz]";
     return o;
 }
 

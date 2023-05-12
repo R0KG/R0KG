@@ -1,9 +1,16 @@
-#pragma once
+#ifndef ILLNESS_H
+#define ILLNESS_H
 
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<stdexcept>
+#include<string>
+#include<vector>
+
+
 enum class Medical_Specialty {Cardiology,Dermatology,Endocrinology,Gynecology, Neurology,Oncology,Pathology,Pediatrics,Pulmonology,Urology};
-extern std::string Spicialty_names[];
+
+ static std::vector<std::string>  Spicialty_names = {"Cardiology", "Dermatology", "Endocrinology", "Gynecology",
+                                 "Neurology", "Oncology", "Pathology", "Pediatrics", "Pulmonology", "Urology"};
 std::ostream & operator << (std::ostream & o, Medical_Specialty m);
 
 class Illness {
@@ -17,3 +24,5 @@ public:
     friend bool operator==(const Illness & lhs,const Illness & rhs) ;
     friend bool operator < (const Illness & lhs,const Illness & rhs) ;
 };
+
+#endif

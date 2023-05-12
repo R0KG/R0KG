@@ -1,5 +1,7 @@
 #include "illness.h"
-
+#include<vector>
+#include<string>
+#include<iostream>
 
 Illness::Illness(Medical_Specialty med, const std::string &name) : med{med}, name{name} {
     if (name.empty()) throw std::runtime_error("Error with Illness Constructor");
@@ -14,7 +16,7 @@ std::string Illness::get_name() const {
 }
 
 std::ostream &operator<<(std::ostream &o, const Illness &ill) {
-    o << "[" << Spicialty_names[static_cast<std::size_t>(ill.get_specialty())] << ", ";
+    o << "[" << Spicialty_names.at(static_cast<std::size_t>(ill.get_specialty())) << ", ";
     o << ill.get_name() << "]";
     return o;
 }
@@ -31,9 +33,8 @@ bool operator<(const Illness &lhs, const Illness &rhs) {
     return false;
 }
 
-std::string Spicialty_names[] = {"Cardiology", "Dermatology", "Endocrinology", "Gynecology",
-                                 "Neurology", "Oncology", "Pathology", "Pediatrics", "Pulmonology", "Urology"};
+
 
 std::ostream &operator<<(std::ostream &o, Medical_Specialty m) {
-    return o << Spicialty_names[static_cast<std::size_t>(m)];
+    return o << Spicialty_names.at(static_cast<std::size_t>(m));
 }

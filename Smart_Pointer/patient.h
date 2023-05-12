@@ -1,14 +1,10 @@
-#pragma once
+#ifndef PATIENT_H
+#define PATIENT_H
 
 #include<iostream>
-#include<string>
+#include<stdexcept>
 #include<set>
-#include<algorithm>
 #include"illness.h"
-
-
-
-
 
 class Patient {
     std::string name;
@@ -31,4 +27,4 @@ friend std::ostream& operator<<(std::ostream& o, const Patient& p);
 };
 
 
-
+#endif

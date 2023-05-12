@@ -1,5 +1,13 @@
-#include"hospital.h"
-
+#include<iostream>
+#include<stdexcept>
+#include<map>
+#include<vector>
+#include<memory>
+#include<algorithm>
+#include "hcp.h"
+#include "illness.h"
+#include "patient.h"
+#include "hospital.h"
 
 
 Hospital::Hospital(std::string name) : name{name}
@@ -18,16 +26,8 @@ bool Hospital::sign_hcp(std::shared_ptr<Health_Care_Provider> m)
 }
 bool Hospital::admit_patient(std::shared_ptr<Patient> m)
 {
-    bool exist = false;
-    std::weak_ptr<Patient> temp_ptr;
-    for(const auto & pair : patients)
-    {
-        if(*m == *pair.second.lock()){
-            exist = true;
-            temp_ptr = m;
-        }
-    }
-    if(exist && temp_ptr.expired())
+    auto it_find = patients.find(m->get_name());
+    if(it_find == patients.end() || (it_find != patients.end() && it_find->second.expired()))
     {
         patients[m->get_name()] = m;
         return true;
@@ -36,11 +36,11 @@ bool Hospital::admit_patient(std::shared_ptr<Patient> m)
 }
 bool Hospital::dismiss_hcp(std::string n)
 {
-    for(auto patient : patients)
+    for(auto hcp : hcps)
     {
-        if(patient.first == n)
+        if(hcp.first == n)
         {
-            patients.erase(n);
+            hcps.erase(n);
             return true;
         }
     }
@@ -49,13 +49,13 @@ bool Hospital::dismiss_hcp(std::string n)
 std::shared_ptr<Health_Care_Provider> Hospital::get_hcp(std::string n) const
 {
     auto it = hcps.find(n);
-    if(it != hcps.end()) throw std::runtime_error("Error with get_hcp memeber function (Hospital)");
+    if(it == hcps.end()) throw std::runtime_error("Error with get_hcp memeber function (Hospital)");
     return it->second;
 }
 std::shared_ptr<Patient> Hospital::get_patient(std::string n) const
 {
     auto it_find = patients.find(n);
-    if( it_find == patients.end() || it_find->second.expired()) throw std::runtime_error("Error with get_patinet(Hospital)");
+    if( it_find == patients.end() || it_find->second.expired()) throw std::runtime_error("Error with get_patient(Hospital)");
     return it_find->second.lock();
 }
 bool Hospital::dismiss_patient(std::string n)
@@ -65,20 +65,42 @@ bool Hospital::dismiss_patient(std::string n)
     {
         patients.erase(n);
         return true;
+    }
+    else if (it_find->second.expired() && it_find != patients.end())
+    {
+        patients.erase(n);
+        return false;
     } 
     return false;
 }
 std::ostream& operator<<(std::ostream& o, const Hospital& p)
 {
+    bool first = true;
     o << "[" << p.name << ", hcps {";
     for(const auto & i : p.hcps)
-    {
-        o << i.first;
+    {   
+        if(first){
+            o << *i.second;
+            first = false;
+        } 
+        else{
+            o << ", " << *i.second;
+        }
     }
+  
     o << "}, patients {";
+    first = true;
     for(const auto & i : p.patients)
     {
-        o << i.first;
+      if(!i.second.expired()){
+        if(first){
+            o << *i.second.lock();
+            first = false;
+        } 
+        else{
+            o << ", " << *i.second.lock();
+        }
+    }
     }
     o << "}]";
     return o;
