@@ -33,6 +33,12 @@ private:
   void add (const key_type & key);
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
+  size_t glob_swap_calls;
+  size_t glob_swap_elem;
+  size_t local_swap_calls;
+  size_t local_swap_elem;
+  size_t clear_calls;
+  size_t clear_elem;
 public:
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
@@ -82,9 +88,18 @@ public:
   return true;
   }
   friend bool operator!=(const ADS_set &lhs, const ADS_set &rhs){ return !(lhs == rhs);}
+  std::pair<size_t,size_t> y(size_t idx) const;
 };  
     template <typename Key, size_t N>
+    std::pair<size_t,size_t> ADS_set<Key,N>::y(size_t idx) const{
+
+    }
+    template <typename Key, size_t N>
     void ADS_set<Key,N>::swap(ADS_set &other){
+      ++local_swap_calls;
+      local_swap_elem += current_size;
+      std::swap(local_swap_calls,other.local_swap_calls);
+      std::swap(local_swap_elem,other.local_swap_elem);
       std::swap(table,other.table);
       std::swap(table_size,other.table_size);
       std::swap(current_size,other.current_size);
@@ -123,6 +138,8 @@ public:
       void ADS_set<Key,N>::clear(){
         ADS_set temp;
         swap(temp);
+        clear_elem += current_size;
+        clear_calls++;
     }
     
     template <typename Key, size_t N>
@@ -357,6 +374,14 @@ public:
 };
 
 template <typename Key, size_t N>
-void swap(ADS_set<Key,N> &lhs, ADS_set<Key,N> &rhs) { lhs.swap(rhs); }
+void swap(ADS_set<Key,N> &lhs, ADS_set<Key,N> &rhs) { 
+    lhs.swap(rhs); 
+    ++lhs.glob_swap_calls;
+    ++rhs.glob_swap_calls;
+    lhs.glob_swap_elem += lhs.current_size;
+    rhs.glob_swap_elem += rhs.current_size;
+    std::swap(lhs.glob_swap_calls,rhs.glob_swap_calls);
+    std::swap(lhs.glob_swap_elem,rhs.glob_swap_elem);    
+    }
 
 #endif // ADS_SET_H

@@ -61,17 +61,16 @@ std::shared_ptr<Patient> Hospital::get_patient(std::string n) const
 bool Hospital::dismiss_patient(std::string n)
 {
     auto it_find = patients.find(n);
-    if(!it_find->second.expired() && it_find != patients.end())
+		if(it_find !=patients.end())
     {
-        patients.erase(n);
+    	std::shared_ptr<Patient> temp = it_find->second.lock();
+      if(temp && !it_find->second.expired())
+      {
+      	patients.erase(n);
         return true;
+      }
     }
-    else if (it_find->second.expired() && it_find != patients.end())
-    {
-        patients.erase(n);
-        return false;
-    } 
-    return false;
+  return false;
 }
 std::ostream& operator<<(std::ostream& o, const Hospital& p)
 {

@@ -23,5 +23,28 @@
             },
             "detail": "compiler: g++"
         }
+    ],
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TrackAges",
+            "request": "launch",
+            "mainClass": "Java.TrackAges",
+            "projectName": "Vs code files_7f4a8fef"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "Java.HelloWorld",
+            "projectName": "Vs code files_7f4a8fef"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "Java.Hello",
+            "projectName": "Vs code files_7f4a8fef"
+        }
     ]
 }

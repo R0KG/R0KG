@@ -319,7 +319,68 @@ friend std::ostream & operator <<(std::ostream & output,const  Vector& rhs){
 
 
 
-   
+   class Iterator
+{
+  public:
+  using value_type = Vector:: value_type;
+  using reference = Vector:: reference;
+  using pointer = Vector:: pointer;
+  using difference_type = Vector:: difference_type;
+  using iterator_category = std:: forward_iterator_tag;
+  private:
+  //Instance variables
+  pointer ptr;
+  public: 
+  // Member functions
+    
+ Iterator(): ptr{nullptr}
+ {
+  
+ }
+  
+ Iterator(pointer ptr_in): ptr{ptr_in}
+ {
+  
+ }
+  
+ reference operator*()const // Iteration
+ {
+   return *ptr;
+ }
+  
+ pointer operator->()const
+ {
+   return ptr;
+ }
+  
+ bool operator==(const const_iterator& rop)const
+ {
+   return rop == *this;
+ }
+  
+ bool operator!=(const const_iterator& rop)const
+ {
+   return !(*this == rop);
+ }
+  
+ Iterator& operator++()
+ {
+  ++ptr;
+  return *this;
+ }
+  
+ Iterator operator++(int)
+ {
+  Iterator temp = *this;
+  ++(*this);
+  return temp;
+ }
+  
+ operator ConstIterator() const
+ {
+   return ConstIterator(ptr);
+ }
+};
 
 
 

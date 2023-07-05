@@ -20,7 +20,8 @@ public:
   using iterator = const_iterator;
 //   using key_compare = std::less<key_type>;                         
   using key_equal = std::equal_to<key_type>;                       
-  using hasher = std::hash<key_type>;                              
+  using hasher = std::hash<key_type>;
+  enum class Mode{normal,special};                              
 private:
   struct Element{
     key_type data;
@@ -68,6 +69,13 @@ public:
       ++bucket_ptr;
     }
     return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size]};
+  }
+  const_iterator w(const size_t *a) const{
+    Element ** bucket_ptr = table;
+    while(bucket_ptr != &table[table_size] && *bucket_ptr == nullptr){
+      ++bucket_ptr;
+    }
+    return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size],Mode::special,a};
   }
   const_iterator end() const{ return const_iterator{&table[table_size],nullptr,&table[table_size]};}
   void dump(std::ostream &o = std::cerr) const;
@@ -297,6 +305,9 @@ private:
   Element ** bucket;
   Element * node;
   Element ** end_bucket;
+  Mode mode;
+  const size_t * rep;
+  size_t rep_count = 0;
   void skip()
   {
     while(bucket != end_bucket && (node == nullptr))
@@ -313,7 +324,7 @@ public:
   using pointer = const value_type *;
   using iterator_category = std::forward_iterator_tag;
 
-  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr) : bucket{bucket},node{node},end_bucket{end_bucket} 
+  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr,Mode mode = Mode::normal,const size_t *rep = nullptr ) : bucket{bucket},node{node},end_bucket{end_bucket},mode{mode},rep{rep} 
   { 
     if(bucket){
       if(node){
@@ -339,11 +350,35 @@ public:
   }
   Iterator &operator++()
   {
-    if(node)
-    {
-      node = node->next;
+    if(mode == Mode::normal){
+        if(node)
+        {
+        node = node->next;
+        }
+        skip();
+        return *this;
     }
-    skip();
+    else{
+        if(node){
+            if(rep_count < *rep){
+                rep_count++;
+            }
+            else{
+                ++rep;
+                rep_count = 0;
+                if(node)
+                {
+                node = node->next;
+                }
+                skip();
+                rep_count++;
+                }
+        }
+        else{
+            skip();
+        }
+
+    }
     return *this;
   } 
   Iterator operator++(int)

@@ -18,9 +18,9 @@ public:
   using difference_type = std::ptrdiff_t;
   using const_iterator = Iterator;
   using iterator = const_iterator;
-//   using key_compare = std::less<key_type>;                         
-  using key_equal = std::equal_to<key_type>;                       
-  using hasher = std::hash<key_type>;                              
+//   using key_compare = std::less<key_type>;                         // B+-Tree
+  using key_equal = std::equal_to<key_type>;                       // Hashing
+  using hasher = std::hash<key_type>;                              // Hashing
 private:
   struct Element{
     key_type data;
@@ -33,12 +33,13 @@ private:
   void add (const key_type & key);
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
+  enum class Mode{normal,special};
 public:
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
-  }                                                           
-  ADS_set(std::initializer_list<key_type> ilist) : ADS_set{} {insert(ilist);}                   
-  template<typename InputIt> ADS_set(InputIt first, InputIt last) : ADS_set{} {insert(first,last);}     
+  }                                                           // PH1
+  ADS_set(std::initializer_list<key_type> ilist) : ADS_set{} {insert(ilist);}                   // PH1
+  template<typename InputIt> ADS_set(InputIt first, InputIt last) : ADS_set{} {insert(first,last);}     // PH1
   ADS_set(const ADS_set &other);
 
   ~ADS_set();
@@ -46,28 +47,35 @@ public:
   ADS_set &operator=(const ADS_set &other);
   ADS_set &operator=(std::initializer_list<key_type> ilist);
 
-  size_type size() const {return current_size;}                                              
-  bool empty() const{ return current_size == 0;}                                                  
+  size_type size() const {return current_size;}                                              // PH1
+  bool empty() const{ return current_size == 0;}                                                  // PH1
 
-  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  
+  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  // PH1
   std::pair<iterator,bool> insert(const key_type &key);
-  template<typename InputIt> void insert(InputIt first, InputIt last); 
+  template<typename InputIt> void insert(InputIt first, InputIt last); // PH1
 
   void clear();
   size_type erase(const key_type &key);
 
-  size_type count(const key_type &key) const;                          
+  size_type count(const key_type &key) const;                          // PH1
   float count_load_factor()const;
   iterator find(const key_type &key) const;
 
   void swap(ADS_set &other);
 
-  const_iterator begin() const{
+    const_iterator begin() const{
     Element ** bucket_ptr = table;
     while(bucket_ptr != &table[table_size] && *bucket_ptr == nullptr){
       ++bucket_ptr;
     }
     return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size]};
+  }
+    const_iterator z() const{
+    Element ** bucket_ptr = table;
+    while(bucket_ptr != &table[table_size] && *bucket_ptr == nullptr){
+      ++bucket_ptr;
+    }
+    return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size],current_size/2,(current_size-1)-(current_size/2),current_size,Mode::special};
   }
   const_iterator end() const{ return const_iterator{&table[table_size],nullptr,&table[table_size]};}
   void dump(std::ostream &o = std::cerr) const;
@@ -297,6 +305,12 @@ private:
   Element ** bucket;
   Element * node;
   Element ** end_bucket;
+  size_type all_elem;
+  size_type half_elem;
+  size_type last_one;
+  size_type first_count = 0;
+  size_type last_count = 0;
+  Mode mode;
   void skip()
   {
     while(bucket != end_bucket && (node == nullptr))
@@ -313,7 +327,7 @@ public:
   using pointer = const value_type *;
   using iterator_category = std::forward_iterator_tag;
 
-  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr) : bucket{bucket},node{node},end_bucket{end_bucket} 
+  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr,size_type half_elem = 0,size_type last_one = 0,size_type all_elem = 0,Mode mode = Mode::normal) : bucket{bucket},node{node},end_bucket{end_bucket},half_elem{half_elem},last_one{last_one},all_elem{all_elem},mode{mode}
   { 
     if(bucket){
       if(node){
@@ -339,11 +353,43 @@ public:
   }
   Iterator &operator++()
   {
-    if(node)
-    {
-      node = node->next;
+    if(all_elem == 2 && mode == Mode::special){
+        if(node)
+        {
+        node = node->next;
+        }
+        skip();
+        return *this;
     }
-    skip();
+    if(mode == Mode::normal){
+        if(node)
+        {
+        node = node->next;
+        }
+        skip();
+    }
+    else{
+        ++first_count;
+        if(first_count < half_elem){
+            if(first_count < half_elem){
+                if(node)
+                {
+                node = node->next;
+                }
+                skip();        
+            }
+        }
+        else{
+            for(size_type i = 0; i <= last_one;i++){
+                if(node)
+                {
+                node = node->next;
+                }
+                skip();      
+            }
+            return *this;
+        }
+    }
     return *this;
   } 
   Iterator operator++(int)

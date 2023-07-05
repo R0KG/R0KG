@@ -33,6 +33,7 @@ private:
   void add (const key_type & key);
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
+  enum class Mode{normal,special};
 public:
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
@@ -68,6 +69,16 @@ public:
       ++bucket_ptr;
     }
     return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size]};
+  }
+  const_iterator z(size_t m) const{
+    if(current_size == 0 || m == 0){
+        return end();
+    }
+        Element ** bucket_ptr = table;
+        while(bucket_ptr != &table[table_size] && *bucket_ptr == nullptr){
+        ++bucket_ptr;
+    }
+    return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size],Mode::special,current_size,m};
   }
   const_iterator end() const{ return const_iterator{&table[table_size],nullptr,&table[table_size]};}
   void dump(std::ostream &o = std::cerr) const;
@@ -297,6 +308,13 @@ private:
   Element ** bucket;
   Element * node;
   Element ** end_bucket;
+  Mode mode;
+  int current_size;
+  size_t our_argument_assignment;
+  Element * first_node;
+  bool was_incremented = false;
+  int count = 0;
+  bool exceed = false;
   void skip()
   {
     while(bucket != end_bucket && (node == nullptr))
@@ -313,7 +331,7 @@ public:
   using pointer = const value_type *;
   using iterator_category = std::forward_iterator_tag;
 
-  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr) : bucket{bucket},node{node},end_bucket{end_bucket} 
+  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr,Mode mode = Mode::normal,int current_size = 0,size_t our_argument_assignment = 0) : bucket{bucket},node{node},end_bucket{end_bucket},mode{mode},current_size{current_size},our_argument_assignment{our_argument_assignment} 
   { 
     if(bucket){
       if(node){
@@ -324,7 +342,13 @@ public:
       }
   }
   skip();
-    
+  if(current_size < our_argument_assignment){
+    this->exceed = true;
+    this->our_argument_assignment = this->current_size;
+  }
+    if(mode == Mode::special){
+        first_node = this->node;
+    }
 
   }
   reference operator*() const 
@@ -339,12 +363,39 @@ public:
   }
   Iterator &operator++()
   {
-    if(node)
-    {
-      node = node->next;
-    }
-    skip();
-    return *this;
+        if(mode == Mode::normal){
+            if(node)
+            {
+            node = node->next;
+            }
+            skip();
+            return *this;
+        }
+        else{
+            if(count < our_argument_assignment){
+                count++;
+                if(node)
+                {
+                node = node->next;
+                }
+                skip();
+                return *this;
+            }
+            else{
+                if(exceed && !was_incremented){
+                    was_incremented = true;
+                    node = first_node;
+                }
+                else{
+                    bucket = end_bucket;
+                    node = nullptr;
+                }
+            }
+        }
+        return *this;
+
+
+
   } 
   Iterator operator++(int)
   {

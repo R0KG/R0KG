@@ -33,6 +33,8 @@ private:
   void add (const key_type & key);
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
+  enum class Mode {normal,special};
+  Mode mode;
 public:
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
@@ -69,6 +71,16 @@ public:
     }
     return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size]};
   }
+  const_iterator x() const{
+    if(empty()){
+        return end();
+    }
+     Element ** bucket_ptr = table;
+    while(bucket_ptr != &table[table_size] && *bucket_ptr == nullptr){
+      ++bucket_ptr;
+    }
+    return const_iterator{bucket_ptr,*bucket_ptr,&table[table_size],current_size,Mode::special};
+  }   
   const_iterator end() const{ return const_iterator{&table[table_size],nullptr,&table[table_size]};}
   void dump(std::ostream &o = std::cerr) const;
   void reserve();
@@ -297,6 +309,10 @@ private:
   Element ** bucket;
   Element * node;
   Element ** end_bucket;
+  Element * first;
+  size_type current_elements;
+  Mode mode;
+  bool incremented = false;
   void skip()
   {
     while(bucket != end_bucket && (node == nullptr))
@@ -313,7 +329,7 @@ public:
   using pointer = const value_type *;
   using iterator_category = std::forward_iterator_tag;
 
-  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr) : bucket{bucket},node{node},end_bucket{end_bucket} 
+  explicit Iterator(Element ** bucket = nullptr,Element * node = nullptr,Element ** end_bucket = nullptr,size_type current_elements = 0,Mode mode = Mode::normal) : bucket{bucket},node{node},end_bucket{end_bucket},current_elements{current_elements},mode{mode} 
   { 
     if(bucket){
       if(node){
@@ -324,7 +340,14 @@ public:
       }
   }
   skip();
-    
+    if(mode == Mode::special && node != nullptr){
+      first = this->node;
+      this->mode = Mode::normal;
+      for(size_type i = 0; i < current_elements-1;i++){
+        ++(*this);
+      }
+      this->mode = Mode::special;
+    }
 
   }
   reference operator*() const 
@@ -339,11 +362,24 @@ public:
   }
   Iterator &operator++()
   {
+    if(mode == Mode::normal){
     if(node)
     {
       node = node->next;
     }
     skip();
+    }
+    else{
+      if(incremented == false){
+        incremented = true;
+        node = first;
+        return *this;
+      }
+      else{
+        bucket = end_bucket;
+        node = nullptr;
+      }
+    }
     return *this;
   } 
   Iterator operator++(int)

@@ -82,7 +82,14 @@ public:
   return true;
   }
   friend bool operator!=(const ADS_set &lhs, const ADS_set &rhs){ return !(lhs == rhs);}
+  friend double z(const ADS_set& a, const ADS_set& b){
+    if(a.current_size == 0 && b.current_size == 0){
+        return 1;
+    }
+    
+  }
 };  
+
     template <typename Key, size_t N>
     void ADS_set<Key,N>::swap(ADS_set &other){
       std::swap(table,other.table);
@@ -355,6 +362,7 @@ public:
   inline friend bool operator==(const Iterator &lhs, const Iterator &rhs) {return lhs.node == rhs.node;}
   inline friend bool operator!=(const Iterator &lhs, const Iterator &rhs) {return lhs.node != rhs.node;}
 };
+
 
 template <typename Key, size_t N>
 void swap(ADS_set<Key,N> &lhs, ADS_set<Key,N> &rhs) { lhs.swap(rhs); }

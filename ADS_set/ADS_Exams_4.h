@@ -18,9 +18,9 @@ public:
   using difference_type = std::ptrdiff_t;
   using const_iterator = Iterator;
   using iterator = const_iterator;
-//   using key_compare = std::less<key_type>;                         
-  using key_equal = std::equal_to<key_type>;                       
-  using hasher = std::hash<key_type>;                              
+  using key_compare = std::less<key_type>;                         
+  using key_equal = std::equal_to<key_type>;                       // Hashing
+  using hasher = std::hash<key_type>;                              // Hashing
 private:
   struct Element{
     key_type data;
@@ -33,12 +33,14 @@ private:
   void add (const key_type & key);
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
+  std::pair<key_type,key_type> Historie;
+  bool was_inserted = false;
 public:
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
-  }                                                           
-  ADS_set(std::initializer_list<key_type> ilist) : ADS_set{} {insert(ilist);}                   
-  template<typename InputIt> ADS_set(InputIt first, InputIt last) : ADS_set{} {insert(first,last);}     
+  }                                                           // PH1
+  ADS_set(std::initializer_list<key_type> ilist) : ADS_set{} {insert(ilist);}                   // PH1
+  template<typename InputIt> ADS_set(InputIt first, InputIt last) : ADS_set{} {insert(first,last);}     // PH1
   ADS_set(const ADS_set &other);
 
   ~ADS_set();
@@ -46,17 +48,17 @@ public:
   ADS_set &operator=(const ADS_set &other);
   ADS_set &operator=(std::initializer_list<key_type> ilist);
 
-  size_type size() const {return current_size;}                                              
-  bool empty() const{ return current_size == 0;}                                                  
+  size_type size() const {return current_size;}                                              // PH1
+  bool empty() const{ return current_size == 0;}                                                  // PH1
 
-  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  
+  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  // PH1
   std::pair<iterator,bool> insert(const key_type &key);
-  template<typename InputIt> void insert(InputIt first, InputIt last); 
+  template<typename InputIt> void insert(InputIt first, InputIt last); // PH1
 
   void clear();
   size_type erase(const key_type &key);
 
-  size_type count(const key_type &key) const;                          
+  size_type count(const key_type &key) const;                          // PH1
   float count_load_factor()const;
   iterator find(const key_type &key) const;
 
@@ -82,9 +84,17 @@ public:
   return true;
   }
   friend bool operator!=(const ADS_set &lhs, const ADS_set &rhs){ return !(lhs == rhs);}
+  std::pair<key_type,key_type> x() const;
 };  
     template <typename Key, size_t N>
+    std::pair<typename ADS_set<Key,N>::key_type,typename ADS_set<Key,N>::key_type> ADS_set<Key,N>::x() const{
+        if(!was_inserted) throw std::runtime_error("");
+        return Historie;
+    }
+
+    template <typename Key, size_t N>
     void ADS_set<Key,N>::swap(ADS_set &other){
+      std::swap(Historie,other.Historie);
       std::swap(table,other.table);
       std::swap(table_size,other.table_size);
       std::swap(current_size,other.current_size);
@@ -122,18 +132,28 @@ public:
       template <typename Key, size_t N>
       void ADS_set<Key,N>::clear(){
         ADS_set temp;
+        auto temp_pair = Historie;
         swap(temp);
+        Historie = temp_pair;
     }
     
     template <typename Key, size_t N>
     std::pair<typename ADS_set<Key,N>::iterator,bool> ADS_set<Key,N>::insert(const key_type &key)
     {
+      was_inserted = true;
+        if(key_compare{}(key,Historie.first)){
+            Historie.first = key;
+        }
+        if(key_compare{}(Historie.second,key)){
+            Historie.second = key;
+        }
       if(!count(key)){
         add(key);
         Iterator res = Iterator(&table[h(key)],locate(key),&table[table_size]);
         return std::make_pair(res,true);
       }
       Iterator res = Iterator(&table[h(key)],locate(key),&table[table_size]);
+      
       return std::make_pair(res,false);
     }
 
@@ -169,6 +189,7 @@ public:
     template <typename Key, size_t N>
     ADS_set<Key,N>::ADS_set(const ADS_set &other) 
     {
+      Historie = other.Historie;
       table_size = other.table_size;
       current_size = other.current_size;
       table = new Element *[table_size+1];

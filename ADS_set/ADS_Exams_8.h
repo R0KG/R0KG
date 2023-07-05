@@ -34,6 +34,12 @@ private:
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
 public:
+  struct statistics_t {
+  size_t ok[3] = {0,0,0} ; // eingefügte Werte
+  size_t fail[3] = {0,0,0}; // nicht eingefügte Werte (weil schon vorhanden)
+
+  };
+  statistics_t data;
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
   }                                                           
@@ -49,9 +55,9 @@ public:
   size_type size() const {return current_size;}                                              
   bool empty() const{ return current_size == 0;}                                                  
 
-  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  
-  std::pair<iterator,bool> insert(const key_type &key);
-  template<typename InputIt> void insert(InputIt first, InputIt last); 
+  void insert(std::initializer_list<key_type> ilist,bool externalCall = true);              
+  std::pair<iterator,bool> insert(const key_type &key,bool externalCall = true);
+  template<typename InputIt> void insert(InputIt first, InputIt last,bool externalCall = true); 
 
   void clear();
   size_type erase(const key_type &key);
@@ -82,9 +88,31 @@ public:
   return true;
   }
   friend bool operator!=(const ADS_set &lhs, const ADS_set &rhs){ return !(lhs == rhs);}
+  statistics_t z() const;  
 };  
     template <typename Key, size_t N>
+    void ADS_set<Key,N>::insert(std::initializer_list<ADS_set<Key,N>::key_type> ilist,bool externalCall){
+      for(const auto & it : ilist)
+      {
+        std::pair<iterator,bool> res = this->insert(it,false);
+        if(externalCall){
+            if(res.second){
+                data.ok[0]++;
+            }
+            else{
+                data.fail[0]++;
+            }
+        }
+        this->reserve();
+      }
+    }
+    template <typename Key, size_t N>
+    typename ADS_set<Key,N>::statistics_t ADS_set<Key,N>::z() const{
+        return data;
+    }
+    template <typename Key, size_t N>
     void ADS_set<Key,N>::swap(ADS_set &other){
+      std::swap(data,other.data);
       std::swap(table,other.table);
       std::swap(table_size,other.table_size);
       std::swap(current_size,other.current_size);
@@ -126,15 +154,22 @@ public:
     }
     
     template <typename Key, size_t N>
-    std::pair<typename ADS_set<Key,N>::iterator,bool> ADS_set<Key,N>::insert(const key_type &key)
+    std::pair<typename ADS_set<Key,N>::iterator,bool> ADS_set<Key,N>::insert(const key_type &key,bool externalCall)
     {
-      if(!count(key)){
+    if(!count(key)){
         add(key);
         Iterator res = Iterator(&table[h(key)],locate(key),&table[table_size]);
+        if(externalCall){
+            data.ok[1]++;
+        }
         return std::make_pair(res,true);
-      }
-      Iterator res = Iterator(&table[h(key)],locate(key),&table[table_size]);
-      return std::make_pair(res,false);
+    } else {
+        Iterator res = Iterator(&table[h(key)],locate(key),&table[table_size]);
+        if(externalCall){
+            data.fail[1]++;
+        }
+        return std::make_pair(res,false);
+        }
     }
 
     template <typename Key, size_t N>
@@ -142,6 +177,8 @@ public:
     {
       ADS_set tmp{ilist};
       swap(tmp);
+      data.ok = {0,0,0};
+      data.fail = {0,0,0};
       return *this;
     }
     template <typename Key, size_t N>
@@ -169,6 +206,7 @@ public:
     template <typename Key, size_t N>
     ADS_set<Key,N>::ADS_set(const ADS_set &other) 
     {
+      data = other.data;
       table_size = other.table_size;
       current_size = other.current_size;
       table = new Element *[table_size+1];
@@ -236,11 +274,19 @@ public:
         }
     }
     template<typename Key, size_t N>
-    template<typename InputIt> void  ADS_set<Key,N>::insert(InputIt first, InputIt last)
+    template<typename InputIt> void  ADS_set<Key,N>::insert(InputIt first, InputIt last,bool externalCall)
     {
       for(auto it = first; it != last;it++)
       {
-        this->add(*it);
+        std::pair<iterator,bool> res = this->insert(*it,false);
+        if(externalCall){
+            if(res.second){
+                data.ok[2]++;
+            }
+            else{
+                data.fail[2]++;
+            }
+        }
         this->reserve();
       }
     }

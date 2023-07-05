@@ -18,9 +18,9 @@ public:
   using difference_type = std::ptrdiff_t;
   using const_iterator = Iterator;
   using iterator = const_iterator;
-//   using key_compare = std::less<key_type>;                         
-  using key_equal = std::equal_to<key_type>;                       
-  using hasher = std::hash<key_type>;                              
+  using key_compare = std::less<key_type>;                         // B+-Tree
+  using key_equal = std::equal_to<key_type>;                       // Hashing
+  using hasher = std::hash<key_type>;                              // Hashing
 private:
   struct Element{
     key_type data;
@@ -33,12 +33,17 @@ private:
   void add (const key_type & key);
   Element * locate(const key_type & key) const; 
   size_type h(const key_type & key) const { return hasher{}(key) % table_size;}
+  std::pair<bool,key_type> Historie;
+  bool first_del = false;
+  bool second_del = false;
+  key_type max {} ;
 public:
   ADS_set() : table{new Element *[N+1]},table_size{N}, current_size{0} {
     for(size_t i = 0;i < N+1;++i){ table[i] = nullptr;}
-  }                                                           
-  ADS_set(std::initializer_list<key_type> ilist) : ADS_set{} {insert(ilist);}                   
-  template<typename InputIt> ADS_set(InputIt first, InputIt last) : ADS_set{} {insert(first,last);}     
+    Historie.first = false;
+  }                                                           // PH1
+  ADS_set(std::initializer_list<key_type> ilist) : ADS_set{} {insert(ilist);}                   // PH1
+  template<typename InputIt> ADS_set(InputIt first, InputIt last) : ADS_set{} {insert(first,last);}     // PH1
   ADS_set(const ADS_set &other);
 
   ~ADS_set();
@@ -46,17 +51,17 @@ public:
   ADS_set &operator=(const ADS_set &other);
   ADS_set &operator=(std::initializer_list<key_type> ilist);
 
-  size_type size() const {return current_size;}                                              
-  bool empty() const{ return current_size == 0;}                                                  
+  size_type size() const {return current_size;}                                              // PH1
+  bool empty() const{ return current_size == 0;}                                                  // PH1
 
-  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  
+  void insert(std::initializer_list<key_type> ilist) {insert(ilist.begin(),ilist.end());}                  // PH1
   std::pair<iterator,bool> insert(const key_type &key);
-  template<typename InputIt> void insert(InputIt first, InputIt last); 
+  template<typename InputIt> void insert(InputIt first, InputIt last); // PH1
 
   void clear();
   size_type erase(const key_type &key);
 
-  size_type count(const key_type &key) const;                          
+  size_type count(const key_type &key) const;                          // PH1
   float count_load_factor()const;
   iterator find(const key_type &key) const;
 
@@ -82,9 +87,15 @@ public:
   return true;
   }
   friend bool operator!=(const ADS_set &lhs, const ADS_set &rhs){ return !(lhs == rhs);}
+  std::pair<bool,key_type> z() const;
 };  
     template <typename Key, size_t N>
+    std::pair<bool,typename ADS_set<Key,N>::key_type> ADS_set<Key,N>::z() const{
+        return Historie;
+    }
+    template <typename Key, size_t N>
     void ADS_set<Key,N>::swap(ADS_set &other){
+      std::swap(Historie,other.Historie);
       std::swap(table,other.table);
       std::swap(table_size,other.table_size);
       std::swap(current_size,other.current_size);
@@ -109,6 +120,22 @@ public:
           else{
             table[index] = current->next;
           }
+          if(key_compare{}(max,current->data)){
+            Historie.second = max;
+            max = current->data;
+          }
+          else if(key_compare{}(Historie.second,current->data)){
+              Historie.second = current->data;
+            }
+          if(first_del){
+            second_del = true;
+          }
+          else{
+            first_del = true;
+          }
+          if(first_del == true && second_del == true){
+            Historie.first = true;
+          }
           delete current;
           --current_size;
           return 1;
@@ -122,6 +149,25 @@ public:
       template <typename Key, size_t N>
       void ADS_set<Key,N>::clear(){
         ADS_set temp;
+        if (current_size >= 2){
+          first_del = true;
+          second_del = true;
+        }
+        if(current_size == 1){
+          first_del = true;
+        }
+        if(first_del == true && second_del == true){
+          temp.Historie.first = true;
+        }
+        for(auto it = begin();it !=end();++it){
+            if(key_compare{}(max,*it)){
+                temp.Historie.second = max;
+                temp.max = *it;
+            }
+            else if(key_compare{}(temp.Historie.second,*it)){
+              temp.Historie.second = *it;
+            }
+        }
         swap(temp);
     }
     
@@ -169,6 +215,7 @@ public:
     template <typename Key, size_t N>
     ADS_set<Key,N>::ADS_set(const ADS_set &other) 
     {
+      Historie = other.Historie;
       table_size = other.table_size;
       current_size = other.current_size;
       table = new Element *[table_size+1];
