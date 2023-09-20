@@ -2,10 +2,6 @@
 
 import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 public class Person {
     private String name;
@@ -46,17 +42,39 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        List<Person> people = new ArrayList<>();
-        people.add(new Person("John", 25));
-        people.add(new Person("Alice", 22));
-        people.add(new Person("Zoe", 20));
-
-        System.out.println("Original list: " + people);
-
-        Collections.sort(people, Person.NameComparator);
-        System.out.println("Sorted by Name: " + people);
-
-        Collections.sort(people, Person.AgeComparator);
-        System.out.println("Sorted by Age: " + people);
+        Person person1 = new Person("Alice", 25);
+        Person person2 = new Person("Bob", 30);
+        Person person3 = new Person("Charlie", 20);
+        Set<Person> set = new TreeSet<>(List.of(person1,person2,person3));
+        List<Person> list = new ArrayList<>(List.of(person1,person2,person3));
     }
+}
+class Student{
+    private String name;
+    private int iq;
+
+    Student(String name,int iq){
+        this.name = name;
+        this.iq = iq;
+    }
+    public String get_name(){
+        return name;
+    }
+    public int getIq(){
+        return iq;
+    }
+    public static Comparator<Student> nameComparator = new Comparator<Student>(){
+        @Override
+        public int compare(Student lpo, Student rop){
+            return lpo.name.compareTo(rop.get_name());
+        }
+    };
+
+  
+
+    @Override
+    public String toString(){
+        return "name if the student: " + name + " iq: " + iq;
+    }
+
 }

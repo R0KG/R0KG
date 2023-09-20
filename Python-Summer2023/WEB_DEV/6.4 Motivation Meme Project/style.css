@@ -1,0 +1,15 @@
+.image {
+  border: 5px solid white;
+}
+
+#main_text {
+  background: black;
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  text-transform: capitalize;
+}
+html {
+  background-color: black;
+}
+

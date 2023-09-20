@@ -1,30 +1,27 @@
-import requests
+V cellcountx = 6
+V cellcounty = 5
+V celltable = [(1, 2) = 1,
+               (1, 3) = 1,
+               (0, 3) = 1]
+DefaultDict[(Int, Int), Int] universe
+universe[(1, 1)] = 1
+universe[(2, 1)] = 1
+universe[(3, 1)] = 1
+universe[(1, 4)] = 1
+universe[(2, 4)] = 1
+universe[(3, 4)] = 1
 
-# function to get the current temperature in Moscow
-def get_temperature():
-    api_key = 'YOUR_API_KEY_HERE'
-    city = 'Moscow'
-    country_code = 'ru'
-    api_url = f'http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&appid={api_key}&units=metric'
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        data = response.json()
-        temperature = data['main']['temp']
-        return temperature
-    else:
-        return None
+L(i) 4
+   print("\nGeneration "i‘:’)
+   L(row) 0 .< cellcounty
+      print(‘  ’(0 .< cellcountx).map(col -> [‘. ’, ‘O ’][:universe[(@row, col)]]).join(‘’))
 
-# main function to answer the question "What is the temperature right now?"
-def answer_question(question):
-    if "temperature" in question and "right now" in question:
-        temperature = get_temperature()
-        if temperature is not None:
-            response = f"The current temperature in Moscow is {temperature}°C."
-        else:
-            response = "Sorry, I couldn't fetch the temperature information at this time."
-    else:
-        response = "I'm sorry, I didn't understand the question."
-    return response
-
-# example usage
-print(answer_question("What is the temperature right now?"))
+   DefaultDict[(Int, Int), Int] nextgeneration
+   L(row) 0 .< cellcounty
+      L(col) 0 .< cellcountx
+         nextgeneration[(row, col)] = celltable.get(
+              (universe[(row, col)],
+              -universe[(row, col)] + sum(multiloop(row-1..row+1,
+                                                    col-1..col+1, (r, c) -> :universe[(r, c)]))
+              ), 0)
+   universe = nextgeneration
