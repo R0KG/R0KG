@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Rating</title>
+</head>
+<body>
+    <h1>Edit Rating</h1>
+    <p>{{ book.title }} by {{ book.author }}</p>
+    <form method="POST">
+        <label for="new_rating">New Rating:</label>
+        <input type="text" name="new_rating" id="new_rating" required>
+        <input type="submit" value="Change Rating">
+    </form>
+</body>
+</html>
