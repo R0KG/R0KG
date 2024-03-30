@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<!-- saved from url=(0151)file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>TISS REST-API Dokumentation | TU Wien</title>
+  <link rel="apple-touch-icon" type="image/png" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://tiss.tuwien.ac.at/static/2.5.2/global/images/mobile/apple-touch-icon-180x180.png">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://tiss.tuwien.ac.at/images/icons/favicon.ico">
+
+
+
+  
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/primefaces.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/reset.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/basic.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/content.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/widgets.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/jquery.ui.multiSelectList.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/jquery.ui.tissAccordion.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/statusMessage.css">
+<link id="mobileCSS" rel="stylesheet" media="screen" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/mobile.css">
+
+<link rel="stylesheet" media="screen" href="./TISS REST-API Dokumentation _ TU Wien_files/application-5c967972c53ee3772fc55f8cc28a99b010c2e6d23a85af13170a0761088a840d.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="print" type="text/css" href="./TISS REST-API Dokumentation _ TU Wien_files/print.css">
+<link rel="stylesheet" media="screen" href="./TISS REST-API Dokumentation _ TU Wien_files/application-7700dba5.css">
+
+  <link rel="stylesheet" media="screen,print" href="./TISS REST-API Dokumentation _ TU Wien_files/apis-f96b31ed44c362d6970b44670e09503d234df01fb7a9d845f2fb08c07bfc7523.css">
+
+<script src="./TISS REST-API Dokumentation _ TU Wien_files/application-3a5e7e1eebf79521cfa1075954b27288a7fb3126e70a9a55518266830d6b6f71.js.download" data-turbolinks-track="reload"></script>
+<script src="./TISS REST-API Dokumentation _ TU Wien_files/runtime-23c1a900dac4b243ee16.js.download"></script>
+<script src="./TISS REST-API Dokumentation _ TU Wien_files/154-5c491184571b79e2658c.js.download"></script>
+<script src="./TISS REST-API Dokumentation _ TU Wien_files/application-14766d8e0cf5eee4a91e.js.download"></script>
+
+  <script type="text/javascript" src="./TISS REST-API Dokumentation _ TU Wien_files/statusMessage.js.download"></script>
+  <script type="text/javascript" src="./TISS REST-API Dokumentation _ TU Wien_files/jquery.ui.tissAccordion.js.download"></script>
+  <script type="text/javascript" src="./TISS REST-API Dokumentation _ TU Wien_files/mobile.js.download"></script><meta id="mobileMeta" name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.5, user-scalable=yes"><meta id="mobileMeta" name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.5, user-scalable=yes">
+
+    <script src="./TISS REST-API Dokumentation _ TU Wien_files/toc-b64b4e1e7b92d31003b8a7dbe5d75f3d17866a66ecb7487483a1a13116e9cd9c.js.download"></script>
+    <script src="./TISS REST-API Dokumentation _ TU Wien_files/big_slide-5f1df97feb943714b2ff65cfe46f7a2b0be636eac9da37e08db3ac08e47ee8b2.js.download"></script>
+    <script src="./TISS REST-API Dokumentation _ TU Wien_files/apis-fee1df4bf637ed2cd001cb350aa62744d22e4407ee1470c94734a63dc3859899.js.download"></script>
+
+<script>
+//<![CDATA[
+
+  I18n.defaultLocale = "de";
+  I18n.locale = "de";
+  I18n.fallbacks = true;
+
+//]]>
+</script><meta id="desktopMeta" name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=2.5, user-scalable=yes">
+
+
+  
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="robots" content="noindex">
+  <link rel="search" type="application/opensearchdescription+xml" title="TISS Suche" href="https://tiss.tuwien.ac.at/addons/tiss_schnellsuche.xml">
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="xPdc8Kfoxhw7TquKoTfxSRJCKBL6ItRh6GjE_Uf0XSK3jorp7-p-wYnZBEeFAsFiAVx5gGCJfoCgWU-BkaoR4A">
+  
+  <meta name="action-cable-url" content="/cable">
+</head>
+<body class="organisation rest__apidoc de" data-rtiss-controller="rest/apidoc" data-rtiss-action="index">
+  
+  <div id="glow_left"></div>
+  <div id="glow_right"></div>
+  <div id="wrapper">
+    <div id="header">
+    <div id="headerInnerWrapper">
+        <div id="headerInner">
+            <div id="headerLeft">
+                <div id="headerLeftInside">
+                    <div id="logo">
+                        <h1><a href="https://tiss.tuwien.ac.at/"></a></h1>
+                    </div>
+                </div>
+            </div>
+            <div id="headerCenter">
+                <div id="headerCenterInside">
+                    <div id="paperHead">
+                      <form id="toolNavForm" name="toolNavForm" method="post" action="https://tiss.tuwien.ac.at/nightly/core/login.jsf" enctype="application/x-www-form-urlencoded">
+  <ul class="clearfix toolNav">
+    <li>
+      <span id="toolNavForm:username" class="toolHome"><a href="https://tiss.tuwien.ac.at/"></a></span>
+    </li>
+    <li>
+      <span id="toolNavFormLang">
+                                <a href="https://tiss.tuwien.ac.at/api/dokumentation?locale=en">English</a>
+      </span>
+      </li>
+      <li>
+      <span><a href="https://tiss.tuwien.ac.at/hilfe" target="_blank" title="
+Hotkey: &lt;CTRL+F1&gt;" data-rtiss-on-click-hotkey="Ctrl+F1 -///-/hilfe">Hilfe</a></span>
+    </li>
+    <li id="hotkey_button">
+      <span><a href="https://tiss.tuwien.ac.at/api/dokumentation#">Hotkeys</a></span>
+      <div class="hotkeytext" id="hotkey_info">
+        <table class="standard">
+          <tbody><tr>
+          <td class="funktion">Hilfe</td>
+          <td class="hotkey">Strg+F1</td>
+          </tr>
+        </tbody></table>
+      </div>
+    </li>
+    <li class="rightAlign">
+    <span>
+                <a class="toolLogout" href="https://tiss.tuwien.ac.at/admin/authentifizierung/logout">&nbsp;</a>
+        
+    </span>
+    </li>
+  </ul>
+</form>
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="headerRight">
+                <div id="tuLogo"><a href="https://www.tuwien.ac.at/"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="contentWrapper">
+      
+
+      <div id="mainNav">
+    <div>
+      <a id="lehreLink" href="https://tiss.tuwien.ac.at/curriculum/studyCodes.xhtml">Lehre</a>
+      <a id="forschungLink" href="https://tiss.tuwien.ac.at/fpl/">Forschung</a>
+      <a id="organisationLink" href="https://tiss.tuwien.ac.at/">Organisation</a>
+    </div>
+</div>
+
+      <div id="content">
+        <div id="contentInnerWrapper" class="clearfix">
+          <div id="contentInner">
+              <h1>TISS REST-API Dokumentation</h1>
+              <div id="subHeader">
+                <br>
+              </div>
+            <ul id="globalMessagesPanel">
+</ul>
+
+            <div class="apidocs">
+  <a id="toc-main-link" href="https://tiss.tuwien.ac.at/api/dokumentation#toc-container" class="toc-link">☰ Inhaltsverzeichnis</a>
+  <div id="toc-container" style="position: fixed; top: 0px; bottom: 0px; height: 100%; right: -15.625em; width: 15.625em; transition: right 300ms ease 0s;">
+    <a id="toc-close" href="https://tiss.tuwien.ac.at/api/dokumentation#toc" class="toc-link">x</a>
+    <div id="toc"><ul><li class="toc-h2 toc-active"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_apis">Öffentliche APIs</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_adressbuch_2_2">Adressbuch 2.2</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_adressbuch_2_1">Adressbuch 2.1</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_adressbuch_2_0_">Adressbuch 2.0 - DEPRECATED</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_adressbuch_1_5_">Adressbuch 1.5 - DEPRECATED</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_adressbuch_1_4_">Adressbuch 1.4 - DEPRECATED</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_adressbuch_1_3_">Adressbuch 1.3 - DEPRECATED</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_fpf">FPF</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_jtiss">JTISS</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_mitteilungsblatt_2_2">Mitteilungsblatt 2.2</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#public_pdb">PDB</a></li><li class="toc-h2"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_apis">Restricted APIs</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_bibliothek">Bibliothek</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_datawarehouse_1_0">Datawarehouse 1.0</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_htu">HTU</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_identity_access_manager__iam__1_0">Identity Access Manager (IAM) 1.0</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_identity_provider_1_1">Identity Provider 1.1</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_jtiss">JTISS</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_orgeinheiten_2_1">Orgeinheiten 2.1</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_personen_2_2">Personen 2.2</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_publikationsdb">PublikationsDB</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_sonstige">Sonstige</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_studenten">Studenten</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_tu_shop_1_0">TU-Shop 1.0</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_typo3_2_2">Typo3 2.2</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_typo3_2_1">Typo3 2.1</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_typo3_1_0">Typo3 1.0</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_zid">ZID</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_zid_pdb">ZID-PDB</a></li><li class="toc-span"><a href="file:///C:/benjamin/documents/2work%20-%20jobs%20_%20tu_it_infra/aktuelle_projekte_services/i_products/2023-09-26_bewerbungen_prep/TISS%20API-Docs.html#restricted_uptudate_2_2">upTUdate 2.2</a></li></ul></div>
+  </div>
+    <span id="public_apis"></span><span id="public_apis"></span><h2 class="apitype" data-anchor="public_apis">Öffentliche APIs</h2>
+      <div class="api_category">
+  <a name="public_adressbuch_2_2"></a>
+  <a style="float: right; font-size: 1.5em;margin-right: 10px;" href="https://tiss.tuwien.ac.at/api/dokumentation#toc-container" class="toc-link">☰</a>
+  <div class="api_category_title">
+    <span id="public_adressbuch_2_2"></span><span id="public_adressbuch_2_2"></span><span class="api_category_title_without_anchor" data-anchor="public_adressbuch_2_2">Adressbuch 2.2</span>
+    <a class="api-anchor" href="https://tiss.tuwien.ac.at/api/dokumentation#public_adressbuch_2_2">¶</a>
+  </div>
+  <div class="api_category_content">
+        <div class="single_api single_api_get" id="apiorgunitv22codecode">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/orgunit/v22/code/:code</div>
+              <div class="description">
+                Detaildaten einer Orgeinheit auf Basis der Codes
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details" style="display: none;">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Orgeinheit auf Basis der Codes</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Orgeinheit Codes</td>
+                    </tr>
+                    <tr>
+                      <td><b>recursive</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Unter-Orgeinheiten rekursiv inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>persons</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Daten der Mitarbeiter und der Leitung der Orgeinheit im JSON inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Orgeinheit mit dem angegebenen Codes existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/orgunit/v22/code/E019-03">/api/orgunit/v22/code/E019-03</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apiorgunitv22idid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/orgunit/v22/id/:id</div>
+              <div class="description">
+                Detaildaten einer Orgeinheit auf Basis der TISS-ID
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Orgeinheit auf Basis der TISS-ID</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>TISS-ID</td>
+                    </tr>
+                    <tr>
+                      <td><b>recursive</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Unter-Orgeinheiten rekursiv inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>persons</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Daten der Mitarbeiter und der Leitung der Orgeinheit inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Orgeinheit mit der angegebenen TISS-ID existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/orgunit/v22/id/7019?persons=true">/api/orgunit/v22/id/7019?persons=true</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apiorgunitv22numbernumber">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/orgunit/v22/number/:number</div>
+              <div class="description">
+                Detaildaten einer Orgeinheit auf Basis der Orgeinheiten-Nummer
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Orgeinheit auf Basis der Orgeinheiten-Nummer</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Orgeinheiten-Nummer</td>
+                    </tr>
+                    <tr>
+                      <td><b>recursive</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Unter-Orgeinheiten rekursiv inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                    <tr>
+                      <td><b>persons</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Daten der Mitarbeiter und der Leitung der Orgeinheit im JSON inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Orgeinheit mit der angegebenen Orgeinheiten-Nummer existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/orgunit/v22/number/E141?recursive=true">/api/orgunit/v22/number/E141?recursive=true</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apiorgunitv22oidoid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/orgunit/v22/oid/:oid</div>
+              <div class="description">
+                Detaildaten einer Orgeinheit auf Basis der OID
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Orgeinheit auf Basis der OID</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Orgeinheit OID</td>
+                    </tr>
+                    <tr>
+                      <td><b>recursive</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Unter-Orgeinheiten rekursiv inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>persons</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Falls true, werden die Daten der Mitarbeiter und der Leitung der Orgeinheit im JSON inkludiert</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Orgeinheit mit der angegebenen OID existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/orgunit/v22/oid/784913?persons=true&amp;recursive=true">/api/orgunit/v22/oid/784913?persons=true&amp;recursive=true</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apiorgunitv22organigramm">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/orgunit/v22/organigramm</div>
+              <div class="description">
+                Liefert alle aktiven Organisationseinheiten der TU-Wien
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Liefert alle aktiven Organisationseinheiten der TU-Wien</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>with_changes</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Liefert, wenn auf 1 gesetzt, die Änderungshistorie der Organisationseinheiten mit aus</td>
+                    </tr>
+                    <tr>
+                      <td><b>include_inactive</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Liefert, wenn auf 1 gesetzt, auch inaktive Orgeinheiten und die Attribute begin, end und is_active</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/orgunit/v22/organigramm">/api/orgunit/v22/organigramm</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apiorgunitv22osuche">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/orgunit/v22/osuche</div>
+              <div class="description">
+                Ergebnis der Suchanfrage von Orgeinheiten
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Ergebnis der Suchanfrage von Orgeinheiten</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>q</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Suchterm</td>
+                    </tr>
+                    <tr>
+                      <td><b>max_treffer</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Maximale Anzahl der Treffer Limit: 100 Default: 15</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Keine Orgeinheit gefunden</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/orgunit/v22/osuche?q=hochsch&amp;max_treffer=100">/api/orgunit/v22/osuche?q=hochsch&amp;max_treffer=100</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apipersonv22idid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/person/v22/id/:id</div>
+              <div class="description">
+                Detaildaten einer Person auf Basis der TISS-ID
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Person auf Basis der TISS-ID</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>TISS-ID</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Person-JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Person mit der angegebenen TISS-ID existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/person/v22/id/134749?intern=true">/api/person/v22/id/134749?intern=true</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apipersonv22mnrmnr">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/person/v22/mnr/:mnr</div>
+              <div class="description">
+                Detaildaten eines Studenten auf Basis der Matrikelnummer
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten eines Studenten auf Basis der Matrikelnummer</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Matrikelnummer</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Person-JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Student mit der angegebenen Matrikelnummer existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/person/v22/mnr/12038098?intern=true">/api/person/v22/mnr/12038098?intern=true</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apipersonv22oidoid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/person/v22/oid/:oid</div>
+              <div class="description">
+                Detaildaten einer Person auf Basis der OID
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Person auf Basis der OID</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>OID</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Person-JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Person mit der angegebenen OID existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/person/v22/oid/24556969">/api/person/v22/oid/24556969</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apipersonv22orcidorcid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/person/v22/orcid/:orcid</div>
+              <div class="description">
+                Detaildaten einer Person auf Basis der ORCID
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Detaildaten einer Person auf Basis der ORCID</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>ORCID</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Person-JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Person mit der angegebenen ORCID existiert nicht</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/person/v22/orcid/0000-0002-8373-6552">/api/person/v22/orcid/0000-0002-8373-6552</a></div>
+              <br>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apipersonv22psuche">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/person/v22/psuche</div>
+              <div class="description">
+                Ergebnis der Suchanfrage von Personen
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+                <div>Ergebnis der Suchanfrage von Personen</div>
+                <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>q</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Suchterm</td>
+                    </tr>
+                    <tr>
+                      <td><b>intern</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Auch interne User_innen z.B. rein-Studierende werden angezeigt</td>
+                    </tr>
+                    <tr>
+                      <td><b>fallback_picture</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Base64-Representation des Fallback-Bildes wird geliefert (wenn true). Das Fallback-Bild (derzeit die Initiale oder andere benutzerdefinierten Buchstaben) wird dann angezeigt, wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat. </td>
+                    </tr>
+                    <tr>
+                      <td><b>preview_picture_uri</b></td>
+                      <td>query</td>
+                      <td>boolean</td>
+                      <td>Eine skalierte Version des Profilbildes wird geliefert (wenn true). Das gelieferte Feld hat den Wert "null", wenn der Benutzer kein Profilbild ausgewählt bzw. hochgeladen hat.</td>
+                    </tr>
+                    <tr>
+                      <td><b>max_treffer</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>Maximale Anzahl der Treffer Limit: 100 Default: 15</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>Keine Person gefunden</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>Unerwarteter Serverfehler</td>
+                  </tr>
+              </tbody>
+            </table>
+              <div class="single_api_details_title">Beispiel-Aufruf</div>
+              <div style="font-weight: bold;"><a target="_blank" href="https://tiss.tuwien.ac.at/api/person/v22/psuche?q=R%C3%BCger&amp;max_treffer=50">/api/person/v22/psuche?q=R%C3%BCger&amp;max_treffer=50</a></div>
+              <br>
+          </div>
+        </div>
+  </div>
+</div>
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      <div class="api_category">
+  <a name="public_fpf"></a>
+  <a style="float: right; font-size: 1.5em;margin-right: 10px;" href="https://tiss.tuwien.ac.at/api/dokumentation#toc-container" class="toc-link">☰</a>
+  <div class="api_category_title">
+    <span id="public_fpf"></span><span id="public_fpf"></span><span class="api_category_title_without_anchor" data-anchor="public_fpf">FPF</span>
+    <a class="api-anchor" href="https://tiss.tuwien.ac.at/api/dokumentation#public_fpf">¶</a>
+  </div>
+  <div class="api_category_content">
+        <div class="single_api single_api_get" id="apifpfrestresearchpersongetbyidid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/get_by_id/:id</div>
+              <div class="description">
+                Returns research person by research person id.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns research person by research person id.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) a valid research person id</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonResult</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such person could be found</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersongetbyoidoid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/get_by_oid/:oid</div>
+              <div class="description">
+                DEPRECATED since version 1.6.5, use /get_by_tid/{tid} instead.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                DEPRECATED since version 1.6.5, use /get_by_tid/{tid} instead.
+Returns research person by oid.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>oid</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) a valid OID</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonResult</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version or an invalid oid was specified</td>
+                  </tr>
+                  <tr>
+                    <td><b>403</b></td>
+                    <td>the research person has a private profile</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such person can be found</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>something else goes wrong</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersongetbyorgunitid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/get_by_orgunit/:id</div>
+              <div class="description">
+                Returns publicly available paginated person list who are members of specified organisation unit.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns publicly available paginated person list who are members of specified organisation unit.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>a valid CmnOrgUnitID (required)</td>
+                    </tr>
+                    <tr>
+                      <td><b>currentPage</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>current page (optional)</td>
+                    </tr>
+                    <tr>
+                      <td><b>pageSize</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>page size (optional)</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>default value is 1.0 (optional)</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonsResult</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid cmnOrgUnitId, version, pageSize or currentPage was specified</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>something else goes wrong</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersongetbyresearchfieldresearchFieldId">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/get_by_researchfield/:researchFieldId</div>
+              <div class="description">
+                Returns publicly available paginated person list who have the specified research focus.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns publicly available paginated person list who have the specified research focus.
+the researchFocusId can be taken from the reserachTopic.id from /api/pdb/rest/researchAreas/v1.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>researchFieldId</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) an id from the list returned by PDB (null value is not allowed)</td>
+                    </tr>
+                    <tr>
+                      <td><b>currentPage</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(required) current page</td>
+                    </tr>
+                    <tr>
+                      <td><b>pageSize</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(required) page size</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonsResult</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersongetbyresearchfocusresearchFocusId">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/get_by_researchfocus/:researchFocusId</div>
+              <div class="description">
+                Returns publicly available paginated person list who have the specified research focus.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns publicly available paginated person list who have the specified research focus.
+the researchFocusId can be taken from the researchArea.id from /api/pdb/rest/researchAreas/v1.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>researchFocusId</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>an id from the list returned by PDB (null value is not allowed)</td>
+                    </tr>
+                    <tr>
+                      <td><b>currentPage</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>current page</td>
+                    </tr>
+                    <tr>
+                      <td><b>pageSize</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>page size</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonsResult</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersongetbytidtid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/get_by_tid/:tid</div>
+              <div class="description">
+                Returns research person by tiss id.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns research person by tiss id.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>tid</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) a valid tiss id of a person</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonResult</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version or tid was specified</td>
+                  </tr>
+                  <tr>
+                    <td><b>403</b></td>
+                    <td>the research person has a private profile</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such person can be found</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>something else goes wrong</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersonlinknameid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/link/:name/:id</div>
+              <div class="description">
+                Redirect to the researcher's public profile page.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Redirect to the researcher's public profile page.
+Primarily used in the sitemap generated by /sitemap{extension}.
+The result is configured to be cached for 24 hours.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>name</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) the researcher's name</td>
+                    </tr>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) the researcher's id</td>
+                    </tr>
+                    <tr>
+                      <td><b>cache</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 'true', 'false' will disable any cache usage</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>redirect the client to the actual location of the public page in FPL</td>
+                  </tr>
+                  <tr>
+                    <td><b>301</b></td>
+                    <td>redirect to the public page in FPL</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>configuration error</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersonpreviewid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/preview/:id</div>
+              <div class="description">
+                Returns research person preview.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns research person preview.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) id of the research person</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonPreview</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such person was found</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersonprofileid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/profile/:id</div>
+              <div class="description">
+                Returns publicly available research person profile.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns publicly available research person profile.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) id of the research person</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) available versions are 1.0, 2.0 and 3.0, default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonProfile, Xml20ResearchPersonProfile or Xml30ResearchPersonProfile depending on the version</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version was specified</td>
+                  </tr>
+                  <tr>
+                    <td><b>403</b></td>
+                    <td>the research person has a private profile</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such person could be found,</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>something else went wrong</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersonprofileByTidtid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/profileByTid/:tid</div>
+              <div class="description">
+                Returns the publicly available research person profile.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns the publicly available research person profile.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>tid</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) TISS ID of the person</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) available versions are 1.0, 2.0 and 3.0, default value is 2.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonProfile, Xml20ResearchPersonProfile or Xml30ResearchPersonProfile depending on the version</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version was specified</td>
+                  </tr>
+                  <tr>
+                    <td><b>403</b></td>
+                    <td>the research person has a private profile</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such person could be found,</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>something else went wrong</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_post" id="apifpfrestresearchpersonsearch">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">post</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/search</div>
+              <div class="description">
+                Returns all publicly available persons matching the query Xml10PublicSearchQueryType.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns all publicly available persons matching the query Xml10PublicSearchQueryType.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html#resource_ResearchPersonResource_publicSearch_POST">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>body</b></td>
+                      <td>body</td>
+                      <td>string</td>
+                      <td>(required) Xml10PublicSearchQueryType</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchPersonSearchResult</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchpersonsitemapextension">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_person/sitemap:extension</div>
+              <div class="description">
+                Returns the sitemap of all research persons.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns the sitemap of all research persons.
+The result is cached for 24 hours.
+This is used by search engines to scan the site.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchPersonResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>extension</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(optional) file name extension specifying the file format (.xml, .gz), defaults to .xml</td>
+                    </tr>
+                    <tr>
+                      <td><b>cache</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is true, false will disable any cache usage</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>list of urls as a xml sitemap referencing the link endpoint</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version was specified</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitgetall">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/get_all</div>
+              <div class="description">
+                Returns all research units.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns all research units.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchUnitsResult</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitgetbyoidoid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/get_by_oid/:oid</div>
+              <div class="description">
+                DEPRECATED since version 1.6.5, use /get_by_tid/{tid} instead.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                DEPRECATED since version 1.6.5, use /get_by_tid/{tid} instead.
+Returns research unit by oid.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>oid</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) valid research unit oid</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchUnitResult</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no research unit was found</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitgetbytidtid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/get_by_tid/:tid</div>
+              <div class="description">
+                Get the research unit by this TissID.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Get the research unit by this TissID.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>tid</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) valid tiss id of an org unit</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchUnitResult</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version or tid was specified</td>
+                  </tr>
+                  <tr>
+                    <td><b>404</b></td>
+                    <td>no such research unit was found</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>something else went wrong</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitlinknameid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/link/:name/:id</div>
+              <div class="description">
+                Redirect to the research unit's public profile page.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Redirect to the research unit's public profile page.
+Primarily used in the sitemap generated by /sitemap{extension}.
+The result is configured to be cached for 24 hours.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>name</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) the research unit's name</td>
+                    </tr>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) the research unit's id</td>
+                    </tr>
+                    <tr>
+                      <td><b>cache</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is true, false will disable any cache usage</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>redirect the client to the actual location of the public page in FPL</td>
+                  </tr>
+                  <tr>
+                    <td><b>301</b></td>
+                    <td>redirect to the public page in FPL</td>
+                  </tr>
+                  <tr>
+                    <td><b>500</b></td>
+                    <td>configuration error</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitpreviewid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/preview/:id</div>
+              <div class="description">
+                Returns research unit preview, if research unit not found of something goes wrong 505 is returned.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns research unit preview, if research unit not found of something goes wrong 505 is returned.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(required) valid null value is not allowed</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchUnitPreview</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitprofileid">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/profile/:id</div>
+              <div class="description">
+                Returns research unit profile, if research unit not found of something goes wrong 505 is returned.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns research unit profile, if research unit not found of something goes wrong 505 is returned.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>id</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>null value is not allowed</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchUnitProfile</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_post" id="apifpfrestresearchunitsearch">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">post</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/search</div>
+              <div class="description">
+                Returns all matching research units matching the query Xml10PublicSearchQueryType.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns all matching research units matching the query Xml10PublicSearchQueryType.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html#resource_ResearchUnitResource_publicSearch_POST">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>body</b></td>
+                      <td>body</td>
+                      <td>string</td>
+                      <td>(required) Xml10PublicSearchQueryType</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>Xml10ResearchUnitSearchResult</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="single_api single_api_get" id="apifpfrestresearchunitsitemapextension">
+          <div class="single_api_header ">
+            <div>
+              <span class="method">get</span>
+            </div>
+            <div class="route-description">
+              <div class="route">/api/fpf/rest/research_unit/sitemap:extension</div>
+              <div class="description">
+                Returns the sitemap of all research units.
+              </div>
+            </div>
+          </div>
+          <div class="single_api_details">
+            <div class="single_api_details_title">Beschreibung</div>
+              <div>
+                Returns the sitemap of all research units.
+The result is cached for 24 hours.
+This is used by search engines to scan the site.
+<a href="https://tiss.tuwien.ac.at/api/fpf/search-api/doc/resource_ResearchUnitResource.html">FPF Rest API Documentation</a>
+              </div>
+              <br>
+            <div class="single_api_details_title">Parameter</div>
+              <table class="single_api_details_table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Datentyp</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><b>extension</b></td>
+                      <td>path</td>
+                      <td>string</td>
+                      <td>(optional) file name extension specifying the file format (.xml, .gz), defaults to .xml</td>
+                    </tr>
+                    <tr>
+                      <td><b>cache</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is true, false will disable any cache usage</td>
+                    </tr>
+                    <tr>
+                      <td><b>version</b></td>
+                      <td>query</td>
+                      <td>string</td>
+                      <td>(optional) default value is 1.0</td>
+                    </tr>
+                </tbody>
+              </table>
+            <div class="single_api_details_title">Response</div>
+            <table class="single_api_details_table">
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>200</b></td>
+                    <td>list of urls as a xml sitemap referencing the link endpoint</td>
+                  </tr>
+                  <tr>
+                    <td><b>400</b></td>
+                    <td>an invalid version was specified</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  </div>
+</div>
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+      
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+          
+<div style="text-align: right;">
+  <a class="to-top-link" href="https://tiss.tuwien.ac.at/api/dokumentation#">Zum Anfang der Seite</a>
+</div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+  <div id="footerContent">
+    <div id="footer-left"></div>
+    <div id="footer-right"></div>
+    <div id="pageEnd"></div>
+  </div>
+  <div id="footerShadow">
+    <div id="footerShadow-left"></div>
+    <div id="footerShadow-right"></div>
+    <div id="baseLinks">
+      <a href="https://tiss.tuwien.ac.at/hilfe/zu/tiss/support" target="_blank">Support</a>
+      |
+      <a href="https://www.it.tuwien.ac.at/regelungen/" target="_blank">Policies</a>
+      |
+      <a href="https://tiss.tuwien.ac.at/ueber_tiss/impressum">Impressum</a>
+      |
+      <a href="https://tiss.tuwien.ac.at/ueber_tiss/datenschutz">Datenschutz</a>
+    <span class="mobileToggles" style="display: none;"> | <a href="javascript:;" class="mobileToggle">Mobile Version</a><a href="javascript:;" class="mobileToggle">Desktop Version</a></span><span class="mobileToggles" style="display: none;"> | <a href="javascript:;" class="mobileToggle">Mobile Version</a><a href="javascript:;" class="mobileToggle">Desktop Version</a></span></div>
+    <div id="legalInfo">
+      Technische Universität Wien - Karlsplatz 13 | 1040 Wien, Österreich | Tel. +43-1-58801-0 | Fax +43-1-58801-41088
+    </div>
+    
+  </div>
+</div>
+
+  </div>
+  <script type="text/javascript">
+    
+  </script>
+
+
+</body></html>

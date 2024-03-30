@@ -1,0 +1,210 @@
+/**
+ * Tiss Accordion Component Style
+ */
+ 
+.tissAccordion{ 
+	position: relative;
+ }
+
+
+/**
+ * Head
+ */
+.tissAccordion .tAHead {
+    position: relative;
+    height: 51px; 
+    clear: both;
+    background-image: url('../images/jquery.ui.tissAccordion/TA_headerbg.png');
+    background-repeat:repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    margin-top: 0px;
+}
+
+.tissAccordion .tAHead .tAHeadContent {
+	margin-left: 24px;
+    margin-right:4px;
+    padding-left: 5px;
+    padding-top:5px;
+	display: block;
+    height: 51px;
+    cursor: pointer;
+}
+.tissAccordion .tAHead .tAHeadContent * {
+	cursor: auto;	
+}
+
+.tissAccordion .tAHead .tATitel {
+    font-size: 13pt;
+    color: #494949;
+	cursor: pointer;	
+}
+.tAHeadRight {
+    display: block;
+    float: right;
+    text-align: right;
+    padding-top:5px;
+    /*width: 170px;*/
+    margin-right: 5px;
+}
+
+.tASubHead{
+    position: absolute;
+    top: 27px;
+    left:32px;
+}
+
+/**
+ * Content
+ */
+.tissAccordion .tAContent {
+    padding-left: 0px;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    padding: 5px 5px 5px 29px;
+    background-image: url('../images/jquery.ui.tissAccordion/TA_content_bg_gradient.png');
+    background-repeat:repeat-x;    
+
+}
+
+.tissAccordion .tAContent.tALast{
+    border-bottom: 1px solid #BBBBBB;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.tissAccordion ul.tAIcons, 
+.tissAccordion ul.tAIcons li{
+    display: inline;
+}
+
+/**
+ * Arrow right (for closed panels)
+ */
+.tissAccordion .tAHead .tAArrow {
+    display: block;
+    width: 24px;
+    height: 51px;
+    position:relative;
+    float: left;
+    background-image: url('../images/jquery.ui.tissAccordion/TA_arrows.png');
+    background-position: left center;
+    background-repeat:no-repeat;
+    cursor: pointer;
+
+}
+
+.lehre .tissAccordion .tAHead .tAArrow:hover,
+.lehre .tissAccordion .tAHead .tAArrow.hover {
+    background-position: -68px center;
+}
+
+.forschung .tissAccordion .tAHead .tAArrow:hover,
+.forschung .tissAccordion .tAHead .tAArrow.hover {
+    background-position: -136px center;
+}
+
+.organisation .tissAccordion .tAHead .tAArrow:hover,
+.organisation .tissAccordion .tAHead .tAArrow.hover {
+    background-position: -204px center;
+}
+
+
+/**
+ * Arrow down (for open panels)
+ */
+.tissAccordion .tAHead.tAOpened .tAArrow {
+    background-repeat:no-repeat;
+    height: 51px;
+    width: 24px;
+    position:relative;
+    background-position: -34px center;
+}
+.lehre .tissAccordion .tAHead.tAOpened .tAArrow:hover,
+.lehre .tissAccordion .tAHead.tAOpened .tAArrow.hover {
+    background-position: -102px center;
+}
+
+.forschung .tissAccordion .tAHead.tAOpened .tAArrow:hover,
+.forschung .tissAccordion .tAHead.tAOpened .tAArrow.hover {
+    background-position: -170px center;
+}
+
+.organisation .tissAccordion .tAHead.tAOpened .tAArrow:hover,
+.organisation .tissAccordion .tAHead.tAOpened .tAArrow.hover {
+    background-position: -238px center;
+}
+
+/**
+ * Borders
+ */
+
+
+.tissAccordion .tAHead.tAFirst .tAArrow {
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+}
+
+.tissAccordion .tAHead.tALast .tAArrow {
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+.tissAccordion .tAHead.tAFirst {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.tissAccordion .tAHead.tALast{
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.tissAccordion .tAHead.tAOpened.tALast{     /* geht nicht */
+    border-bottom: 1px solid #BBBBBB;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.tissAccordion .tAHead.tAOpened{
+    border-bottom: 1px solid #BBBBBB;
+}
+
+
+
+/**
+ * Links to open all / close all panels
+ */
+.tissAccordion.tAAllOpened a.tAOpenAll {
+	display: none;
+}
+.tissAccordion.tAAllClosed a.tACloseAll {
+	display: none;
+}
+.tissAccordion .tAOpenCloseLinks {
+	padding-top: 5px;
+	padding-bottom: 5px;	
+}

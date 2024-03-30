@@ -1,0 +1,724 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[Mobile]
+
+Primary use:	Style for mobile devices such as the iPhone, iPad
+				and Android devices
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1.    Body 
+2.    Header / #header
+3.    Content Wrapper / #contentWrapper
+3.1.  Supplementary Navigation / #supNav
+3.2.  Main Navigation / #mainNav
+3.3.  Content / #content
+3.4   Forms and fieldsets
+3.5   Widgets
+4.    Footer / #footer
+5.    HPPI Pictures
+6.    Java TISS
+6.1   Curriculum
+
+
+-------------------------------------------------------------------*/
+
+/* [1. Body]
+-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 949px) {
+
+	html {
+		background: white;
+		height: 100%;
+	}
+	
+	body {
+		height: 100%;
+		min-height: auto;
+	}
+	
+	
+	#glow_left, #glow_right {
+		display: none;
+	}
+	
+	#wrapper {
+		margin: 0px;
+		padding: 0px;
+		min-width: 200px;
+		max-width: 100%;
+		min-height: 100%;
+	}
+
+
+/* [2. Header / #header]
+-------------------------------------------------------------------*/
+
+	#header {
+		background: url('../images/mobile/nav_main.png' ) no-repeat top left #0f4161;
+		height: 73px;
+		position: static;
+	}
+	
+	#headerInnerWrapper {
+		background: none;
+		margin: 0px;
+		height: auto;
+	}
+	
+	#headerInner {
+		background: none;
+	}
+	
+	#headerLeft {
+		position: relative;
+		height: 73px;
+		width: 120px;
+	}
+	
+	#headerLeftInside {
+		border: none;
+		margin: 0px;
+	}
+	
+	#logo {
+		position: relative; 
+		top: 0px;
+		width: auto;
+	}
+	
+	#logo h1 a {
+		background: none;
+		margin: 0px;
+		width: auto;
+		height: 65px;
+		position: relative;
+		z-index: 1;
+	}
+	
+	#headerCenter {
+		margin: 0px;
+		height: auto;
+	}
+	
+	#headerCenterInside {
+		position: relative;
+		width: auto;
+		height: 37px;
+		border-bottom: 1px solid #cfdce6;
+	}
+	
+	#paperHead {
+		border: none;
+		top: 0px;
+	}
+	
+	.toolNav {
+		padding: 3px 59px 0 10px;
+	}
+	
+	.toolNav li {
+		margin-right: 10px;
+		font-size: 12px;
+	}
+	
+	.toolNav li.rightAlign {
+		margin-left: 0px;
+	}
+	
+	.toolNav li a, 
+	.toolNav li a:hover,
+	.toolNav li span,
+	.toolNav li span:hover {
+		height: 30px;
+		line-height: 30px;
+		color: #80A0B1 !important;
+	}
+	
+	.toolHome {
+		background: url(../images/mobile/home.png) no-repeat center left !important;
+		padding-left: 27px;
+	}
+		
+	.toolLogout {
+		background: url(../images/mobile/logout.png) no-repeat center right !important;
+		width: 31px;
+		text-indent: 300%;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 0px;
+	}
+	
+	.toolLogin {
+		background: url(../images/mobile/login.png) no-repeat center right !important;
+		width: 36px;
+		text-indent: 300%;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 0px;
+	}
+	
+	#headerRight {
+		display: block;
+	}
+	
+	#tuLogo {
+		background: url(../images/mobile/tu_logo.png) no-repeat top left;
+		width: 40px;
+		height: 40px;
+	    bottom: 11px !important;
+	    left: auto !important;
+	    right: 10px;
+	    top: auto;
+   		z-index: 1;
+	}
+	
+	#tuLogo a {
+		height: 100%;
+		width: 100%;
+		top: 0px;
+		right: 0px;
+		position: relative;
+	}
+	
+	/* = Note: Cut off long usernames */
+	.toolHome span,
+	.toolHome a {
+		max-width: 400px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+}
+
+
+@media only screen and (max-width: 650px) {
+	
+	/* =Note: Hide parts of the toolNav on small devices */
+	.toolNav #hotkey_button,
+	.toolNav #hotkey_info {
+		display: none !important;
+	}
+	
+	/* = Note: Cut off long usernames */
+	.toolHome span,
+	.toolHome a {
+		max-width: 150px;
+	}
+	
+	/* =Note: Improve styling of subheader */
+	#subHeader div,
+	h1 + .subHeader div, 
+	#subHeader .rightAlign,
+	h1 + .subHeader .rightAlign {
+		float: left !important;
+		width: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 400px) {
+
+	/* = Note: Cut off long usernames */
+	.toolHome span,
+	.toolHome a {
+		max-width: 60px;
+	}
+}
+
+	
+/* [3. Content Wrapper / #contentWrapper ]
+-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 949px) {
+
+	body #contentWrapper {
+		background: none;
+		position: static;
+		padding-bottom: 110px;
+		background: none !important;
+	}
+	
+	
+/* [3.1. Supplementary Navigation /#supNav ]
+-------------------------------------------------------------------*/
+	#supNav {
+		height: auto;
+		position: relative;
+		float: none;
+		width: auto;
+		top: 38px;
+	}
+	
+	#supNavHeaderWrapper {
+		height: auto;
+		position: relative;
+		width: auto;
+	}
+	
+	.lehre #supNavHeader,
+	.forschung #supNavHeader,
+	.organisation #supNavHeader {
+		background-size: auto 25px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		border-bottom: 1px solid #cfdce6;
+		border-top: none;
+		position: absolute;
+		width: 44px;
+		height: 37px;
+		border-left: 1px solid #cfdce6;
+		margin: 0px;
+		z-index: 2;
+		top: -38px;
+		right: 0px;
+		cursor: pointer;
+	}
+
+	.lehre #supNavHeader:hover,
+	.forschung #supNavHeader:hover,
+	.organisation #supNavHeader:hover {
+		background-color: white;
+	}
+
+	.lehre #supNavHeader.active,
+	.forschung #supNavHeader.active,
+	.organisation #supNavHeader.active {
+		border-bottom: 2px solid #F5FAFD;
+	}
+	
+	.lehre #supNavHeader {
+		background-image: url(../images/mobile/list_lehre.png);
+	}
+	
+	.forschung #supNavHeader {
+		background-image: url(../images/mobile/list_forschung.png);
+	}
+	
+	.organisation #supNavHeader {
+		background-image: url(../images/mobile/list_organisation.png);
+	}
+	 
+	#supNavHeaderStroke {
+		display: none;
+	}
+	
+	#supNavHeading {
+		display: none;
+	}
+	
+	#shadow_top {
+		display: none;
+	}
+	
+	#supNavBody {
+		display: none;
+		position: relative;
+		top: 0px;
+		background: #f5fafd;
+		width: 100%;
+		padding: 0px;
+		border-bottom: 1px solid #cfdce6;
+		border-top: 1px solid white;
+		-webkit-box-shadow:  0 3px 6px 0px rgba(0, 0, 0, 0.1), inset 0px -1px rgb(255,255,255);
+        box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.1), inset 0px -1px rgb(255,255,255);
+	}
+	
+	#supNavBody:before {
+		display: block;
+	    font-size: 16px;
+	    font-weight: bold;
+	    left: 10px;
+	    position: absolute;
+	    top: 10px;
+	}
+	
+	.lehre #supNavBody:before {
+		color: #DD7C00;
+	    content: "Lehre";
+	}
+	
+	.en.lehre #supNavBody:before {
+	    content: "Education";
+	}
+	
+	.organisation #supNavBody:before {
+		color: #4E2085;
+	    content: "Organisation";
+	}
+	
+	.en.organisation #supNavBody:before {
+	    content: "Organisation";
+	}
+	
+	.forschung #supNavBody:before {
+		color: #669C00;
+	    content: "Forschung";
+	}
+	
+	.en.forschung #supNavBody:before {
+	    content: "Research";
+	}
+	
+	#supNavBody > ul > li {
+		margin-bottom: 10px;	
+	}
+	
+	#supNavBody li {
+		margin-bottom: 1px;
+	}
+	
+	#supNavBody > ul {
+		padding: 37px 10px 10px;
+		-moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 20px;
+        column-count: 2;
+		column-gap: 20px;
+	}
+	
+	.supNavMenuHeader {
+		padding-left: 0px;
+	}
+	
+	#supNav .linkBlock a {
+		padding-left: 10px;
+	}
+	
+	#supNav a {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	
+/* [3.2. Main Navigation / #mainNav ]
+-------------------------------------------------------------------*/		
+	.lehre #mainNav,
+	.forschung #mainNav,
+	.organisation #mainNav {
+		background: none;
+		height: auto;
+		position: absolute;
+		width: auto;
+		top: 0px;
+		right: 0px;
+		height: 73px;
+		width: 100%;
+	}
+	
+	.lehre #mainNav {
+		background: url('../images/mobile/nav_main_lehre.png' ) no-repeat top right;
+	}
+	
+	.organisation #mainNav {
+		background: url('../images/mobile/nav_main_organisation.png' ) no-repeat top right;
+	}
+	
+	.forschung #mainNav {
+		background: url('../images/mobile/nav_main_forschung.png' ) no-repeat top right;
+	}
+	
+	body #mainNav div {
+		background: none;
+		height: auto;
+		width: auto;
+	}
+	
+	#mainNav #lehreLink {
+	    height: 63px;
+	    left: auto;
+	    right: 121px;
+	    top: 1px;
+	    width: 58px;
+	}
+	
+	#mainNav #forschungLink {
+		height: 63px;
+	    left: auto;
+	    right: 61px;
+	    top: 1px;
+	    width: 58px;
+	}
+	
+	#mainNav #organisationLink {
+		height: 63px;
+	    left: auto;
+	    right: 1px;
+	    top: 1px;
+	    width: 58px;
+	}
+	
+
+/* [3.3. Content / #content ]
+-------------------------------------------------------------------*/
+	#content {
+		margin: 0;
+		padding-top: 37px;
+		min-height: 100px;
+	}
+	
+	#contentInnerWrapper {
+		margin: 0 10px;
+	}
+	
+	#content h1 {
+		padding-top: 18px;
+	}
+	
+	#subHeader,
+	h1 + .subHeader {
+		padding-bottom: 0px;
+	}
+	
+}
+
+
+/* [3.4. Forms and fieldsets]
+-------------------------------------------------------------------*/	
+@media only screen and (max-width: 650px) {
+	fieldset ul, 
+	fieldset ol {
+		padding: 6px 0 0 0;
+	}
+	
+	fieldset li label:first-child {
+		float: none;
+		margin-left: 0px;
+		width: auto;
+		text-align: left;
+	}
+	
+	fieldset.styledFieldset {
+		margin-right: 0px;
+		padding-left: 11px;
+	}
+	
+	fieldset.styledFieldset legend {
+		margin-left: -11px;
+		padding-right: 11px;
+	}
+	
+	fieldset.narrow label:first-child,
+	fieldset li.narrow label:first-child {
+	    font-weight: bold;
+	}
+	
+	.styledCommandBox {
+		padding: 10px 5px 15px 11px;
+	}
+	
+	.xLargeInput,
+	.xxLargeInput {
+		width: 100% !important;
+	}
+	
+	.encode pre {
+		white-space: normal;
+	}
+}
+
+/* [3.5. Widgets ]
+---------------------------------------------------------------------
+  =Note: Extract and adapt for other software-stacks 
+         (eg. Ruby, TISS21)
+-------------------------------------------------------------------*/	
+@media only screen and (max-width: 949px) {
+
+	#content .ui-tabs .ui-tabs-nav a, 
+	#content .ui-tabs .ui-tabs-nav span {
+		padding: 6px 7px 4px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 80px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.ui-dialog {
+		max-width: 95%;
+		margin: 0 2.5%;
+	}
+	
+	.ui-dialog fieldset ul, 
+	.ui-dialog fieldset ol {
+		padding: 0px;
+	}
+	
+	.ui-dialog fieldset li label:first-child {
+		margin-left: 0px;
+		width: auto;
+		margin-left: 0px;
+	}
+	
+	table.mceLayout, textarea.richEditor {
+		width: 100% !important;
+	}
+
+
+/* [4. Footer / #footer ]
+-------------------------------------------------------------------*/
+	#footer {
+		margin: 0px;
+		padding: 22px 70px 10px 10px;
+		background: url(../images/mobile/footer.jpg) top center no-repeat;
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		right: 0;
+		min-height: 40px;
+		max-width: 100%;
+		word-wrap:break-word;
+	}
+	
+	#footer a {
+		color: rgba(255,255,255,0.7);
+	}
+	
+	#footerContent {
+		display: none;
+	}
+	
+	#footerShadow {
+		padding: 0px;
+		background: none;
+		text-align: left;
+		height: auto;
+		color: rgba(255,255,255,0.4);
+	}
+	
+	#footerShadow-left {
+		display: none;
+	}
+	
+	#footerShadow-right {
+		display: none;
+	}
+	
+	#baseLinks {
+		padding: 0px;
+		white-space: nowrap;
+	}
+	
+	#legalInfo {
+		padding: 0px;
+	}
+
+	#footer .versionInfo,
+	#footer .development-info, 
+	#footer #development-info {
+		display: none;
+	}
+}
+
+
+/* [5. HPPI Images ]
+---------------------------------------------------------------------
+=Note:  Special graphics for the mobile layout if using iPhone Retina 
+        or other high PPI devices.
+        
+=Note:  Media queries inspired by:
+        http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
+-------------------------------------------------------------------*/
+@media only screen and (max-width: 949px) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (max-width: 949px) and (min-resolution: 124.8dpi) {
+	#header {
+		background: url('../images/mobile/nav_main_2x.png' ) no-repeat top left;
+		background-size: auto 100%;
+	}
+	
+	#tuLogo {
+		background: url(../images/mobile/tu_logo_2x.png) no-repeat top left;
+		background-size: auto 100%;
+	}
+	
+	.lehre #mainNav {
+		background: url('../images/mobile/nav_main_lehre_2x.png' ) no-repeat top right;
+		background-size: auto 100%;
+	}
+	
+	.organisation #mainNav {
+		background: url('../images/mobile/nav_main_organisation_2x.png' ) no-repeat top right;
+		background-size: auto 100%;
+	}
+	
+	.forschung #mainNav {
+		background: url('../images/mobile/nav_main_forschung_2x.png' ) no-repeat top right;
+		background-size: auto 100%;
+	}
+	
+	.toolHome {
+		background: url(../images/mobile/home_2x.png) no-repeat center left !important;
+		background-size: auto 20px !important;
+	}
+	
+	.toolLogout {
+		background: url(../images/mobile/logout_2x.png) no-repeat center right !important;
+		background-size: auto 20px !important;
+	}
+	
+	.toolLogin {
+		background: url(../images/mobile/login_2x.png) no-repeat center right !important;
+		background-size: auto 20px !important;
+	}
+	
+	.lehre #supNavHeader {
+		background: url(../images/mobile/list_lehre_2x.png) no-repeat center center;
+		background-size: auto 30px !important;
+	}
+	
+	.forschung #supNavHeader {
+		background: url(../images/mobile/list_forschung_2x.png) no-repeat center center;
+		background-size: auto 30px !important;
+	}
+	
+	.organisation #supNavHeader {
+		background: url(../images/mobile/list_organisation_2x.png) no-repeat center center;
+		background-size: auto 30px !important;
+	}
+	
+	#footer {
+		background: url(../images/mobile/footer_2x.jpg) top center no-repeat;
+		background-size: cover;
+	}
+}
+
+
+/* [6. Java TISS ]
+---------------------------------------------------------------------
+  =Note: Java TISS project specific selectors
+-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 650px) {
+
+    /* [6.1. Curriculum ]
+    -------------------------------------------------------------------*/
+    .courseTitle {
+    	padding-left: 0px;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    }
+    
+    .courseKey {
+    	padding-left: 0px;
+    	float: none;
+    	width: auto;
+    }
+    
+    .nodeTable-level-3 {
+    	padding-left: 0px;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    }
+    
+    .nodeTable-level-3 {
+    	padding-left: 10px;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    }
+}

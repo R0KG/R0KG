@@ -1,0 +1,281 @@
+/**
+ * Tiss Accordion Widget
+ * 
+ * How to use the Tiss Accordion Widget: See the according Tiss Styleguide page.
+ * 
+ * Help and getting started for creating jQuery UI Widgets: See
+ * http://net.tutsplus.com/tutorials/javascript-ajax/coding-your-first-jquery-ui-plugin/
+ * http://www.erichynds.com/jquery/tips-for-developing-jquery-ui-widgets/
+ * http://bililite.com/blog/understanding-jquery-ui-widgets-a-tutorial/
+ */
+
+
+// The jQuery object is passed into this function and is used inside the function via the $ alias; 
+// this is to ensure that the widget is compatible with jQuery's noConflict() method. 
+(function($) {
+
+/**
+ * JQuery UI "tissAccordion" widget
+ */
+$.widget('ui.tissAccordion',{
+	
+	/**
+	 * Options can be configured per widget instance upon initialization.
+	 */
+    options: {         
+    	
+    	/**
+    	 * If this option is true, the tissAccordion will render "Open all" and "Close all"
+    	 * links for opening/closing all panels at once.
+    	 */
+    	displayOpenCloseLinks : true,
+    	
+    	/**
+    	 * Translation for the "Open all" link text.
+    	 */
+    	txtOpenAll: "Alle öffnen",
+
+    	/**
+    	 * Translation for the "Close all" link text.
+    	 */
+    	txtCloseAll: "Alle schließen",
+    	
+    	
+    	/**
+    	 * Callback function for the toggle event. (Note that instead of providing a callback, you 
+    	 * can also listen to the widget's tissaccordiontoggle events)
+    	 */
+    	toggle: function(event, head) { }
+    },
+    
+    
+    /**
+     * Initializes one instance of tissAccordion.
+     */
+    _init: function(){
+        var self = this;
+        this.element.find('.tAHead:first').addClass('tAFirst');
+        this.element.find('.tAHead:last').addClass('tALast');
+        this.element.find('.tAContent:last').addClass('tALast');
+
+
+
+        // set css classes and event listeners for all tAHeads
+        this.element.find('div.tAHead').each(function(){
+            var head = $(this);
+            
+            // open panels
+            if(head.hasClass('tAOpened')) {
+            	head.next().show();
+            }
+            // close panels
+            else {
+            	head.addClass('tAClosed');
+            	head.next().hide();
+            }
+
+            // setup dom and event listeners for toggling the panels
+            var onClickFunction = function(event){
+            	if(// if the event has bubbled up from other children than the tATitel
+            		(event.target !== this) &&
+            		(event.target !== $(this).find('.tATitel:first')[0])
+            	) return;
+            	var head = $(this).closest('.tAHead');
+            	self.toggle(head);
+            } 
+            $('<div/>').addClass('tAArrow').click(onClickFunction).prependTo(head);
+            head.find('.tAHeadContent').click(onClickFunction);
+
+            // setup event listeners for hover effects
+            head.hover(
+            function(event){ // start hover
+            	$(this).closest('.tAHead').find('.tAArrow:first').addClass('hover');
+            },
+            function(event){ // end hover
+            	$(this).closest('.tAHead').find('.tAArrow:first').removeClass('hover');
+            }
+            );
+            // don't do the hover effect when hovering over header content elements
+            head.find('.tAHeadContent').children(':not(.tATitel)').hover(
+            function(){ 
+            	$(this).closest('.tAHead').find('.tAArrow:first').removeClass('hover');
+            	return false;
+            },
+            function(){
+            	$(this).closest('.tAHeadContent').mouseenter();
+            }
+            );
+
+        });
+
+       // setup open/close links
+        if(this.options.displayOpenCloseLinks) {
+        	var linkOpenAll  = $('<a href="javascript:"/>').text(this.options.txtOpenAll).addClass('tAOpenAll');
+        	var linkCloseAll = $('<a href="javascript:"/>').text(this.options.txtCloseAll).addClass('tACloseAll');
+        	var links = $('<div class="tAOpenCloseLinks"/>').append(linkOpenAll, ' ', linkCloseAll);
+        	this.element.prepend(links);
+        	this.element.append(links.clone());
+        	this.element.find('.tAOpenAll').click(function(){ self.openAll()});
+        	this.element.find('.tACloseAll').click(function(){ self.closeAll()});
+        }
+        
+        // set counter of open panels
+        this._count();
+    },
+        
+    /**
+     * Toggles one accordion panel specified by the according tAHead element
+     */
+    toggle: function(tAHead){
+        tAHead = $(tAHead);
+
+        if(tAHead.hasClass('tAOpened')) this.close(tAHead);
+        else this.open(tAHead);
+
+        // trigger the toggle event.
+        // one can bind to the toggle event by calling 
+        // $('.tissAccordion').bind('tissaccordiontoggle', function(){console && console.log(arguments);});
+    	this._trigger('toggle', null, tAHead);
+    },
+
+    /**
+     * Opens one accordion panel specified by the according tAHead element
+     */
+    open: function(tAHead) {
+    	var tAHead = $(tAHead);
+    	tAHead.removeClass('tAClosed');
+        tAHead.addClass('tAOpened');
+    	tAHead.next().slideDown('fast');
+        this._count(); 
+    },
+
+    /**
+     * Closes one accordion panel specified by the according tAHead element
+     */
+    close: function(tAHead) {
+    	var tAHead = $(tAHead);
+        tAHead.removeClass('tAOpened');
+        tAHead.addClass('tAClosed');
+    	tAHead.next().slideUp('fast');
+        this._count(); 
+    }, 
+    
+    /**
+     * Opens all accordion panels
+     * TODO: So wie bei closeAll nicht für jeden tAHead separat die open-Methode aufrufen
+     */
+    openAll: function() {
+    	//var self = this;
+    	//this.element.find('div.tAHead').each(function(){self.open(this)});
+    	this.element.find('.tAHead').removeClass('tAClosed').addClass('tAOpened').next().slideDown('fast');
+    	this._count();
+    }, 
+    
+    /**
+     * Closes all accordion panels
+     */
+    closeAll: function(scrollIntoView) {
+    	if(scrollIntoView === undefined) scrollIntoView = true; 
+    	var self = this;
+    	var elem = this.element;
+    	
+    	var heads = this.element.find('.tAHead');
+    	var countdown = heads.length;
+    	this.element.find('.tAHead').removeClass('tAOpened').addClass('tAClosed').next().slideUp('fast', function(){
+    		if(-- countdown) return; // wait until the last animation completes 
+    		self._count(); 
+    		if(scrollIntoView) self._scrollIntoView();
+    	});
+    },
+    
+    /**
+     * Opens all panels of all accordion instances on the page
+     */
+    openAllInstances: function() {
+    	// open all instances on the page
+    	$('.tissAccordion').tissAccordion('openAll');
+    },
+    
+    /**
+     * Closes all panels of all accordion instances on the page
+     */
+    closeAllInstances: function() {
+    	// close all instances on the page
+    	$('.tissAccordion').tissAccordion('closeAll', false);
+    	
+    	// jump to the top of the page
+    	this._scrollToTop();
+    },
+    
+    /**
+     * Internal helper method that scrolls the browser window to ensure that at least 
+     * some part of the accordion is visible. (E.g. used after collapsing all panels)
+     */
+    _scrollIntoView: function() {
+    	// find out if (at least some part of) the accordion is visible
+    	// see http://stackoverflow.com/questions/487073/jquery-check-if-element-is-visible-after-scroling
+    	var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(this.element).offset().top;
+        var elemBottom = elemTop + $(this.element).height();
+        var isVisible = (elemBottom >= docViewTop) && (elemTop <= docViewBottom);
+        
+    	// if not visible, then jump to top of list of accordion items
+        // sadly, scrolltop animation using old jquery is buggy, therefore the try/catch 
+        if(isVisible) return;
+    	try{
+    		$('html, body').animate({scrollTop: elemTop}, 'fast');
+    	} catch(err) {
+    		$(window).scrollTop(elemTop)
+    	}
+    },
+    
+    /**
+     * Internal helper method to scroll to the top of the page
+     * TODO
+     */
+    _scrollToTop: function() {
+    	var elemTop = $('.tissAccordion:first').offset().top;
+    	try{
+    		$('html, body').animate({scrollTop: elemTop}, 'fast');
+    	} catch(err) {
+    		$(window).scrollTop(elemTop)
+    	}    	
+    },
+
+    /**
+     * Internal helper method that updates the count of open items
+     */
+    _count: function() {
+    	var e = this.element;
+    	
+    	// count items
+    	this._items = e.children('.tAHead').length;
+    	this._openItems = e.children('.tAOpened').length;
+    	
+    	// all opened?
+    	if(this._openItems==this._items) e.addClass('tAAllOpened');
+    	else e.removeClass('tAAllOpened');
+    	
+    	// all closed?
+    	if(this._openItems==0) e.addClass('tAAllClosed');
+    	else e.removeClass('tAAllClosed');
+    },
+    
+    // Internal variables
+    _items: 0,
+    _openItems: 0
+
+
+    });
+})(jQuery);  
+
+
+/**
+ * The following code initializes the tissAccordion widget on all Html elements 
+ * that are tagged with a tissAccordion class.
+ */
+//jQuery(document).ready(function() {
+//	// create accordion instances
+//	jQuery('.tissAccordion').tissAccordion();
+//});

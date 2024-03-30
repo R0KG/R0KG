@@ -1,0 +1,1020 @@
+(self["webpackChunkrtiss"] = self["webpackChunkrtiss"] || []).push([[34],{
+
+/***/ 2181:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var map = {
+	"./autocomplete/component_controller.js": 3510,
+	"./person_visitenkarte_mini/component_controller.js": 9242,
+	"./person_visitenkarte_mini_ozus/component_controller.js": 5492,
+	"autocomplete/component_controller.js": 3510,
+	"person_visitenkarte_mini/component_controller.js": 9242,
+	"person_visitenkarte_mini_ozus/component_controller.js": 5492
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 2181;
+
+/***/ }),
+
+/***/ 9598:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var map = {
+	"./autocomplete/component.scss": 3805,
+	"./autocomplete_results/component.scss": 552,
+	"./autocomplete_results_person/component.scss": 6297,
+	"./person_visitenkarte_mini/component.scss": 9148,
+	"./person_visitenkarte_mini_ozus/component.scss": 7111,
+	"autocomplete/component.scss": 3805,
+	"autocomplete_results/component.scss": 552,
+	"autocomplete_results_person/component.scss": 6297,
+	"person_visitenkarte_mini/component.scss": 9148,
+	"person_visitenkarte_mini_ozus/component.scss": 7111
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 9598;
+
+/***/ }),
+
+/***/ 7074:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var map = {
+	"./aufnahme/portfolio_controller.js": 6759,
+	"./aufnahme/tucard_controller.js": 5693,
+	"./aufnahme/urteil_controller.js": 1856,
+	"./aufnahmeverfahren_controller.js": 8906,
+	"./aussendung/filter_controller.js": 8128,
+	"./aussendung/waehle_empfaenger_controller.js": 912,
+	"./batchjob_controller.js": 3747,
+	"./benutzer_selektor/auswahl_controller.js": 3127,
+	"./benutzer_selektor/benutzer_selektor_controller.js": 4807,
+	"./benutzer_selektor/formular_controller.js": 9045,
+	"./beschaeftigungsverhaeltnisse_controller.js": 2840,
+	"./brz_schnittstellen_person_link_controller.js": 3002,
+	"./dynamische_formularelemente/datum_feld_controller.js": 5152,
+	"./dynamische_formularelemente/exklusiv_oder_inputgruppe_controller.js": 3584,
+	"./einausblenden_controller.js": 8606,
+	"./einzelzeugnisse_progressbar_controller.js": 7,
+	"./externe_leiter_controller.js": 2772,
+	"./fragebogen/ausfuellansicht_controller.js": 8087,
+	"./fragebogen/auswahl_antwortbereich_controller.js": 8187,
+	"./fragebogen/fragebogen_controller.js": 2691,
+	"./fragebogen/fragezeile_controller.js": 4342,
+	"./fragebogen/radio_fragezeile_controller.js": 4194,
+	"./hello_controller.js": 6155,
+	"./hotkey_controller.js": 446,
+	"./inline_edit_controller.js": 1064,
+	"./interne_veranstaltung/edit_teilnehmer_controller.js": 7342,
+	"./interne_veranstaltung/formular_deaktivierer_controller.js": 9411,
+	"./interne_veranstaltung/fragebogen_controller.js": 3361,
+	"./interne_veranstaltung/tabellen_namensliste_controller.js": 8820,
+	"./interne_veranstaltung/teilnehmer_email_controller.js": 254,
+	"./organigramm_controller.js": 1063,
+	"./progress_controller.js": 9935,
+	"./service_center_person_link_controller.js": 1839,
+	"./stab_termin_controller.js": 1251,
+	"./textfeld_copy_controller.js": 6319,
+	"./tiss_jstree_controller.js": 6584,
+	"./toggle_button_controller.js": 3415,
+	"./toggle_guckguck_class_controller.js": 3644,
+	"./tuwis_pers_person_link_controller.js": 2724,
+	"./uptudate_gewaehlte_person_dazufuegen_controller.js": 4960,
+	"./url_shortener_controller.js": 4961,
+	"./url_shortener_zeile_controller.js": 6452,
+	"controllers/aufnahme/portfolio_controller.js": 6759,
+	"controllers/aufnahme/tucard_controller.js": 5693,
+	"controllers/aufnahme/urteil_controller.js": 1856,
+	"controllers/aufnahmeverfahren_controller.js": 8906,
+	"controllers/aussendung/filter_controller.js": 8128,
+	"controllers/aussendung/waehle_empfaenger_controller.js": 912,
+	"controllers/batchjob_controller.js": 3747,
+	"controllers/benutzer_selektor/auswahl_controller.js": 3127,
+	"controllers/benutzer_selektor/benutzer_selektor_controller.js": 4807,
+	"controllers/benutzer_selektor/formular_controller.js": 9045,
+	"controllers/beschaeftigungsverhaeltnisse_controller.js": 2840,
+	"controllers/brz_schnittstellen_person_link_controller.js": 3002,
+	"controllers/dynamische_formularelemente/datum_feld_controller.js": 5152,
+	"controllers/dynamische_formularelemente/exklusiv_oder_inputgruppe_controller.js": 3584,
+	"controllers/einausblenden_controller.js": 8606,
+	"controllers/einzelzeugnisse_progressbar_controller.js": 7,
+	"controllers/externe_leiter_controller.js": 2772,
+	"controllers/fragebogen/ausfuellansicht_controller.js": 8087,
+	"controllers/fragebogen/auswahl_antwortbereich_controller.js": 8187,
+	"controllers/fragebogen/fragebogen_controller.js": 2691,
+	"controllers/fragebogen/fragezeile_controller.js": 4342,
+	"controllers/fragebogen/radio_fragezeile_controller.js": 4194,
+	"controllers/hello_controller.js": 6155,
+	"controllers/hotkey_controller.js": 446,
+	"controllers/inline_edit_controller.js": 1064,
+	"controllers/interne_veranstaltung/edit_teilnehmer_controller.js": 7342,
+	"controllers/interne_veranstaltung/formular_deaktivierer_controller.js": 9411,
+	"controllers/interne_veranstaltung/fragebogen_controller.js": 3361,
+	"controllers/interne_veranstaltung/tabellen_namensliste_controller.js": 8820,
+	"controllers/interne_veranstaltung/teilnehmer_email_controller.js": 254,
+	"controllers/organigramm_controller.js": 1063,
+	"controllers/progress_controller.js": 9935,
+	"controllers/service_center_person_link_controller.js": 1839,
+	"controllers/stab_termin_controller.js": 1251,
+	"controllers/textfeld_copy_controller.js": 6319,
+	"controllers/tiss_jstree_controller.js": 6584,
+	"controllers/toggle_button_controller.js": 3415,
+	"controllers/toggle_guckguck_class_controller.js": 3644,
+	"controllers/tuwis_pers_person_link_controller.js": 2724,
+	"controllers/uptudate_gewaehlte_person_dazufuegen_controller.js": 4960,
+	"controllers/url_shortener_controller.js": 4961,
+	"controllers/url_shortener_zeile_controller.js": 6452
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 7074;
+
+/***/ }),
+
+/***/ 3510:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ _class; }
+});
+
+// EXTERNAL MODULE: ./node_modules/stimulus/index.js + 38 modules
+var stimulus = __webpack_require__(7931);
+// EXTERNAL MODULE: ./node_modules/@rails/request.js/src/verbs.js + 4 modules
+var verbs = __webpack_require__(9404);
+;// CONCATENATED MODULE: ./app/javascript/helpers/debounce.js
+function debounce(fn,delay=10){let timeoutId=null;return(...args)=>{const callback=()=>fn.apply(this,args);clearTimeout(timeoutId);timeoutId=setTimeout(callback,delay);};}
+;// CONCATENATED MODULE: ./app/javascript/helpers/cancel.js
+function cancel(event){event.stopPropagation();event.preventDefault();}
+;// CONCATENATED MODULE: ./app/components/autocomplete/component_controller.js
+class _class extends stimulus/* Controller */.Qr{constructor(...args){super(...args);this.search=()=>{if(this.inputTarget.value){this.performSearch(this.inputTarget.value);}else{this.hideResults();this.resultsTarget.innerHTML="<div></div>";this.selectedValue=0;}};}initialize(){this.search=debounce(this.search,400);this.observeNextPageLink();}connect(){this.selectedValue=0;this.element.parentElement.addEventListener('tiss-autocomplete-reset',()=>this.reset());}async loadNextPage(event){event?.preventDefault();if(this.abortController){return;// don't load next page if there is a pending search request
+}this.abortController=new AbortController();const signal=this.abortController.signal;this.nextTarget.querySelector("a").style.display="none";this.nextTarget.querySelector("img").style.display="block";try{const response=await (0,verbs/* get */.U2)(this.nextTarget.querySelector("a").href,{signal});this.abortController=null;if(response.ok){const body=await response.text;const tempWrapper=document.createElement('div');tempWrapper.innerHTML=body;this.nextTarget.replaceWith(tempWrapper);this.observeNextPageLink();}}catch(e){// request aborted, ok
+}}async observeNextPageLink(){if(!this.hasNextTarget)return;let nextPageLink=this.nextTarget.querySelector("a");if(!nextPageLink)return;await this.nextIntersection(nextPageLink,{root:this.resultsTarget.querySelector(".autocomplete-results-content"),rootMargin:"150px"});this.loadNextPage();}nextIntersection(element,options={}){return new Promise(resolve=>{new IntersectionObserver(([entry],observer)=>{if(!entry.isIntersecting)return;observer.disconnect();resolve();},options).observe(element);});}navigate(event){switch(event.key){case"ArrowUp":if(this.selectedValue>1){this.selectResult(this.selectedValue-1);}cancel(event);break;case"ArrowDown":if(this.selectedValue<this.totalResults){this.selectResult(this.selectedValue+1);}cancel(event);break;case"Enter":cancel(event);if(this.selectedValue>0){this.results[this.selectedValue-1].querySelector("a").click();}break;}}async performSearch(query){if(this.abortController){this.abortController.abort();// abort any pending search requests (new search or next page search)
+}this.abortController=new AbortController();const signal=this.abortController.signal;this.element.classList.add(this.loadingClass);try{const response=await (0,verbs/* get */.U2)(`${this.queryUrlValue}?q=${query}`,{signal});this.abortController=null;if(response.ok){const body=await response.text;this.element.classList.remove(this.loadingClass);this.resultsTarget.innerHTML=body;this.showResults();this.resultsTarget.scrollTop=0;this.selectedValue=0;this.observeNextPageLink();}else if(response.unauthenticated){window.location.replace('/admin/authentifizierung?timeout=true&url='+window.location.pathname);}}catch(e){// request aborted, ok
+}}get results(){return this.resultsTarget.querySelectorAll('li');}get totalResults(){return this.results.length;}closeWhenEmpty(event){if(event.target.value)return;this.hideResults();}closeWhenOutside(event){if(!this.element.contains(event.target))this.hideResults();}openWhenFilled(event){if(event.target.value)this.showResults();}selectResult(number){this.selectedValue=number;let selectedResult=this.results[this.selectedValue-1];this.results.forEach(target=>target.classList.remove("autocomplete-result--selected"));selectedResult.classList.add("autocomplete-result--selected");selectedResult.scrollIntoView({block:"nearest",inline:"nearest"});}hideResults(){this.resultsTarget.classList.remove('flex');}showResults(){this.resultsTarget.classList.add('flex');}// Ein Ergebnis wurde angeklickt oder selektiert und die Enter Taste wurde betätigt.
+// Input wird disabled, der display-name des Ergebnisses wird angezeigt und ein CustomEvent wird getriggert.
+openResult(event){event.preventDefault();let itemId=event.currentTarget.dataset.id;let type=event.currentTarget.dataset.type;let displayName=event.currentTarget.dataset.displayName;let queryString=this.inputTarget.value;this.disableWithSelected(displayName);// JavaScript CustomEvent namens "autocomplete-selected" triggern.
+// Der Benutzer dieser Komponemte sollte auf diesen Event hören und die geeignete Aktion setzen (eine Ergebnissseite laden oder ähnliches)
+// alert("Create CustomEvent with: id: " + itemId + ", displayName: " + displayName + ", query: " + queryString)
+let customEvent=new CustomEvent("tiss-autocomplete-selected",{bubbles:true,detail:{id:itemId,type:type,displayName:displayName,query:queryString}});this.element.parentElement.dispatchEvent(customEvent);}// Autocomplete-Input disablen und einen Spinner mit dem display-namen des selektierten Ergebnisses anzeigen
+disableWithSelected(displayName){this.hideResults();this.inputTarget.style.display="none";this.element.querySelector(".autocomplete-input-icon").style.display="none";this.resultLoadingTarget.querySelector("span").textContent=displayName+" laden...";this.element.classList.add(this.loadingClass);}// Diese Methode wird aufgerufen wenn man auf dem <tiss-suche> Element den CustomEvent 'tiss-autocomplete-reset' feuert.
+reset(){this.element.classList.remove(this.loadingClass);this.resultLoadingTarget.querySelector("span").textContent="";this.inputTarget.value="";this.inputTarget.style.display="block";this.element.querySelector(".autocomplete-input-icon").style.display="flex";this.inputTarget.focus();}}_class.targets=['input','results','resultLoading','next'];_class.values={queryUrl:String,selected:Number};_class.classes=["loading"];
+
+/***/ }),
+
+/***/ 9242:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// import "../autocomplete_results_person/component.scss"
+
+/***/ }),
+
+/***/ 5492:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+
+/***/ }),
+
+/***/ 4955:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var actioncable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8392);
+/* harmony import */ var actioncable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(actioncable__WEBPACK_IMPORTED_MODULE_0__);
+// Action Cable provides the framework to deal with WebSockets in Rails.
+// You can generate new channels where WebSocket features live using the `rails generate channel` command.
+let consumer;const createChannel=(...args)=>{//console.log("createChannel()")
+if(!consumer){//console.log("cable.createConsumer()")
+consumer=actioncable__WEBPACK_IMPORTED_MODULE_0___default().createConsumer();}//console.log("consumer.subscriptions.create()")
+return consumer.subscriptions.create(...args);};/* harmony default export */ __webpack_exports__["Z"] = (createChannel);
+
+/***/ }),
+
+/***/ 6759:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{postFormData(event){event.preventDefault();let formData=$j(this.formTarget).serializeArray();formData.push({name:'name',value:$j(event.target).attr("name")});$j.ajax({url:'/aufnahme/aufnahmeverfahren_admin/pdf_upload_ajax/'+this.idValue,type:'POST',data:formData,dataType:'text',error:function(xhr,status,fehler){},success:function(data){$j('#portfolio-review').html(data);}});}}_class.targets=["form"];_class.values={id:String};
+
+/***/ }),
+
+/***/ 5693:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.statusAbfragen(this.data.get("id"));}statusAbfragen(id){$j.rails.ajax({url:"/aufnahme/stab_bachelor_zulassungsantraege/tu_card_status",type:"GET",dataType:"text",data:`id=${id}`,success:data=>{$j(this.statusTarget).html(data);},error:data=>{$j(this.statusTarget).html(`Fehler: ${data.responseText}`);}});$j.unblockUI();}}_class.targets=["status"];
+
+/***/ }),
+
+/***/ 1856:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){$j(this.actionsTarget).hide();}editieren(event){event.preventDefault();$j(this.urteilTarget).hide();$j(this.editLinkTarget).hide();$j(this.actionsTarget).show();}ok(event){this.urteilAendern(event,"ok");}ungultig(event){this.urteilAendern(event,"ungueltig");}unlesbar(event){this.urteilAendern(event,"nicht_lesbar");}urteilAendern(event,urteil){event.preventDefault();$j.rails.ajax({url:`/aufnahme/stab_bachelor_zulassungsantraege/${this.data.get("zulassung-id")}/dokument/${this.data.get("dok-id")}/${urteil}`,type:"POST",dataType:"text",success:data=>{$j(this.urteilTarget).text(data);this.abbrechen(event);},error:data=>{alert(`Fehler: ${data.responseText}`);}});}abbrechen(event){event.preventDefault();$j(this.actionsTarget).hide();$j(this.urteilTarget).show();$j(this.editLinkTarget).show();}}_class.targets=["urteil","editLink","actions"];
+
+/***/ }),
+
+/***/ 8906:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.onChangeVerfahrenstyp($j('#aufnahmeverfahren_verfahrenstyp :selected').val());this.changeFuerAlleStudienrichtungenDisabledState();$j('#aufnahmeverfahren_verfahrenstyp').bind('change',event=>this.onChangeVerfahrenstyp(event.target.value));$j('#aufnahmeverfahren_studientyp').bind('change',event=>this.onChangeStudientyp(event.target.value));$j('#aufnahmeverfahren_abschluss_notwendig').bind('change',event=>this.onChangeAbschlussNotwendig(event.target.value));}changeFuerAlleStudienrichtungen(){if($j(this.fuerAlleStudienrichtungenTarget).is(':checked')){this.studienrichtungenVerstecken();}else{this.studienrichtungenAnzeigen();}this.changeFuerAlleStudienrichtungenDisabledState();this.changeFuerAlleStudien();}changeStudienspezifisch(){if($j(this.studienspezifischTarget).is(':checked')){$j(this.fuerAlleStudienTarget).prop('checked',true);this.studienVerstecken();$j(this.studienspezifischContainerTarget).show();}else{$j(this.studienspezifischContainerTarget).hide();}}changeFuerAlleStudien(){if($j(this.fuerAlleStudienTarget).is(':checked')){this.studienVerstecken();}else{this.studienLadenUndAnzeigen();}}changeFuerAlleStudienrichtungenDisabledState(){if($j('#aufnahmeverfahren_studientyp').val()==='ausserordentliche'){$j('#aufnahmeverfahren_fuer_alle_studienrichtungen').prop('disabled',true);$j('#aufnahmeverfahren_fuer_alle_studienrichtungen2').prop('value',1);}else{$j('#aufnahmeverfahren_fuer_alle_studienrichtungen').prop('disabled',false);$j('#aufnahmeverfahren_fuer_alle_studienrichtungen2').prop('value',0);}}onChangeStudientyp(studientyp){if(studientyp==='bachelor'){$j(this.fuerAlleStudienrichtungenTarget).prop('checked',false);}else{$j(this.fuerAlleStudienrichtungenTarget).prop('checked',true);}this.toggleTuAbschlussNotwendig();this.changeFuerAlleStudienrichtungen();this.changeFuerAlleStudien();}onChangeVerfahrenstyp(verfahrenstyp){//this.toggleVerfuegbarePlaetzteUndVerfahrensende(verfahrenstyp)
+this.toggleInnenauftrag(verfahrenstyp);this.toggleTuAbschlussNotwendig();}toggleVerfuegbarePlaetzteUndVerfahrensende(verfahrenstyp){if(verfahrenstyp==='nachregistrierung'){$j('#element_container_for_aufnahmeverfahren_verfuegbare_plaetze').show();$j('#element_container_for_aufnahmeverfahren_registrierung_ende label').toggleClass('required',false);}else{$j('#element_container_for_aufnahmeverfahren_verfuegbare_plaetze').hide();$j('#element_container_for_aufnahmeverfahren_registrierung_ende label').toggleClass('required',true);}}toggleTuAbschlussNotwendig(){if($j('#aufnahmeverfahren_verfahrenstyp :selected').val()==='bewerbung'&&$j('#aufnahmeverfahren_studientyp').val()==='master'){$j('#element_container_for_aufnahmeverfahren_abschluss_notwendig').show();}else{$j('#element_container_for_aufnahmeverfahren_abschluss_notwendig').hide();$j(this.tuAbschlussNotwendigTarget).prop('checked',false);}}studienrichtungenAnzeigen(){$j(this.auswahlStudienrichtungenTarget).show();$j.rails.ajax({method:'POST',url:'/aufnahme/aufnahmeverfahren_admin/studienrichtungen_anzeigen',data:{aufnahmeverfahren_id:this.data.get("id"),studientyp:$j('#aufnahmeverfahren_studientyp').val()}});}studienrichtungenVerstecken(){$j(this.auswahlStudienrichtungenTarget).hide();}studienspezifischAnzeigen(){$j(this.fuerAlleStudienTarget).prop('checked',false);this.studienVerstecken();$j(this.auswahlStudienspezifischContainerTarget).show();}studienspezifischVerstecken(){$j(this.auswahlStudienspezifischContainerTarget).hide();}studienLadenUndAnzeigen(){$j(this.auswahlStudienTarget).show();let data={aufnahmeverfahren_id:this.data.get("id"),studientyp:$j('#aufnahmeverfahren_studientyp').val(),fuerAlleStudienrichtungen:$j(this.fuerAlleStudienrichtungenTarget).is(':checked')};if(data.fuerAlleStudienrichtungen!==true){let studienrichtungen=[];$j("#studienrichtungen-container input:checked").each(function(){studienrichtungen.push($j(this).val());});data.studienrichtungen=studienrichtungen.join(",");}$j.rails.ajax({method:'POST',url:'/aufnahme/aufnahmeverfahren_admin/studien_anzeigen',data:data});}studienVerstecken(){$j(this.auswahlStudienTarget).hide();}toggleInnenauftrag(verfahrenstyp){let innenauftrag_elem=$j('#element_container_for_aufnahmeverfahren_innenauftrag_code');let kuerzelEb_elem=$j('#element_container_for_aufnahmeverfahren_kuerzel_eb');if(['aufnahmeverfahren','auswahlverfahren'].includes(verfahrenstyp)){innenauftrag_elem.find('select').attr('disabled',false);innenauftrag_elem.show();if(verfahrenstyp==='aufnahmeverfahren'){kuerzelEb_elem.find('select').attr('disabled',false);kuerzelEb_elem.show();}}else{innenauftrag_elem.find('select').attr('disabled',true);innenauftrag_elem.hide();kuerzelEb_elem.find('select').attr('disabled',true);kuerzelEb_elem.hide();}}}_class.targets=["fuerAlleStudienrichtungen","studienrichtung","studienspezifisch","studienspezifischContainer","fuerAlleStudien","abschlussNotwendig","auswahlStudienrichtungen","auswahlStudien","kuerzelEb"];
+
+/***/ }),
+
+/***/ 8128:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get filterId(){return this.data.get("filterId");}get aussendungId(){return this.data.get("aussendungId");}nameAendern(event){$j.post("/messaging_c/aussendung/filter_umbennen",{id:this.aussendungId,filter_id:this.filterId,filter_name:$j(this.filterNameInputTarget).val()},response=>{this.filterName=response["filter_name"];$j(this.filterNameAnzeigeTarget).text(this.filterName);$j(this.filterNameAnzeigeTarget).show();$j(this.bearbeitenButtonTarget).show();$j(this.nameAenderungContainerTarget).hide();},'json').fail(response=>{alert(response.responseJSON["message"]);});}nameAendernAbbrechen(event){$j(this.filterNameAnzeigeTarget).show();$j(this.bearbeitenButtonTarget).show();$j(this.nameAenderungContainerTarget).hide();}nameAendernContainerAnzeigen(event){$j(this.filterNameAnzeigeTarget).hide();$j(this.bearbeitenButtonTarget).hide();$j(this.nameAenderungContainerTarget).show();}get filterName(){return this.data.get("filterName");}set filterName(filterNameValue){this.data.set("filterName",filterNameValue);}filterLoeschen(event){const confirmStr=I18n.t("aussendung.js.loschen_bestaetigen",{filtername:this.filterName});if(!confirm(confirmStr)){return;}$j.ajax({url:'/messaging_c/aussendung/filter_loeschen',type:'DELETE',dataType:'json',data:{id:this.aussendungId,filter_id:this.filterId},success:data=>{const event=new CustomEvent('anzahlVeraendert',{bubbles:true,detail:{daten:data["daten"]}});this.element.dispatchEvent(event);$j(this.containerTarget).hide('slow',()=>{$j(this.containerTarget).remove();});},error:function(jqx,ts,et){console.log(jqx);console.log(ts);console.log(et);}});}}_class.targets=["container","filterNameAnzeige","filterNameInput","nameAenderungContainer","bearbeitenButton"];
+
+/***/ }),
+
+/***/ 912:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{initialize(){}get aussendungId(){return this.data.get("aussendungId");}neuesFilter(event){const filterTyp=$j(event.target).data("new-filter-type"),filterID=this.aussendungId;$j.post("/messaging_c/aussendung/neues_filter",{id:filterID,typ:filterTyp},data=>{const neuesFilter=$j(data['filter_html']);$j(this.filterContainerTarget).prepend(neuesFilter);this.abfrageUndAnzahlAktualisieren(data['daten']);$j(this.filterAnwendenButtonContainerTarget).show();$j(this.keinFilterAngelegtHinweisTarget).hide();},'json');}filterAnwenden(event){var baumSerializierenEvent=new Event('baumSerializieren');var baume=document.getElementsByClassName("filter-baum-container");var i;for(i=0;i<baume.length;i++){baume[i].dispatchEvent(baumSerializierenEvent);}const data=[];$j.each($j(this.filterContainerTarget).find('.filter-form'),(i,filterForm)=>{data.push($j(filterForm).serialize());});$j.post("/messaging_c/aussendung/filter_anwenden",{id:this.aussendungId,form_data:data},response=>{this.abfrageUndAnzahlAktualisieren(response['daten']);$j(".nicht-gespeichert-hinweis").hide();},'json');}speichereFilter(event){const formular=$j(this.redirectFormTarget);var baumSerializierenEvent=new Event('baumSerializieren');var baume=document.getElementsByClassName("filter-baum-container");var i;for(i=0;i<baume.length;i++){baume[i].dispatchEvent(baumSerializierenEvent);}$j.each($j(this.filterContainerTarget).find('.filter-form'),(i,filterForm)=>{formular.append($j("<input>",{type:'hidden',name:"filter_formular_data[]",value:$j(filterForm).serialize()}));});return true;}abfrageUndAnzahlAktualisieren(daten){if(this.hasSqlAnzeigeTarget){const textFeld=$j(this.sqlAnzeigeTarget).find("#filter_query_query");textFeld.val(daten["gesamt_sql"]);}if(daten['anzahl_filter']<=0){$j(this.filterAnwendenButtonContainerTarget).hide();$j(this.keinFilterAngelegtHinweisTarget).show();}else{this.filterAnzahlAnzeigeTargets.forEach(elem=>{const anzahlAnzeige=$j(elem),anzahl=daten["einzel_filter_anzahl"][anzahlAnzeige.data("filter-id")];anzahlAnzeige.text(anzahl);});}$j(this.gesamtAnzahlAnzeigeTarget).text(daten["gesamt_anzahl"]["gesamt"]);}anzahlVeraendert(event){this.abfrageUndAnzahlAktualisieren(event.detail.daten);}anzahlZuruecksetzen(){$j(this.gesamtAnzahlAnzeigeTarget).text("---");}}_class.targets=["filterContainer","infobox","sqlAnzeige","gesamtAnzahlAnzeige","filterAnzahlAnzeige","filterAnwendenButtonContainer","keinFilterAngelegtHinweis","redirectForm"];
+
+/***/ }),
+
+/***/ 3747:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _rails_request_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9404);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{async toggleActive(event){event.preventDefault();const response=await (0,_rails_request_js__WEBPACK_IMPORTED_MODULE_1__/* .post */ .v_)('/batchjobs/job/toggle_active/'+this.idValue);if(response.ok){const html=await response.text;this.element.outerHTML=html;}}async startOnce(event){event.preventDefault();const response=await (0,_rails_request_js__WEBPACK_IMPORTED_MODULE_1__/* .post */ .v_)('/batchjobs/job/start_once/'+this.idValue);if(response.ok){const html=await response.text;this.element.outerHTML=html;}}stop(event){event.preventDefault();(0,_rails_request_js__WEBPACK_IMPORTED_MODULE_1__/* .post */ .v_)('/batchjobs/job/stop/'+this.idValue);}async reload(event){const response=await (0,_rails_request_js__WEBPACK_IMPORTED_MODULE_1__/* .post */ .v_)('/batchjobs/job/reload/'+this.idValue);if(response.ok){const html=await response.text;this.element.outerHTML=html;}}reloadUnlessRunning(event){if(this.statusValue!=='queued'&&this.statusValue!=='running'){this.reload(event);}}}_class.values={id:String,active:Boolean,status:String};_class.targets=['progressbar'];
+
+/***/ }),
+
+/***/ 3127:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get parentFormular(){return this.application.getControllerForElementAndIdentifier($j(this.element).parents(".formular-container")[0],'benutzer-selektor--formular');}get readonly(){return this.data.get("readonly");}set readonly(readonlyValue){if(this.hasBaumTarget){this.baumTarget.dispatchEvent(new CustomEvent("baumStatusAendern",{detail:{status:readonlyValue}}));}else{$j(this.inputElementTargets).attr('disabled',readonlyValue);}this.data.set("readonly",readonlyValue);}connect(){// warten bis baum ladet
+$j(window).on("load",()=>{if(this.parentFormular.readonly){this.readonly=true;}});}get auswahlTyp(){return this.data.get("auswahlTyp");}get fuerAlle(){return this._fuerAlle;}set fuerAlle(fuerAlle){this._fuerAlle=fuerAlle;this.fuerAlleCheckboxStatusTarget.value=this._fuerAlle;this.readonly=this._fuerAlle;if(this._fuerAlle){$j(this.containerTarget).addClass("auswahl-element-inaktiv");$j(this.containerTarget).removeClass("auswahl-element-aktiv");}else{$j(this.containerTarget).addClass("auswahl-element-aktiv");$j(this.containerTarget).removeClass("auswahl-element-inaktiv");}$j(this.element).trigger("fuerAlleGeandert");}fuerAlleStatusAendern(){this.fuerAlle=!$j(this.fuerAlleCheckboxTarget).is(":checked");// Wenn checkbox NICHT gecheckt, dann wird fuer_alle
+$j(this.element).trigger("anzahlGeaendert");}}_class.targets=["container","fuerAlleCheckbox","fuerAlleCheckboxStatus","baum","inputElement","auswahlContainer"];
+
+/***/ }),
+
+/***/ 4807:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get readonly(){return this.data.get("readonly")==="true";}set readonly(readonlyValue){this.data.set("readonly",readonlyValue);}get anzahlPersonen(){return this.anzahlAnzeigeTarget.textContent;}set anzahlPersonen(anzahlPersonen){this.anzahlAnzeigeTarget.textContent=anzahlPersonen;}get controllerPath(){return this.data.get("controller-path");}get fuerId(){return this.data.get("fuerId");}get fuerType(){return this.data.get("fuerType");}get auswahlTypen(){return JSON.parse(this.data.get("auswahlTypen"));}async serialize(){await this.alleBauemSerializieren();}anzahlPersonenZuruecksaetzen(){this.anzahlPersonen='---';}anzahlAktualisieren(){Promise.all(this.alleBauemSerializieren()).then(data=>{$j.post(`${this.controllerPath}/anzahl_aktualisieren`,$j(this.fromElementTarget).serialize(),response=>{this.anzahlPersonen=response.anzahl;},'json');});}enterDeaktivieren(e){if(e.keyCode==13){e.preventDefault();return false;}}alleBauemSerializieren(){const baeume=document.getElementsByClassName("tiss-jstree-container");const promises=[];for(let i=0;i<baeume.length;i++){promises.push(this.application.getControllerForElementAndIdentifier(baeume[i],"tiss-jstree").serialize());}return promises;}neuesFormularAnlegen(){$j.post(`${this.controllerPath}/neues_benutzer_selektor_formular`,{fuer_id:this.fuerId,fuer_type:this.fuerType,auswahl_typen:this.auswahlTypen},formularHtml=>{const formular=$j(formularHtml);formular.hide();$j(this.element).find(".formular-liste").append(formular);formular.show("slow");this.element.dispatchEvent(new Event("change",{bubbles:true}));},"html");}}_class.targets=["anzahlAnzeige","fromElement"];
+
+/***/ }),
+
+/***/ 9045:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get formularId(){return this.data.get("id");}get parentFormular(){return this._parentFormular;}set parentFormular(parentFormular){this._parentFormular=parentFormular;}connect(){this.parentFormular=this.application.getControllerForElementAndIdentifier($j(this.element).parents(".benutzer-selektor-container")[0],'benutzer-selektor--benutzer-selektor');if(this.readonly){$j(this.fuerAlleCheckboxTarget).attr("disabled","disabled");$j(this.fuerAlleFuerAuswahlCheckboxTargets).attr("disabled","disabled");$j(this.fuerAlleAuswahlCheckboxStatusTargets).attr("disabled","disabled");$j(this.loeschenButtonTarget).attr("disabled","disabled");}}get readonly(){return this.parentFormular.readonly;}formularLoeschen(){$j.ajax({url:`${this.parentFormular.controllerPath}/formular_entfernen`,method:'DELETE',dataType:'json',data:{'formular-id':this.formularId,'fuer_id':this.parentFormular.fuerId},success:response=>{this.element.dispatchEvent(new Event('change',{bubbles:'true'}));$j(this.element).fadeOut(300,()=>{$j(this.element).remove();});}});}fuerAlleAktualiseren(){const fuerAlle=$j(this.fuerAlleCheckboxTarget).is(':checked');$j(this.fuerAlleFuerAuswahlCheckboxTargets).prop('checked',!fuerAlle);$j(this.fuerAlleFuerAuswahlCheckboxTargets).prop('disabled',fuerAlle);$j(this.fuerAlleAuswahlCheckboxStatusTargets).prop('disabled',fuerAlle);$j.post(`${this.parentFormular.controllerPath}/formular_fuer_alle`,{'formular-id':this.formularId,'fuer-alle':fuerAlle,'fuer_id':this.parentFormular.fuerId,'fuer_type':this.parentFormular.fuerType},data=>{this.parentFormular.anzahlPersonen=data.anzahlPersonen;if(!data.fuerAlle){data.fuerAlleAuswahlelemente.forEach(auswahlId=>{const checboxElem=$j(`.auswahl-element-container[data-benutzer-selektor--auswahl-id=${auswahlId}] .fuer-alle-checkbox`);checboxElem.prop('checked',false);});}// Events manuell auslösen. Stimulus registriert die Jquery-events nicht
+this.fuerAlleFuerAuswahlCheckboxTargets.forEach(fuerAlleCheckbox=>{fuerAlleCheckbox.dispatchEvent(new Event('change'));});},'json');}toggleFormular(){$j(this.toggleButtonTargets).toggle();$j(this.auswahlContainerTargets).toggle(400);}}_class.targets=["auswahlContainer","toggleButton","loeschenButton","fuerAlleCheckbox","fuerAlleFuerAuswahlCheckbox","fuerAlleAuswahlCheckboxStatus"];
+
+/***/ }),
+
+/***/ 2840:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/**
+ * Wird auf der ServiceCenter Seite verwendet.
+ * Ruft die Sap360 Schnittstelle (Beschäftigungsverhältnisse) für eine Person
+ * und zeigt den JSON Response inline.
+ * Die Schnittstelle wird nur beim ersten Aufmachen des Accordeons aufgerufen.
+ */class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){$j('#accordion_beschaeftigung .tAArrow').on('click',()=>{if($j(this.ergebnisTarget).text()===''){this.sapSchnittstelleAufrufen();}});}sapSchnittstelleAufrufen(){$j.ajax({global:false,url:this.data.get('url'),dataType:'json',success:data=>{$j(this.ergebnisTarget).text(JSON.stringify(data,undefined,2));}});}}_class.targets=["ergebnis"];
+
+/***/ }),
+
+/***/ 3002:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _rails_request_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9404);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{setPerson(event){this.personidTarget.value=event.detail.id;let suche=document.querySelector("tiss-search");suche.dispatchEvent(new CustomEvent("tiss-autocomplete-reset"));this.update();}async update(){let queryUrl=`/admin/brz_schnittstellen?${$j(this.formTarget).serialize()}`;$j('#brz_ergebnis').hide('fade',100,()=>{this.getBrzResults(queryUrl);});}async getBrzResults(queryUrl){try{history.pushState({},null,queryUrl);$j(this.formTarget).find("select").prop("disabled",true);$j("tiss-search input").prop("disabled",true);$j('#warte_auf_ajax_suchergebnis').show('fade',200);const response=await (0,_rails_request_js__WEBPACK_IMPORTED_MODULE_1__/* .get */ .U2)(queryUrl);if(response.ok){const body=await response.text;$j('#brz_ergebnis').html(body);$j('#warte_auf_ajax_suchergebnis').hide('fade',200);$j('#brz_ergebnis').show('fade',200);$j(this.formTarget).find(":input").prop("disabled",false);$j("tiss-search input").prop("disabled",false);}else if(response.unauthenticated){window.location.replace('/admin/authentifizierung?timeout=true&url='+window.location.pathname);}}catch(e){j('#brz_ergebnis').html(`Fehler beim Abrufen der Daten. ${e}`);}}}_class.targets=["form","personid"];
+
+/***/ }),
+
+/***/ 5152:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.doppelPunkAutocompleted=false;if(this.hasDatumfeldTarget){$j(this.datumfeldTarget).on("select",()=>{this.aktualisiereHiddenInput();});}}aktualisiereHiddenInput(){this.hiddenInputTarget.value="";if(this.hasDatumfeldTarget){this.hiddenInputTarget.value+=this.datumfeldTarget.value;}if(this.hasDatumfeldTarget&&this.hasZeitfeldTarget){this.hiddenInputTarget.value+=" ";}if(this.hasZeitfeldTarget){this.hiddenInputTarget.value+=this.zeitfeldTarget.value;}}/* Wenn der User wegclickt wird das Feld so autocompleted, dass die Eingabe eine korrekte Zeit ist. */autocomplete(){const wertGelesen=this.zeitfeldTarget.value,letzeChar=wertGelesen.charAt(wertGelesen.length-1);if(wertGelesen.length===0){return;}switch(wertGelesen.length){case 1:/* Wenn nur eine Zahl eingegben wurde, als eine einstellige Stunde genommen.*/this.zeitfeldTarget.value=`0${wertGelesen}:00`;break;case 2:/* Wenn eine vollständige Stunde (zwei stellen) eingeben wurde, dann werden die Minuten auf 00 gesetzt*/this.zeitfeldTarget.value=`${wertGelesen}:00`;break;case 3:if(letzeChar===':'){/* Wenn eine vollständige Stunde (zwei stellen) eingeben wurde plus doppelpunkt, dann werden die Minuten auf 00 gesetzt*/this.zeitfeldTarget.value=`${wertGelesen}00`;}break;case 4:if(wertGelesen.charAt(1)===':'){/* Wenn nach eine Zahl Doppelpunkt und die Minuten vollständig eingeben werden, heißt dass die Stunde einstellig ist. Die Stunde wird dann
+                    * mit 0 versehen. (zb 1:11) */this.zeitfeldTarget.value=`0${wertGelesen}`;}else if(wertGelesen.charAt(2)===':'){/* Wenn die Stunden vollständig eingegeben werden aber nur eine Zahl für die Minute, dann werden die Minuten
+                    *  mit 0 versehen. (zb 11:1) */this.zeitfeldTarget.value=`${wertGelesen.slice(0,2)}:0${letzeChar}`;}else if(isFinite(letzeChar)){/* Wenn kein Doppelpunkt eingegeben wird, dann wird nach dem 2ten Zeichen ein Doppelpunkt gesetzt */this.zeitfeldTarget.value=`${wertGelesen.slice(0,2)}:${wertGelesen.slice(2,4)}`;}}this.aktualisiereHiddenInput();}keypress(event){const wertGelesen=this.zeitfeldTarget.value;/* Wenn der Doppelpunkt, wird dann autocompleted, wenn 2 Zeichen hintereinander eingegeben werden (zb: 12 => 12:).
+        * die Methode fügt 'doppelpunktHinzufuegen' das letzte Zeichen vor dem Doppelpunkt hinzu. Der Hanlder 'doppelpunktHinzufuegen'
+        * passiert vor dem keypress, dh das Zeichen ist zum Zeitpunkt der Ausführung nicht im Feld. Deswegen würde die zweite Zahl
+        * doppelt im Eingabefeld stehen. Das letzte Zeichen wird entfern. */if(this.doppelPunkAutocompleted){this.doppelPunkAutocompleted=false;this.zeitfeldTarget.value=wertGelesen.slice(0,-1);return;}if(wertGelesen.length===0){return;}const letzeChar=wertGelesen.charAt(wertGelesen.length-1);/* Wenn eine Zahl eingegeben wird, dann soll nichts passieren. */if(isFinite(letzeChar)){return;}if(wertGelesen.length===2&&letzeChar===':'){/* Es kann sein, dass 1 zahl und ein Doppelpunkt copy-pasted wird. Dann wird die Stunde mit einer 0 versehen. */this.zeitfeldTarget.value=`0${wertGelesen[0]}:`;}else if(!(wertGelesen.length===3&&letzeChar===':')){/* Wenn keine Zahl eingegeben wird, dann wird das Zeichen entfernt.
+            * rechte Seite von &&: Es kann sein, dass 2 Zahlen und ein Doppelpunkt copy-pasted wird oder der Doppelpunkt
+            * gelöscht wird und ein Zeihen eingegeben wird. Dann soll der Doppelpunkt nicht entfern werden */this.zeitfeldTarget.value=wertGelesen.slice(0,-1);}}/* Ein Doppelpunkt wird automatisch hinzufügt, wenn 2 Zahlen eigegeben werden. */doppelpunktHinzufuegen(event){const wertGelesen=this.zeitfeldTarget.value,/* Die Inhalte des Eingabeelements (ohne das Zeichen, was zuletzt eingegeben wurden) */key=event.key;/* Das letzte Zeichen, was eingeben wurde (ist noch nicht in der Eingabefeld) */ /* Es kann sein, dass der Doppelpunkt gelöscht wird, dann soll der Doppelpunkt nicht hinzufügt werden (sonst könnte
+        man nicht die Stunden löschen). */if(key==="Backspace"){return;}/* Wenn das zweite Zeichen eigegeben wurde (letzte Stelle von der Stunde), dann wird der Doppelpunkt hinzufügt.*/if(wertGelesen.length===1&&isFinite(key)){this.zeitfeldTarget.value=wertGelesen+key+":";this.doppelPunkAutocompleted=true;}else if(wertGelesen.length===2&&isFinite(key)){/* Wenn drei Zeichen eigegeben werden, dann wird nach dem zweiten Zeichen ein Dopplepunkt hinzufügt.
+            * Tritt dann auf, wenn die Stunden copy-pasted werden und dann eine Zahl eingegeben wird. */this.zeitfeldTarget.value=wertGelesen+":";}}}_class.targets=["zeitfeld","datumfeld","hiddenInput"];
+
+/***/ }),
+
+/***/ 3584:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{toggle(event){const selectedRadioElement=$j(event.target),container=selectedRadioElement.closest('.exklusiv-oder-moeglichkeit-container'),warnungErrorContainer=container.find('.warnung-error-container'),inputfelderZumAktivieren=container.find(".exklusiv-oder-input");/* Alle ander Felder disabled */$j(this.inputFeldTargets).prop("readonly",true);$j(this.inputFeldTargets).prop("disabled",true);/* Da alle Felder deaktiviert sind, wird das eine ausgewählte Feld wieder aktiviert.*/inputfelderZumAktivieren.prop("readonly",false);inputfelderZumAktivieren.prop("disabled",false);$j(this.element).find('.exklusiv-oder-moeglichkeit-container').removeClass("ausgewaehlt");$j(this.element).find('.warnung-error-container').hide();container.addClass("ausgewaehlt");warnungErrorContainer.show();}}_class.targets=["inputFeld"];
+
+/***/ }),
+
+/***/ 8606:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get initialVersteckt(){return this.data.get("initialVersteckt")==="true";}connect(){if(this.initialVersteckt){this.ausblenden();}else{this.einblenden();}}einblenden(){$j(this.einblendenButtonTarget).hide();$j(this.ausblendenButtonTarget).show();if(this.hasToggleElementTarget){$j(this.toggleElementTargets).show();}}ausblenden(){$j(this.einblendenButtonTarget).show();$j(this.ausblendenButtonTarget).hide();if(this.hasToggleElementTarget){$j(this.toggleElementTargets).hide();}}}_class.targets=["einblendenButton","ausblendenButton","toggleElement"];
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{// connect() {
+//     this.element.parentElement.addEventListener('tiss-progressbar-before-start', () => $j(".einzelzeugnis_pdf_submit").attr("disabled", true))
+//     this.element.parentElement.addEventListener('tiss-progressbar-after-completion-or-fail', () => $j(".einzelzeugnis_pdf_submit").attr("disabled", false))
+// }
+//
+disableElements(){$j(".einzelzeugnis_pdf_submit").attr("disabled",true);}enableElements(){$j(".einzelzeugnis_pdf_submit").attr("disabled",false);}});
+
+/***/ }),
+
+/***/ 2772:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){if(!this.toggleButtonTarget.checked){this.deaktiviere();}}deaktiviere(){$j(this.inputTargets).attr('disabled',true);}aktiviere(){$j(this.inputTargets).attr('disabled',false);}dispatchDeselectEvent(){const event=document.createEvent("HTMLEvents");event.initEvent("deselect",false,true);const radioButtons=document.getElementsByClassName('typ-radio');for(let button of radioButtons){if(button.id!==this.toggleButtonTarget.id){button.dispatchEvent(event);}}}}_class.targets=["input","toggleButton"];
+
+/***/ }),
+
+/***/ 8087:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{fragebogenValidieren(event){for(let i in this.pflichtCheckboxGruppeTargets){const checkboxGruppe=$j(this.pflichtCheckboxGruppeTargets[i]),anzahlChecked=checkboxGruppe.find(".frage-input:checked").length;if(anzahlChecked<=0){event.preventDefault();const ersteCheckbox=$j(checkboxGruppe).find(".frage-input")[0];ersteCheckbox.setCustomValidity("Wählen Sie eine Antwortmöglichkeit aus!");ersteCheckbox.reportValidity();ersteCheckbox.setCustomValidity("");}}}}_class.targets=["pflichtCheckboxGruppe"];
+
+/***/ }),
+
+/***/ 8187:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _metadata__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(381);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get fragezeileId(){return this.data.get("fragezeileId");}get fragbarId(){return this.data.get("fragbarId");}neueMoeglichkeit(event){$j.post((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .ajaxPath */ .ld)("neue_moeglichkeit"),{"fragezeile-id":this.fragezeileId,"fragebogen-id":(0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getFragebogenId */ .uh)()},html=>{$j(this.keineMoeglichkeitAnzeigeTarget).hide();const neueMoeglichkeit=$j(html);neueMoeglichkeit.hide();$j(this.moeglichkeitListeTarget).append(neueMoeglichkeit);neueMoeglichkeit.show('fast');});}moeglichkeitLoeschen(event){if((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getReadonly */ .sU)())return;if(!confirm(I18n.t("fragebogen.js.moeglichkeit_loeschen_bestaetigung")))return;const moeglichkeitId=$j(event.target).data("moeglichkeit-id");$j.ajax((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .ajaxPath */ .ld)("moeglickeit_loeschen"),{data:{"fragbar-id":this.fragbarId,"fragezeile-id":this.fragezeileId,"fragebogen-id":(0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getFragebogenId */ .uh)(),'moeglichkeit-id':moeglichkeitId},dataType:'json',method:"DELETE",success:data=>{const loeschendeElement=$j(`#moeglichkeit-${data["moeglichkeit-id"]}`);loeschendeElement.hide('slow',()=>{loeschendeElement.remove();if(!this.hasMoeglichkeitZeileTarget){$j(this.keineMoeglichkeitAnzeigeTarget).show();}});}});}}_class.targets=["keineMoeglichkeitAnzeige","moeglichkeitListe","moeglichkeitZeile"];
+
+/***/ }),
+
+/***/ 2691:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _metadata__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(381);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get readonly(){return this.data.get("readonly")==="true";}set readonly(readonlyValue){this.data.set("readonly",readonlyValue);}connect(){if(this.readonly)$j(this.steuerElementTargets).attr("disabled","disabled");}get maxFragezeilen(){return Number.parseInt(this.data.get("maxFragezeilen"));}set maxFragezeilen(maxFragezeilenValue){this.data.set("maxFragezeilen",maxFragezeilenValue);}get id(){return this.data.get("id");}get path(){return this.data.get("path");}get anzahlFragezeilen(){return Number.parseInt(this.data.get("anzahlFragezeilen"));}set anzahlFragezeilen(anzahlFragezeilenValue){this.data.set("anzahlFragezeilen",anzahlFragezeilenValue);$j(this.anzahlFragenAnzeigeTarget).text(anzahlFragezeilenValue);}neueFrageZeile(event){const frageTyp=this.typDropdownTarget.value;$j.post((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .ajaxPath */ .ld)("neue_fragezeile"),{"fragebogen-id":this.id,"frage-typ":frageTyp},html=>{const neueFragezeile=$j(html);neueFragezeile.hide();$j(this.fragezeilenContainerTarget).append(neueFragezeile);neueFragezeile.show('slow');this.anzahlFragezeilen+=1;$j(this.submitButtonTargets).attr('disabled',false);if(this.anzahlFragezeilen>=this.maxFragezeilen){$j(this.neueFrageButtonTarget).attr("disabled",true);}});}fragezeileGeloescht(event){this.anzahlFragezeilen-=1;$j(this.neueFrageButtonTarget).attr("disabled",false);if(this.anzahlFragezeilen<=0){$j(this.submitButtonTargets).attr('disabled',true);}}readonlyStatusVeraendern(event){const status=event.detail.readonly;this.readonly=status;$j(this.steuerElementTargets).attr("disabled",this.readonly);}}_class.targets=["typDropdown","fragezeilenContainer","anzahlFragenAnzeige","submitButton","steuerElement","neueFrageButton"];
+
+/***/ }),
+
+/***/ 4342:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _metadata__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(381);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get id(){return this.data.get("id");}get position(){return this.data.get("position");}fragezeileLoeschen(){if(!confirm(I18n.t("fragebogen.js.fragezeile_loeschen_bestaetigung")))return;$j.ajax((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .ajaxPath */ .ld)("fragezeile_loeschen"),{data:{'fragezeile-id':this.id,'fragebogen-id':(0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getFragebogenId */ .uh)()},dataType:'json',method:"DELETE",success:data=>{const geloeschtEvent=new Event("fragezeileGeloescht");this.element.dispatchEvent(geloeschtEvent);$j(this.element).hide('slow',()=>{$j(this.element).remove();});}});}nachObenVerschieben(){if((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getReadonly */ .sU)())return;const vorrige=(0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .vorrigeFragezeile */ .bx)(this.position);this.austauschen(vorrige,data=>{$j(vorrige).insertAfter(this.element);});}nachUntenVerchieben(){if((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getReadonly */ .sU)())return;const naechste=(0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .naechsteFragezeile */ .qe)(this.position);this.austauschen(naechste,data=>{$j(naechste).insertBefore(this.element);});}kontextHilfeToggle(){const checked=$j(this.kontextHilfeCheckboxTarget).is(":checked");$j(this.kontextHilfeAreaTarget).prop("disabled",!checked);$j(this.kontextHilfeAreaTarget).prop("readonly",!checked);}austauschen(andereFragezeile,callback){$j.post((0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .ajaxPath */ .ld)("fragezeile_austauschen"),{"fragezeile-id-1":this.id,"fragezeile-id-2":andereFragezeile.data("fragebogen--fragezeile-id"),"fragebogen-id":(0,_metadata__WEBPACK_IMPORTED_MODULE_1__/* .getFragebogenId */ .uh)()},callback,'json');}}_class.targets=["kontextHilfeCheckbox","kontextHilfeArea"];
+
+/***/ }),
+
+/***/ 4194:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get pflicht(){return this.data.get("pflicht")==="true";}connect(){if(this.pflicht){$j(this.radioTarget).prop("checked",true);// Das erste Element ausgewählt setzen
+}}auswahlZuruecksetzen(){$j(this.radioTargets).prop("checked",false);}}_class.targets=["radio"];
+
+/***/ }),
+
+/***/ 6155:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _channels_cable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4955);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.initChannel();}initChannel(){(0,_channels_cable__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)({channel:"HelloChannel"},{connected(){console.log("Connected to channel");},received(data){console.log(data);}});}});
+
+/***/ }),
+
+/***/ 446:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _github_hotkey__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1793);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){(0,_github_hotkey__WEBPACK_IMPORTED_MODULE_1__/* .install */ .N9)(this.element);}disconnect(){(0,_github_hotkey__WEBPACK_IMPORTED_MODULE_1__/* .uninstall */ .Tz)(this.element);}});
+
+/***/ }),
+
+/***/ 1064:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.editing=false;}onKeyup(event){if(this.editing&&event.key==="Escape"){this.editing=false;}else if(this.editing&&event.ctrlKey&&event.key==="Enter"){this.speichern(event);}}editieren(event){event.preventDefault();this.editing=true;}speichern(event){event.preventDefault();$j.rails.ajax({url:this.data.get("speichern-url"),type:"POST",data:"inhalt="+$j(this.inputTarget).val().trim(),dataType:"text",success:data=>{$j(this.inputTarget).val(data);$j(this.displayTarget).html(data.replace(/\n/g,"<br>"));this.editing=false;},error:data=>{alert(`Fehler: ${data.responseText}`);}});}abbrechen(event){event.preventDefault();this.editing=false;}get editing(){return this.data.get("editing")==='true';}set editing(editing){this.data.set("editing",editing);if(editing){$j(this.displayTarget).hide();$j(this.editLinkTarget).hide();$j(this.inputTarget).show();$j(this.inputTarget).focus().select();$j(this.editingLinksTarget).show();}else{$j(this.inputTarget).hide();$j(this.editingLinksTarget).hide();$j(this.displayTarget).show();$j(this.editLinkTarget).show();}}}_class.targets=["display","input","editLink","editingLinks"];
+
+/***/ }),
+
+/***/ 7342:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ _class; }
+});
+
+// EXTERNAL MODULE: ./node_modules/stimulus/index.js + 38 modules
+var stimulus = __webpack_require__(7931);
+;// CONCATENATED MODULE: ./app/javascript/controllers/interne_veranstaltung/zusaetzlicher_text.js
+function zusaetzlicherTextDaten(formularHtml){return{zusaetzlicher_text:$j(formularHtml).find('#teilnehmer_email_zusaetzlicher_text').val(),mit_zusaetzlicher_text:$j(formularHtml).find('#teilnehmer_email_mit_zusaetzlicher_text').val()};}
+;// CONCATENATED MODULE: ./app/javascript/controllers/interne_veranstaltung/edit_teilnehmer_controller.js
+class _class extends stimulus/* Controller */.Qr{get teilnehmerStatus(){return this.statusSelectTarget.value;}connect(){}emailBereichAktualisieren(data){$j(this.emailContainerTarget).html(data.inhalt);$j(this.betreffTarget).html(data.betreff);}statusGeaendert(){const requestData={status_id:this.teilnehmerStatus,zusaetzlicher_text_daten:zusaetzlicherTextDaten(this.element)};if(this.teilnehmerStatus==='12'){// 12 == erfolgreich teilgenommen
+$j.get(`/tu_events_verwaltung/tu_event/${this.idValue}/teilnehmer_innen/erfolgreich_teilgenommen_vorschau`,requestData,data=>{this.emailBereichAktualisieren(data);},'json');}else{$j.get(`/tu_events_verwaltung/tu_event/${this.idValue}/teilnehmer_innen/status_aenderung_vorschau`,requestData,data=>{this.emailBereichAktualisieren(data);},'json');}}}_class.targets=['emailContainer','betreff','statusSelect'];_class.values={id:String,teilnehmerId:String};
+
+/***/ }),
+
+/***/ 9411:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){let initalStatus=this.toggleButtonTarget.value==="true";if(this.invertiert)initalStatus=!initalStatus;$j(document).on("tinyMCEGeladen",()=>{this.tinymceStatusAendern(initalStatus);});this.blurBereichAndern(initalStatus);}get invertiert(){return this.data.get("invertiert")==="true";}tinymceStatusAendern(status){if(typeof tinymce==='undefined'){return;}tinymce.activeEditor.getBody().setAttribute('contenteditable',status);}blurBereichAndern(status){if(!this.hasBlurBereichTarget)return;if(status){$j(this.blurBereichTargets).removeClass("blurred-bereich");}else{$j(this.blurBereichTargets).addClass("blurred-bereich");}const statusVeraendertEvent=new CustomEvent("blurbereichSatusVeraendert",{detail:{toggleButtonStatus:status}});this.blurBereichTargets.forEach(elem=>{elem.dispatchEvent(statusVeraendertEvent);});}formStatusAendern(event){const buttonStatus=this.toggleButtonTarget.value==="true",status=this.invertiert?!buttonStatus:buttonStatus;if(status){$j(this.inputZeileTargets).removeAttr("disabled");$j(this.inputZeileTargets).removeAttr("readonly");}else{$j(this.inputZeileTargets).attr("disabled","disabled");$j(this.inputZeileTargets).attr("readonly","readonly");}this.tinymceStatusAendern(status);this.blurBereichAndern(status);}}_class.targets=["inputZeile","deaktiviertCheckbox","toggleButton","blurBereich"];
+
+/***/ }),
+
+/***/ 3361:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{toggleButtonVeraendert(event){const toggleButtonChecked=event.detail.toggleButtonStatus;const fragebogen=document.getElementById("fragebogen");const statusVeraendertEvent=new CustomEvent("fragebogenReadonlyStatusVeraendert",{detail:{readonly:!toggleButtonChecked}// Fragebogen ist nicht bearbeitbar, wenn blurred => Toggle-Button nicht checked
+});fragebogen.dispatchEvent(statusVeraendertEvent);$j(this.vorschauButtonTarget).attr("disabled",!toggleButtonChecked);}}_class.targets=["vorschauButton"];
+
+/***/ }),
+
+/***/ 8820:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{verstecken(){$j(this.anzeigenLinkTarget).show();$j(this.namenslisteTarget).hide(400);}anzeigen(){$j(this.anzeigenLinkTarget).hide();$j(this.namenslisteTarget).show(400);}}_class.targets=["anzeigenLink","namensliste"];
+
+/***/ }),
+
+/***/ 254:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* Wird beim Anlegen und Editieren von Teilnehmer_innen verwendet. Deaktiviert die Eingabelfelder im E-Mail bereich, wenn kein E-Mail zu senden ist bei
+Statusänderung. Das Blurren der Eingabelemente erfolgt mit dem formular_deaktivierer.
+ */class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.formStatusAendern();this.zusaetzlicherTextFeldStatusAendern();}get toggleButtonStatus(){return this.toggleButtonTarget.value==="true";}get zusaetzlicherTextFeldStatus(){console.log(this.zusaetzlicherTextToggleTarget);console.log(this.zusaetzlicherTextToggleTarget.value);console.log('a');return this.zusaetzlicherTextToggleTarget.value==="true";}zusaetzlicherTextFeldStatusAendern(){if(this.zusaetzlicherTextFeldStatus){$j(this.zusaetzlicherTextFeldTarget).removeAttr("disabled");$j(this.zusaetzlicherTextFeldTarget).removeAttr("readonly");}else{$j(this.zusaetzlicherTextFeldTarget).attr("disabled","disabled");$j(this.zusaetzlicherTextFeldTarget).attr("readonly","readonly");}}formularDeaktivieren(){$j(this.zusaetzlicherTextCheckboxTarget).attr("disabled","disabled");$j(this.zusaetzlicherTextCheckboxTarget).attr("readonly","readonly");$j(this.ccTextFeldTarget).attr("disabled","disabled");$j(this.ccTextFeldTarget).attr("readonly","readonly");$j(this.zusaetzlicherTextFeldTarget).attr("disabled","disabled");$j(this.zusaetzlicherTextFeldTarget).attr("readonly","readonly");}formularAktivieren(){$j(this.ccTextFeldTarget).removeAttr("disabled");$j(this.ccTextFeldTarget).removeAttr("readonly");$j(this.zusaetzlicherTextCheckboxTarget).removeAttr("disabled");$j(this.zusaetzlicherTextCheckboxTarget).removeAttr("readonly");if(this.zusaetzlicherTextFeldStatus){$j(this.zusaetzlicherTextFeldTarget).removeAttr("disabled");$j(this.zusaetzlicherTextFeldTarget).removeAttr("readonly");}}formStatusAendern(){if(this.toggleButtonStatus){this.formularAktivieren();}else{this.formularDeaktivieren();}}}_class.targets=["toggleButton","zusaetzlicherTextFeld",'zusaetzlicherTextToggle',// Hidden Input die zum Checkbox gehört
+'zusaetzlicherTextCheckbox','ccTextFeld'];
+
+/***/ }),
+
+/***/ 1063:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){let kollektor=JSON.parse(this.data.get("kollektor"));for(const[key,value]of Object.entries(kollektor)){for(const[child_type,cnt]of Object.entries(value["used_child_types_cnt"])){let el1=document.getElementById(key.replace(/^Organisation::/,'').split(/(?=[A-Z])/).join('_').toLowerCase());let el2=document.getElementById(child_type.replace(/^Organisation::/,'').split(/(?=[A-Z])/).join('_').toLowerCase());if(typeof el1!='undefined'&&el1!=null&&typeof el2!='undefined'&&el2!=null){new window.LeaderLine(el1,el2,{startPlugColor:'rgba(219, 124, 10, 0.6)',endPlugColor:'rgba(96, 145, 3, 0.6)',gradient:true,startSocket:'bottom',endSocket:'top',path:'magnet',//dash: {animation: true},
+endPlug:'disc',middleLabel:window.LeaderLine.captionLabel(""+cnt,{color:'#4e2085'})});}}}}});
+
+/***/ }),
+
+/***/ 9935:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.refreshStatusValue=this.updateOnLoadValue;this.intervalId=setInterval(()=>{if(this.continuousUpdateValue&&!this.hasJidValue||this.refreshStatusValue){this.updateStatus();}},1000);/*
+     * Dispatch custom event to let other controllers know the
+     * progressbar is about to be displayed so they can make
+     * adjustements etc (e.g. grey out buttons and other stuff)
+    */let customEvent=new CustomEvent("tiss-progressbar-before-start",{bubbles:true,detail:{}});this.element.parentElement.dispatchEvent(customEvent);}disconnect(){clearInterval(this.intervalId);}run(event){event.preventDefault();if(this.is_not_confirmed())return null;// Prüfe etwaigen confirm-Dialog
+$j.ajax({global:false,url:'/tools/progress/run',method:'POST',dataType:'json',data:this.getRunRequestParams()}).done(data=>{this.hideLink();this.showProgressBar();this.workingValue=true;if(data!==null){this.jidValue=data['jid'];}this.refreshStatusValue=true;}).fail((xhr,status,error)=>{alert(error);});}// Wenn confirm_message definiert ist *und* der Dialog mit "abbrechen" geschlossen wurde,
+// gilt der Klick als *nicht* bestätigt.
+is_not_confirmed(){let confirm_message=$j(this.element).children('a.job_link').data('rtiss-jobrun-confirm');return confirm_message&&!confirm(confirm_message);}updateStatus(){this.refreshStatusValue=false;let statusUrl='/tools/progress/status';$j.ajax({global:false,url:statusUrl,dataType:'json',data:this.getUpdateRequestParams(),success:data=>{if(data!==null){if(this.isJobInProgress(data)){this.hideLink();this.showProgressBar();this.setProgress(this.getPercentFinished(data));this.setMessage(data['message']||this.linkText());if(!this.hasJidValue&&data['jid']){this.jidValue=data['jid'];}this.refreshStatusValue=true;if(this.workingValue===false){this.workingValue=true;/*
+               * Dispatch custom event to let other controllers know the
+               * progressbar is done (and the job either failed or succeeded),
+               * so they can make adjustements etc (e.g. unlock/hide/unhide UI
+               * elements)
+               */let customEvent=new CustomEvent("tiss-progressbar-start-working",{bubbles:true,detail:{}});this.element.parentElement.dispatchEvent(customEvent);}}else{if(this.workingValue){this.finishJob(data);}else if(this.hasJidValue){this.hideLink();this.showProgressBar();this.finishJob(data);}}}}});}finishJob(data){this.workingValue=false;this.setProgress(100);this.setMessage(data['message']||this.linkText());$j(this.spinnerTarget).hide();/*
+     * Dispatch custom event to let other controllers know the
+     * progressbar is done (and the job either failed or succeeded),
+     * so they can make adjustements etc (e.g. unlock/hide/unhide UI
+     * elements)
+     */let customEvent=new CustomEvent("tiss-progressbar-after-completion-or-fail",{bubbles:true,detail:{}});this.element.parentElement.dispatchEvent(customEvent);let waitTime=2000;if(this.isJobFailed(data)){$j(this.failedTarget).show();$j(this.progressTarget).hide();$j(this.closeTarget).show();waitTime=5000;}else{$j(this.successTarget).show();}if(this.isCallbackDefined()){$j(this.progressbarTarget).hide('fade',waitTime,()=>{this.showLink();this.invokeCallback(data);});}else if(this.isJobCompleted(data)){$j(this.progressbarTarget).hide('fade',waitTime,()=>{this.showLink();});}}getRunRequestParams(){let params={};params["job"]=$j(this.element).data('job');this.addJobOptionsToParams(params);return params;}getUpdateRequestParams(){let params={};params["job"]=$j(this.element).data('job');if(this.hasJidValue){params["jid"]=this.jidValue;}params["ignoreOptions"]=this.statusIgnoreOptionsValue;this.addJobOptionsToParams(params);return params;}addJobOptionsToParams(params){const jobOptions=this.getJobOptions();for(let key in jobOptions){params[key]=jobOptions[key];}}getJobOptions(){let attributes=this.element.attributes;let jobOptions={};for(let i=0;i<attributes.length;i++){let attributeName=attributes[i].name;if(attributeName.startsWith('data-job-param')){let attributeValue=attributes[i].value;jobOptions[attributeName.replace('data-','')]=attributeValue;}}return jobOptions;}close(){$j(this.progressbarTarget).hide('fade',1000,()=>this.showLink());}isJobInProgress(data){return data['status']==='working'||data['status']==='queued'||data['status']==='retrying';}isJobFailed(data){return data['status']==='failed';}isJobCompleted(data){return data['status']==='completed'||data['status']==='complete';}getPercentFinished(data){if(typeof data['pct_complete']!=='undefined'){return data['pct_complete'];}else if(typeof data["num"]!=='undefined'&&typeof data["total"]!=='undefined'){return Math.round(data['num']/data['total']*100);}else{return 0;}}hideLink(){if(this.hasLinkTarget){$j(this.linkTarget).hide();}}showLink(){if(this.hasLinkTarget){$j(this.linkTarget).show();}}linkText(){if(this.hasLinkTarget){return $j(this.linkTarget).text();}else{return'';}}showProgressBar(){$j(this.progressbarTarget).css('display','flex');}setProgress(percent){$j(this.progressTarget).attr('value',percent);}setMessage(message){$j(this.messageTarget).text(message);}isCallbackDefined(){return typeof $j(this.element).data('job-completed-callback')!=='undefined';}invokeCallback(data={}){let action=$j(this.element).data('job-completed-callback');if(action==='reload'){window.location.reload();}else{let render_data=$j(this.element).data('job-return-status-via');if(render_data==='get'){let params={};if(data['uuid'])params['uuid']=data['uuid'];if(data['message']){if(data['message'].length>120)// Bei einem HTTP-GET die Messagelänge begrenzen
+params['message']=data['message'].substring(0,115)+' ...';else params['message']=data['message'];}if(data['status'])params['status']=data['status'];if(data['time'])params['time']=data['time'];if(Object.keys(params).length>0){let url_params=[];for(let k in params)url_params.push(k+'='+encodeURIComponent(params[k]));action+=(action.indexOf("?")>-1?'&':'?')+url_params.join('&');}$j.get(action);}else if(render_data==='post'){$j.post(action,data);}else{$j.get(action);}}}}_class.targets=["link","progressbar","progress","message","spinner","success","failed","close"];_class.values={working:Boolean,jid:String,updateOnLoad:Boolean,continuousUpdate:Boolean,statusIgnoreOptions:Boolean,refreshStatus:Boolean};
+
+/***/ }),
+
+/***/ 1839:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{openPerson(event){$j('#person_anzeige').hide('fade',100,()=>{$j('#warte_auf_ajax_suchergebnis > h2').text(event.detail.displayName);$j('#warte_auf_ajax_suchergebnis').show('fade',200);window.location=`/service_center/person?person_id=${event.detail.id}&suche=${event.detail.query}`;});}});
+
+/***/ }),
+
+/***/ 1251:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony import */ var _channels_cable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4955);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){//console.log("StabTerminController#connect()");
+this.initChannel();}initChannel(){//console.log("StabTerminController#initChannel()");
+(0,_channels_cable__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)({channel:"StabTerminChannel"},{connected(){//console.log("StabTerminController#connected()");
+},received(data){//console.log("StabTerminController#received(data)");
+//console.log(data);
+$j('#actual').html(data.message);},disconnected(){//console.log("StabTerminController#disconnected()");
+}});}});
+
+/***/ }),
+
+/***/ 6319:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/**
+ * Nimmt die Inhalte eines Inputfeldes und speichert in die Zwischenablage
+ * targets:
+ * textfeld -> Das feld, was man speichern will
+ * actions:
+ * textSpeichern -> action zu speichern
+ */class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{textSpeichern(){const textfeldObj=$j(this.textfeldTarget);const disabled=textfeldObj.is(':disabled');if(disabled){textfeldObj.prop("disabled",false);}this.textfeldTarget.select();this.textfeldTarget.setSelectionRange(0,99999);document.execCommand("copy");if(disabled){textfeldObj.prop("disabled",true);}}}_class.targets=["textfeld"];
+
+/***/ }),
+
+/***/ 6584:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{constructor(...args){super(...args);this.ctrPressed=false;}get baumObjekt(){return this._baumObjekt;}set baumObjekt(baumObjekt){this._baumObjekt=baumObjekt;}connect(){const baumConfig={'core':{"themes":{"name":"rtiss","dots":true,"icons":false}},"plugins":["checkbox","ui","themes","search","changed"],'checkbox':{three_state:false,"cascade":"undetermined"}};if(this.datenQuelle==="ajax"){baumConfig['core']['data']={"url":this.datenUrl,"dataType":"json"};}if(this.cascading==='down_ctrl'){baumConfig.checkbox.cascade='undetermined';}else{baumConfig.checkbox.cascade=this.cascading;}$j(this.baumTarget).on("changed.jstree",(event,data)=>{// Todo (vielleicht): Wenn der Cascading nicht down_ctrl ist, dann macht diese Event-Handler gar nichts. Kann
+// aber später sein, dass man den changed Handler für was anders auch braucht.
+if(this.cascading==='down_ctrl'){if(!this.ctrPressed)return;if(data.action==="select_node")$j(this.baumTarget).jstree(true).check_node(data.node.children_d);if(data.action==="deselect_node")$j(this.baumTarget).jstree(true).uncheck_node(data.node.children_d);}}).on("ready.jstree",()=>{if(this.disabled){this.baumObjekt.close_all();}}).jstree(baumConfig).bind("loaded.jstree",(e,data)=>{if(this.datenQuelle==="ajax"){this.werteLaden(e,data);}});document.addEventListener("keydown",e=>{if(e.key==="Control"){this.ctrPressed=true;}});document.addEventListener("keyup",e=>{if(e.key==="Control"){this.ctrPressed=false;}});this.baumObjekt=$j(this.baumTarget).jstree();}baumStatusAendern(event){const status=event.detail.status;this.baumObjekt.open_all();$j(this.baumSucheTarget).attr('disabled',status);$j.each($j(this.baumElementTargets),(i,element)=>{if(status)this.baumObjekt.disable_node(element.id);else this.baumObjekt.enable_node(element.id);});this.baumObjekt.close_all();if(!status&&this.data.get('erstes-element-aufklappen')==="true"){this.baumObjekt.open_node($j(this.baumElementTarget).attr("id"));}this.disabled=status;}suchen(){this.baumObjekt.search($j(this.baumSucheTarget).val());}baumAusklappen(){this.baumObjekt.open_all();}baumZuklappen(){this.baumObjekt.close_all();}werteLaden(e,data){$j.get(this.valueUrl,werte=>{werte.forEach(wert=>{$j(this.baumTarget).jstree("select_node",wert,true);});},'json');}// Beim Suchen wird change event gebubbled nach oben. Das ist of nicht erwünch, wenn man ein evnetlistener auf dem
+// Baum hat.
+bubblingEntfernen(event){event.stopPropagation();}serialize(){return new Promise((resolve,reject)=>{const selectedItems=$j(this.baumTarget).jstree().get_selected(true),hiddenInputContainer=$j(this.hiddenInputContainerTarget);hiddenInputContainer.empty();selectedItems.forEach(item=>{if(item.data===null||item.data.objektId===null){return;}hiddenInputContainer.append($j("<input>",{type:"hidden",name:this.hiddenInputName,value:item.data.objektId}));});resolve({selectedItems:selectedItems});});}set hiddenInputName(name){if(name===undefined||name==null){throw"Inputname für den Baum nicht gefunden";}this.data.set('inputName',name);}get hiddenInputName(){return this.data.get('inputName');}get disabled(){return this.data.get('disabled')==="true";}set disabled(istDisabeld){this.data.set('disabled',istDisabeld);}get cascading(){return this.data.get("cascading");}set cascading(cascadingValue){this.data.set("cascading",cascadingValue);}get datenUrl(){return this.data.get("datenUrl");}get datenQuelle(){return this.data.get("datenQuelle");}get valueUrl(){return this.data.get("valueUrl");}}_class.targets=["baum","hiddenInputContainer","baumSuche","baumElement"];
+
+/***/ }),
+
+/***/ 3415:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{get invertiert(){return this.data.get("invertiert")==="true";}connect(){this.updateHiddenInput();}updateHiddenInput(event){let status=$j(this.checkboxTarget).is(":checked");if(this.invertiert)status=!status;$j(this.hiddenInputTarget).val(status);this.hiddenInputTarget.dispatchEvent(new Event('change',{bubbles:true}));}}_class.targets=["checkbox","hiddenInput"];
+
+/***/ }),
+
+/***/ 3644:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/**
+ * toggle-guckguck-class
+ * benutzer kann damit vordefinierte website-bereiche ein- und ausschalten (per css display: none)
+ * anwendungsbeispiel siehe _tiss_/tools/demo/stimulus_toggle_guckguck
+ * https://de.wikipedia.org/wiki/Guck-guck-Spiel
+ */class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){this.element.classList.add("toggle-guckguck");this.versteckbarTargets.forEach((el,i)=>{el.classList.add("guckguck-sichtbar");});this.verstecktTargets.forEach((el,i)=>{el.classList.add("guckguck-versteckt");});}toggle(event){//const klasseAllerZiele = event.currentTarget.dataset.klasseAllerZiele //erhält
+//console.log("Stimulus klasseAllerZiele", klasseAllerZiele)
+console.log("Stimulus toggle!",this.element);this.versteckbarTargets.forEach((el,i)=>{el.classList.toggle("guckguck-nicht");});this.verstecktTargets.forEach((el,i)=>{el.classList.toggle("guckguck-nicht");});}}_class.targets=["versteckt","versteckbar"];
+
+/***/ }),
+
+/***/ 2724:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+/* harmony default export */ __webpack_exports__["default"] = (class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{openPerson(event){window.location=`/personal/tuwis_pers?person_id=${event.detail.id}&suche=${event.detail.query}`;}});
+
+/***/ }),
+
+/***/ 4960:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{openPerson(event){$j('#mitglied_form :input').prop('disabled',true);$j('#mitglied_form').fadeTo(300,0.3);//hidden field person id ausfüllen
+this.ausgewaehltePersonIdTarget.value=event.detail.id;//document.getElementById("person_person_id_ausgewaehlt").value = event.detail.id //so ginge es auch
+//submit formular
+this.autocompletePersonenSuchFormTarget.submit();//document.getElementById("autocomplete_personen_such_form").submit();
+}}_class.targets=['ausgewaehltePersonId','autocompletePersonenSuchForm'];
+
+/***/ }),
+
+/***/ 4961:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){}sendeInput(event){// Wenn enter gedrückt
+if(event.keyCode===13){this.kuerzenSubmit();}}kuerzenSubmit(){const url=this.urlinputTarget.value,fehlermeldungContainer=$j(this.fehlermeldungenTarget);fehlermeldungContainer.empty();$j.post("/tools/url_shortener/url_kuerezen",{url:url},html=>{$j(this.urlinputTarget).val("");$j(this.zuletztGeneriertContainerTarget).show();const neueZeile=$j(html);neueZeile.addClass("aktuell-url");$j(this.urlTabellenBodyTarget).find("tr").removeClass();neueZeile.hide();$j(this.urlTabellenBodyTarget).prepend(neueZeile);neueZeile.show(500);},"html").fail(error=>{if(error.status===400){fehlermeldungContainer.text(error.responseText);}});}}_class.targets=["urlinput","urlTabellenBody","fehlermeldungen","zuletztGeneriertContainer","submitButton"];
+
+/***/ }),
+
+/***/ 6452:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _class; }
+/* harmony export */ });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7931);
+class _class extends stimulus__WEBPACK_IMPORTED_MODULE_0__/* .Controller */ .Qr{connect(){}urlZelleMarkieren(){$j(this.shortenedUrlZelleTarget).addClass("url-zelle-markiert");}urlZelleMarkierungEntfernen(){$j(this.shortenedUrlZelleTarget).removeClass("url-zelle-markiert");}urlKopieren(){$j(this.shortenedUrlTarget).show();this.shortenedUrlTarget.select();this.shortenedUrlTarget.setSelectionRange(0,99999);document.execCommand("copy");$j(this.shortenedUrlTarget).hide();$j(this.shortenedUrlZelleTarget).addClass("url-zelle-klickt");setTimeout(()=>{$j(this.shortenedUrlZelleTarget).removeClass("url-zelle-klickt");},200);}}_class.targets=["shortenedUrlZelle","shortenedUrl"];
+
+/***/ }),
+
+/***/ 9266:
+/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/@stimulus/polyfills/index.js
+var polyfills = __webpack_require__(8173);
+// EXTERNAL MODULE: ./node_modules/stimulus/index.js + 38 modules
+var stimulus = __webpack_require__(7931);
+// EXTERNAL MODULE: ./node_modules/@stimulus/webpack-helpers/dist/index.js
+var dist = __webpack_require__(9074);
+// EXTERNAL MODULE: ./node_modules/@webcomponents/custom-elements/custom-elements.min.js
+var custom_elements_min = __webpack_require__(7363);
+// EXTERNAL MODULE: ./node_modules/dom4/build/dom4.max.js
+var dom4_max = __webpack_require__(3839);
+// EXTERNAL MODULE: ./node_modules/mutation-observer/index.js
+var mutation_observer = __webpack_require__(6735);
+// EXTERNAL MODULE: ./node_modules/@github/catalyst/lib/index.js + 5 modules
+var lib = __webpack_require__(7635);
+;// CONCATENATED MODULE: ./app/javascript/web_components/tiss_search.ts
+var _class,_class2,_descriptor,_descriptor2;function _initializerDefineProperty(target,property,descriptor,context){if(!descriptor)return;Object.defineProperty(target,property,{enumerable:descriptor.enumerable,configurable:descriptor.configurable,writable:descriptor.writable,value:descriptor.initializer?descriptor.initializer.call(context):void 0});}function _applyDecoratedDescriptor(target,property,decorators,descriptor,context){var desc={};Object.keys(descriptor).forEach(function(key){desc[key]=descriptor[key];});desc.enumerable=!!desc.enumerable;desc.configurable=!!desc.configurable;if('value'in desc||desc.initializer){desc.writable=true;}desc=decorators.slice().reverse().reduce(function(desc,decorator){return decorator(target,property,desc)||desc;},desc);if(context&&desc.initializer!==void 0){desc.value=desc.initializer?desc.initializer.call(context):void 0;desc.initializer=undefined;}if(desc.initializer===void 0){Object.defineProperty(target,property,desc);desc=null;}return desc;}function _initializerWarningHelper(descriptor,context){throw new Error('Decorating class property failed. Please ensure that '+'proposal-class-properties is enabled and runs after the decorators transform.');}let TissSearchElement=(0,lib/* controller */.Ih)(_class=(_class2=class TissSearchElement extends HTMLElement{constructor(...args){super(...args);_initializerDefineProperty(this,"queryUrl",_descriptor,this);_initializerDefineProperty(this,"label",_descriptor2,this);}connectedCallback(){this.update();}update(){this.innerHTML=`
+            <div class="autocomplete-container"
+                 data-controller="autocomplete--component"
+                 data-autocomplete--component-query-url-value="${this.queryUrl}"
+                 data-autocomplete--component-loading-class="autocomplete-busy"
+                 data-action="click@window->autocomplete--component#closeWhenOutside 
+                              focusin@window->autocomplete--component#closeWhenOutside 
+                              keydown->autocomplete--component#navigate"
+                 role="search">
+              <div class="autocomplete-input-wrapper">
+                <div class="autocomplete-input-icon">
+                  <!-- Heroicon name: solid/search -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <input name="suchfeld"
+                       data-autocomplete--component-target="input"
+                       data-action="input->autocomplete--component#search click->autocomplete--component#openWhenFilled focus->autocomplete--component#openWhenFilled"
+                       placeholder="${this.label}"
+                       type="search"
+                       autocomplete="off"
+                       spellcheck="false"
+                       data-controller="hotkey" data-hotkey="s,S"
+                       role="combobox" aria-autocomplete="list" aria-label="${this.label}"
+                       ${this.getAttribute('data-autofocus')==="true"?"autofocus":""}>
+                <div class="autocomplete-loading" data-autocomplete--component-target="resultLoading">
+                  <span></span> <img src="${this.getBaseUrl()}/static/2.5.2/global/icons/ajax-loader.gif" alt="Ladeanzeige">
+                </div>
+              </div>
+              <div data-autocomplete--component-target="results" class="autocomplete-results">
+                <div></div>
+              </div>
+            </div>`;}/**
+     * Get the base url from the query url
+     */getBaseUrl(){let baseUrl="";if(this.queryUrl.startsWith("http://")){baseUrl=this.queryUrl.substring(0,this.queryUrl.indexOf("/",7));}else if(this.queryUrl.startsWith("https://")){baseUrl=this.queryUrl.substring(0,this.queryUrl.indexOf("/",8));}return baseUrl;}},(_descriptor=_applyDecoratedDescriptor(_class2.prototype,"queryUrl",[lib/* attr */.Lj],{configurable:true,enumerable:true,writable:true,initializer:function(){return"/autocomplete/person/suche";}}),_descriptor2=_applyDecoratedDescriptor(_class2.prototype,"label",[lib/* attr */.Lj],{configurable:true,enumerable:true,writable:true,initializer:function(){return"Suche";}})),_class2))||_class;
+;// CONCATENATED MODULE: ./app/javascript/packs/application.js
+/* eslint no-console:0 */ // This file is automatically compiled by Webpack, along with any other files
+// present in this directory. You're encouraged to place your actual application logic in
+// a relevant structure within app/javascript and only use these pack files to reference
+// that code so it'll be compiled.
+//
+// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
+// layout file, like app/views/layouts/application.html.erb
+// Uncomment to copy all static images under ../images to the output folder and reference
+// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
+// or the `imagePath` JavaScript helper below.
+//
+// const images = require.context('../images', true)
+// const imagePath = (name) => images(name, true)
+const application=stimulus/* Application.start */.Mx.start();const contextControllers=__webpack_require__(7074);const contextComponents=__webpack_require__(2181);const contextComponentsCss=__webpack_require__(9598);application.load((0,dist/* definitionsFromContext */.X)(contextControllers).concat((0,dist/* definitionsFromContext */.X)(contextComponents).concat((0,dist/* definitionsFromContext */.X)(contextComponentsCss))));
+
+/***/ }),
+
+/***/ 3805:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 552:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 6297:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 9148:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 7111:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 381:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "bx": function() { return /* binding */ vorrigeFragezeile; },
+/* harmony export */   "ld": function() { return /* binding */ ajaxPath; },
+/* harmony export */   "qe": function() { return /* binding */ naechsteFragezeile; },
+/* harmony export */   "sU": function() { return /* binding */ getReadonly; },
+/* harmony export */   "uh": function() { return /* binding */ getFragebogenId; }
+/* harmony export */ });
+const getFragebogenId=()=>{return $j("#fragebogen").data("fragebogen--fragebogen-id");};const getReadonly=()=>{const fragebogenDataSet=document.getElementById("fragebogen").dataset;return fragebogenDataSet["fragebogen-FragebogenReadonly"]==="true";//Mit normal JS,  JQuery zeigt wegen Cache auch alte Werte
+};const ajaxPath=action=>{const path=$j("#fragebogen").data("fragebogen--fragebogen-path");return`${path}/${action}`;};const vorrigeFragezeile=position=>{const tmp=$j(`.fragezeile[data-fragebogen--fragezeile-position=${position}]`);return tmp.prev(".fragezeile");};const naechsteFragezeile=position=>{const tmp=$j(`.fragezeile[data-fragebogen--fragezeile-position=${position}]`);return tmp.next(".fragezeile");};
+
+/***/ })
+
+},
+/******/ function(__webpack_require__) { // webpackRuntimeModules
+/******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+/******/ __webpack_require__.O(0, [154], function() { return __webpack_exec__(9266); });
+/******/ var __webpack_exports__ = __webpack_require__.O();
+/******/ }
+]);
+//# sourceMappingURL=application-14766d8e0cf5eee4a91e.js.map

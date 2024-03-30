@@ -1,0 +1,1955 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[Content]
+
+Primary use:    Style for the content section of TISS.
+                (Everything inside the white area, between primary-
+                and secondary navigation and below the toolbar
+                and above the footer)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Layout
+1.1 Sidebar
+2. Basic Elements
+2.1. Page Headings / h1 / #subHeader / h2 / h3
+2.2. Content Structuring
+2.3. Links / a
+2.4. Lists
+2.5. Colored Arrow
+2.6. Jump To Top
+2.7. Definition List
+2.8. User-generated Text / .encode
+2.9. Images / img
+2.10. Icons
+3. Messages
+3.1. Global Messages
+3.2. Other Messages
+3.3. Static Messages
+4. Form Elements
+4.1. Fieldset
+4.1.1 LeftBlock Fieldset
+4.1.2 Narrow Fieldset
+4.1.3 Two-Column Fieldset
+4.1.4 Table Filter / .tableFilter
+4.2. CommandBox
+4.3. Input Elements
+4.3.1. Predefined Dimensions
+4.3.2. Input & Textarea
+4.3.3. Date, Time & Percent
+4.4. Buttons
+4.4.1. Secondary Button / .secondaryButton
+4.4.2. Primary Button / .primaryButton
+4.4.3. Disabled Button
+4.5. TinyMCE
+4.5.1. Editor
+4.5.2. Content
+-------------------------------------------------------------------*/
+
+
+/* [1. Layout]
+-------------------------------------------------------------------*/
+#contentInnerWrapper {
+    position: relative;
+    margin: 0 35px;
+}
+
+#contentInner {
+    position: relative;
+    width: 100%;
+    float: left; /* =Note: To fix the bug that all clear:both elements inside are positioned under the supnav */
+}
+
+.spacer {
+    height: 1px;
+    padding-bottom: 2.3em;
+}
+
+.leftContent {
+    float: left;
+    width: 62%;
+}
+
+.rightContent {
+    float: right;
+    width: 35%;
+}
+
+/* [1.1 Sidebar]
+
+=Note			Layout inspired by:
+				http://matthewjamestaylor.com/blog/ultimate-2-column-right-menu-pixels.htm
+-------------------------------------------------------------------*/
+
+#content.withSidebar #contentInnerWrapper {
+    margin-right: 0;
+}
+#content.withSidebar .sidebarColsWrapper {
+    background: #fafafa;
+	position:relative; /* Fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;
+    overflow:hidden;
+
+    /* =Note
+       Gray background for the sidebar, faded out into white along the bottom edge.
+       Generated from the following Compass/SCSS code:
+       #gradient {
+         @include background-image(linear-gradient(bottom, white 0%, #fafafa 35px, #fafafa 100%));
+       } */
+    background: #fafafa;
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ffffff), color-stop(35px, #fafafa), color-stop(100%, #fafafa));
+    background-image: -webkit-linear-gradient(bottom, #ffffff 0%, #fafafa 35px, #fafafa 100%);
+    background-image: -moz-linear-gradient(bottom, #ffffff 0%, #fafafa 35px, #fafafa 100%);
+    background-image: -o-linear-gradient(bottom, #ffffff 0%, #fafafa 35px, #fafafa 100%);
+    background-image: -ms-linear-gradient(bottom, #ffffff 0%, #fafafa 35px, #fafafa 100%);
+    background-image: linear-gradient(to top, #ffffff 0%, #fafafa 35px, #fafafa 100%);
+}
+#content.withSidebar .sidebarCols {
+	float:left;
+	width:200%;
+	margin-left:-286px; /* margin-left = sidebar's width + padding-left + padding-right */
+	position:relative;
+	right:100%;
+	background:#fff;
+    border-right: 1px solid #eeeeee;
+    transition: margin-left 200ms;
+    -moz-transition: margin-left 200ms; /* Firefox 4 */
+    -webkit-transition: margin-left 200ms; /* Safari and Chrome */
+    -o-transition: margin-left 200ms; /* Opera */
+}
+#content.withSidebar .maincolWrapper {
+	float:left;
+	width:50%;
+	position:relative;
+	left:50%;
+	padding-bottom:1em;
+}
+#content.withSidebar .mainCol {
+	margin:0 35px 0 286px; /* margin-left = sidebar's width + padding-left + padding-right */
+	overflow:hidden;
+    transition: margin-left 200ms;
+    -moz-transition: margin-left 200ms; /* Firefox 4 */
+    -webkit-transition: margin-left 200ms; /* Safari and Chrome */
+    -o-transition: margin-left 200ms; /* Opera */
+}
+#content.withSidebar #sidebar {
+	float:right;
+	width:250px; /* width = sidebar's inner width */
+	position:relative;
+	left:268px; /* left = sidebar's width + padding-left */
+	padding-top: 10px;
+    transition: left 200ms, opacity 200ms;
+    -moz-transition: left 200ms, opacity 200ms; /* Firefox 4 */
+    -webkit-transition: left 200ms, opacity 200ms; /* Safari and Chrome */
+    -o-transition: left 200ms, opacity 200ms; /* Opera */
+}
+
+
+#content.withSidebar #showSidebar {
+    position: absolute;
+    top:0;
+    right:0;
+    padding-right: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 12pt;
+    transition: opacity 200ms;
+    -moz-transition: opacity 200ms; /* Firefox 4 */
+    -webkit-transition: opacity 200ms; /* Safari and Chrome */
+    -o-transition: opacity 200ms; /* Opera */
+}
+#content.withSidebar #hideSidebar {
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0.8;
+    font-size: 12pt;
+    visibility: visible;
+    transition: opacity 200ms;
+    -moz-transition: opacity 200ms; /* Firefox 4 */
+    -webkit-transition: opacity 200ms; /* Safari and Chrome */
+    -o-transition: opacity 200ms; /* Opera */
+}
+#content.withSidebar #hideSidebar:hover {
+    opacity: 1;
+}
+#content.withSidebar.hiddenSidebar #showSidebar {
+    opacity: 0.8;
+    visibility: visible;
+}
+#content.withSidebar.hiddenSidebar #showSidebar:hover {
+    opacity: 1;
+}
+#content.withSidebar.hiddenSidebar #hideSidebar,
+#content.withSidebar.hiddenSidebar #hideSidebar:hover {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+#content.withSidebar.hiddenSidebar .sidebarCols {
+    margin-left: -36px;
+    transition: margin-left 200ms;
+    -moz-transition: margin-left 200ms;
+    -webkit-transition: margin-left 200ms;
+    -o-transition: margin-left 200ms;
+}
+#content.withSidebar.hiddenSidebar .sidebarCols .mainCol {
+    margin-left: 36px;
+    transition: margin-left 200ms;
+    -moz-transition: margin-left 200ms;
+    -webkit-transition: margin-left 200ms;
+    -o-transition: margin-left 200ms;
+}
+#content.withSidebar.hiddenSidebar #sidebar {
+    width: 0;
+    max-width: 0;
+    overflow: hidden;
+    left: 15px;
+    opacity: 0;
+}
+
+
+#sidebar .widget {
+	margin: 1.5em 0 2.5em 0;
+}
+#sidebar .widgetHeader {
+	position: relative;
+}
+#sidebar .widgetBody {
+	background: url("../images/header_line.png") repeat-x left top transparent;
+	position: relative;
+	padding-top: 1em;
+}
+#sidebar .widgetTitle {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#sidebar .widgetAction {
+	font-size: 0.916em;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+#sidebar .widgetItem{
+	position: relative;
+	padding: 0.2em;
+}
+#sidebar .widgetItem_date {
+	top: 0em;
+	left: 0em;
+	position: absolute;
+	width: 75px;
+	height: 100%;
+	font-weight: bold;
+	font-size: 0.916em;
+}
+#sidebar .widgetItem_date span{
+	display: inline-block;
+	padding-left: 0.5em;
+	padding-top: 0.2em;
+}
+#sidebar .widgetItem_title,
+#sidebar .widgetItem_sup {
+	font-size: 0.916em;
+	margin-left: 8em;
+	line-height: 1.4em;
+}
+#sidebar .widgetItem_title {
+	font-weight: bold;
+	color: #1C4F72;
+	position: absolute;
+	margin: 0;
+	left: 0;
+}
+
+
+#sidebar .actionLink:hover {
+    text-decoration: none;
+}
+#sidebar .actionLink:hover:before {
+    content: '«';
+    position: absolute;
+    margin-left: -1em;
+}
+
+
+
+
+/* [2. Basic Elements]
+-------------------------------------------------------------------*/
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.dark {
+    color: #000;
+}
+
+.light {
+    color: #909090;
+}
+
+.smallText {
+    font-size: .8em;
+}
+
+small {
+    font-size: 11px;
+    color: #AAAAAA;
+}
+
+#content .rightAlign {
+    float: right;
+}
+
+.highlight,
+.markiert {
+    background-color: #fffeac;
+    border: 1px solid #CCCC44;
+    border-bottom: 1px solid #AAAA11;
+    border-right: 1px solid #AAAA11;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+
+table {
+    border: 0;
+    font-size: 1em;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #D8D8D8;
+}
+
+/*=Note: Every element wrapped with this class becomes scrollable
+ when the content exceeds the wrapping elements width */
+.autoscroll {
+    overflow-x: auto;
+}
+
+/* [2.1. Page Headings / h1 / #subHeader / h2 / h3]
+-------------------------------------------------------------------*/
+#content h1 {
+    font: 1.8em Helvetica, Arial, sans-serif;
+    color: #343637;
+    padding: 42px 0px 4px 0px;
+    background: url('../images/header_line.png' ) bottom left repeat-x;
+    margin-bottom: 21px;
+}
+
+#content h1 a:hover {
+    text-decoration: none;
+}
+
+#content h1 small a:hover {
+    text-decoration: underline;
+}
+
+#content h1 small.rightAlign {
+    display: inline-block;
+    height: 1.8em;
+    margin-top: 0.7em;
+}
+
+#content h1 small.dropdown {
+    margin-top: 3px !important;
+    font-size: 13px;
+}
+
+#subHeader,
+h1 + .subHeader {
+    font-size: 1.1em;
+    color: #8f8f8f;
+    margin-top: -18px;
+    margin-bottom: 11px;
+    padding-bottom: 12px;
+    line-height: 1.2em;
+}
+
+#subHeader ul.pipe,
+h1 + .subHeader ul.pipe {
+    margin-top: 0;
+}
+
+.leftSubHeader {
+    float: left;
+}
+
+.rightSubHeader {
+    float: right;
+    text-align: right;
+}
+
+#content h2 {
+    font: 1.5em Helvetica, Arial, sans-serif;
+    color: #333333;
+    margin: 12px 0 3px 0;
+    padding-bottom: 1px;
+    line-height: 1.4em;
+}
+
+#content h3 {
+    font-size: 1.2em;
+    margin: 12px 0 3px 0;
+    font-weight: bold;
+}
+
+/* [2.2. Content Structuring]
+-------------------------------------------------------------------*/
+#content p {
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+}
+
+#content .underlinedDotted {
+    background: url('../images/header_line.png' ) bottom left repeat-x;
+    margin-bottom: 5px;
+}
+
+#content .overlinedDotted {
+    background: url('../images/header_line.png' ) top left repeat-x;
+    padding-top: 7px;
+}
+
+#content .underlinedSolid {
+    border-bottom: 1px solid #D8D8D8;
+    margin-bottom: 5px;
+}
+
+.continText {
+    font-size: 1.2em !important;
+    line-height: 1.8em;
+}
+
+#content .toc {
+    line-height: 1.6em;
+}
+
+#content .toc ul {
+    margin-left: 3em;
+}
+
+/* [2.3. Links / a]
+-------------------------------------------------------------------*/
+/* =Lehre -------------v */
+.lehre a {
+    color: #AC5E00;
+}
+
+.lehre a.external {
+    background: url('../images/lehre/external_link.png' ) center right no-repeat;
+    padding-right: 15px;
+}
+
+/* =Forschung ---------v */
+.forschung a {
+    color: #669c00;
+}
+
+.forschung a.external {
+    background: url('../images/forschung/external_link.png' ) center right no-repeat;
+    padding-right: 15px;
+}
+
+/* =Organisation ------v */
+.organisation a {
+    color: #4e2085;
+}
+
+.organisation a.external {
+    background: url('../images/organisation/external_link.png' ) center right no-repeat;
+    padding-right: 15px;
+}
+
+a[href^="mailto:"] {
+    background: url('../icons/mail.png' ) center left no-repeat;
+    margin-left: 1px;
+    padding-left: 19px;
+}
+
+a[href^="tel:"] {
+  /* default icon for all telephone links */
+  background: url('../icons/tel.png' ) center left no-repeat;
+  margin-left: 1px;
+  padding-left: 19px;
+}
+
+a.tel-tuphone[href^="tel:"],
+a.tel-weitere-inhabung[href^="tel:"] {
+  /* tu phone numbers */
+  background-image: url('../icons/tel-tuphone.png');
+}
+
+a.tel-fax[href^="tel:"],
+a.tel-art6[href^="tel:"] {
+  /* fax numbers */
+  background-image: url('../icons/tel-fax.png');
+}
+
+a.tel-mobile[href^="tel:"],
+a.tel-art3[href^="tel:"],
+a.tel-art7[href^="tel:"] {
+  /* mobile phone numbers */
+  background-image: url('../icons/tel-mobile.png');
+}
+
+
+
+/* [2.4. Lists]
+-------------------------------------------------------------------*/
+#content .bulletList,
+#content .enumList {
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+#content .enumList {
+    margin-left: 2em;
+    list-style: decimal;
+}
+
+#content .bulletList li {
+    margin-left: 1em;
+    padding-left: 1em;
+    background-position: 0 0.5em;
+    background-repeat: no-repeat;
+}
+
+/* =Lehre -------------v */
+.lehre #content .bulletList li {
+    background-image: url('../images/lehre/square_small.gif' );
+}
+
+/* =Forschung ---------v */
+.forschung #content .bulletList li {
+    background-image: url('../images/forschung/square_small.gif' );
+}
+
+/* =Organisation ------v */
+.organisation #content .bulletList li {
+    background-image: url('../images/organisation/square_small.gif' );
+}
+
+#content .styledList {
+    list-style-type: disc;
+    padding-left: 2em; /* =Note: line-height: 17px;*/
+    line-height: 1.6em;
+}
+
+ul.inline li{
+    display: inline-block;
+    margin: 0;
+}
+ul.inline li{
+    *display: inline; /* =Hack */
+}
+
+
+/* [2.5. Colored Arrow]
+-------------------------------------------------------------------*/
+#content .arrow {
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+/* =Lehre -------------v */
+.lehre #content .arrow {
+    background-image: url('../images/lehre/arrow.png' );
+}
+
+/* =Forschung ---------v */
+.forschung #content .arrow {
+    background-image: url('../images/forschung/arrow.png' );
+}
+
+/* =Organisation ------v */
+.organisation #content .arrow {
+    background-image: url('../images/organisation/arrow.png' );
+}
+
+#content h2.arrow {
+    background-position: 0 5px;
+}
+
+/* [2.6. Jump To Top]
+-------------------------------------------------------------------*/
+.jumpToTop {
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding: 0 13px 2px 0;
+}
+
+/* =Lehre -------------v */
+.lehre .jumpToTop {
+    background-image: url('../images/lehre/arrow_up_small.png' );
+}
+
+/* =Forschung ---------v */
+.forschung .jumpToTop {
+    background-image: url('../images/forschung/arrow_up_small.png' );
+}
+
+/* =Organisation ------v */
+.organisation .jumpToTop {
+    background-image: url('../images/organisation/arrow_up_small.png' );
+}
+
+/* [2.7. Definition List]
+-------------------------------------------------------------------*/
+.legend {
+    margin: 0;
+    padding: 0;
+}
+
+.legend dt {
+    float: left;
+    clear:left;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.legend dd {
+    margin: 0 0 0 100px;
+    padding: 0 0 0.5em 0;
+}
+
+.legend dd:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.smallLegend dd:after {
+    clear: none;
+}
+
+.bigLegend dt {
+    width: 120px;
+}
+
+.bigLegend dd {
+    margin-left: 120px;
+}
+
+.smallLegend dt {
+    width: 30px;
+}
+
+.smallLegend dd {
+    margin: 0 !important;
+}
+
+.smallLegend dt {
+    width: 30px !important;
+}
+
+
+/* [2.8. User-generated Text / .encode]
+-------------------------------------------------------------------*/
+
+.encode ul, .encode ol {
+    list-style: inherit !important;
+    margin: 0 0 1.5em 2em !important;
+    padding: 0 0 0 1em;
+}
+
+.encode ul {
+    list-style-type: disc !important;
+}
+
+.encode ol {
+    list-style-type: decimal !important;
+}
+
+.encode h1 {
+    background: none repeat scroll 0 0 transparent !important;
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    padding-top: 10px !important;
+    margin-bottom: 0.5em !important;
+}
+.encode h2 {
+    font-size: 1.2em !important;
+    font-weight: normal;
+}
+.encode h3, h4 {
+    font-size: 1em !important;
+    font-weight: bold !important;
+}
+
+.encode pre {
+    margin-bottom: 1.5em;
+}
+
+
+/* [2.9. Images / img]
+-------------------------------------------------------------------*/
+
+img.runningText {
+    vertical-align:bottom;
+}
+
+/* [2.10. Icons]
+-------------------------------------------------------------------*/
+
+/* =Note: Grey help icon without link */
+img.helpIcon {
+    vertical-align: middle;
+    padding-bottom: 3px;
+    padding-left: 2px;
+}
+
+/* =Note: Help icon with link */
+a.helpIcon {
+    text-indent: -9000px;
+    overflow: hidden;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+    padding-left: 0px;
+    padding-top: 2px;
+}
+
+*:first-child+html a.helpIcon {  /* IE7 hack */
+    display:block;
+}
+
+/* =Lehre -------------v */
+.lehre a.helpIcon {
+    background: url('../images/lehre/info_lehre.png') no-repeat;
+}
+
+/* =Forschung ---------v */
+.forschung a.helpIcon {
+    background: url('../images/forschung/info_forschung.png') no-repeat;
+}
+
+/* =Organisation ------v */
+.organisation a.helpIcon {
+    background: url('../images/organisation/info_organisation.png') no-repeat;
+}
+
+
+/* [3. Messages]
+-------------------------------------------------------------------*/
+
+/* [3.1. Global Messages]
+-------------------------------------------------------------------*/
+#globalMessagesPanel .infoMessage,
+#globalMessagesPanel .errorMessage,
+#globalMessagesPanel .warnMessage,
+#globalMessagesPanel .successMessage
+ {
+    padding: 11px 10px 11px 49px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 8px 0;
+    background-position: 14px 7px;
+    display: block;
+}
+
+.infoMessage {
+    color: #395878;
+    border: 1px solid #6e93ba;
+    background:url('../icons/message-info.png' ) no-repeat #d9e6f2;
+}
+
+.errorMessage {
+    color: #843f3f !important;
+    border: 1px solid #ba6e6e;
+    background:url('../icons/message-cross.png' ) no-repeat #f2dada;
+}
+
+.warnMessage {
+    color: #734f21 !important;
+    border: 1px solid #c69e23;
+    background:url('../icons/message-warning.png' ) no-repeat #f9e8ab;
+}
+
+.successMessage {
+    color: #447839;
+    border: 1px solid #7bba6e;
+    background: url('../icons/message-tick.png' ) no-repeat #ddf2d9;
+}
+
+/* [3.2. Other Messages]
+--------------------------------------------------------------------
+=Notes:    DEPRECATED!
+-------------------------------------------------------------------*/
+.hint {
+    background: transparent url('../icons/exclamation-white.png' ) no-repeat 1px 1px;
+    width: 10px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.help {
+    background: transparent url('../icons/question.png' ) no-repeat 1px 1px;
+    width: 11px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.info {
+    background: transparent url('../icons/info.png' ) no-repeat 1px 1px;
+    width: 11px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.warning {
+    background: transparent url('../icons/exclamation-red.png' ) no-repeat 1px 1px;
+    width: 11px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.success {
+    background: transparent url('../icons/tick-circle.png' ) no-repeat 1px 1px;
+    width: 11px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hintText {
+    background: transparent url('../icons/exclamation-white.png' ) no-repeat 1px 1px;
+    line-height: 1.5em;
+    padding: 30px;
+}
+
+.helpText {
+    background: transparent url('../icons/question.png' ) no-repeat 1px 1px;
+    line-height: 1.5em;
+    padding: 30px;
+}
+
+.infoText {
+    background: transparent url('../icons/info.png' ) no-repeat 1px 1px;
+    line-height: 1.5em;
+    padding: 30px;
+}
+
+.warningText {
+    background: transparent url('../icons/exclamation-red.png' ) no-repeat 1px 1px;
+    line-height: 1.5em;
+    padding: 30px;
+}
+
+.successText {
+    background: transparent url('../icons/tick-circle.png' ) no-repeat 1px 1px;
+    line-height: 1.5em;
+    padding: 30px;
+}
+
+/* [3.3. Static Messages]
+--------------------------------------------------------------------
+=Notes:     styled messages, use with <div>
+-------------------------------------------------------------------*/
+
+.staticInfoMessage, .staticQuestionMessage, .staticWarningMessage {
+    padding: 11px 11px 11px 48px;
+    margin-bottom: 15px;
+}
+
+.staticInfoMessage, .staticQuestionMessage {
+    background:url('../icons/message-info.png' ) no-repeat 14px 7px;
+    color: #395878;
+    border: 1px solid #c1d5df;
+    background-color: #f1f8fc;
+}
+
+.staticQuestionMessage {
+    background:url('../icons/message-question.png' ) no-repeat 14px 7px #f1f8fc;
+}
+
+.staticWarningMessage {
+    background:url('../icons/message-warning.png' ) no-repeat 14px 5px #f9eec8;
+    color: #734f21;
+    border: 1px solid #d4b965;
+}
+
+fieldset .staticInfoMessage,
+fieldset .staticQuestionMessage,
+fieldset .staticWarningMessage {
+    margin: 5px 0 0 0;
+}
+
+fieldset.styledFieldset .staticInfoMessage,
+fieldset.styledFieldset .staticQuestionMessage,
+fieldset.styledFieldset .staticWarningMessage {
+    border: 0;
+    background-color: transparent;
+}
+
+fieldset.styledFieldset .staticWarningMessage {
+    color: #666;
+}
+
+#content .staticInfoMessage p,
+#content .staticQuestionMessage p,
+#content .staticWarningMessage p {
+    margin-bottom: 0.8em;
+    line-height: 1.2em;
+}
+
+#content .staticInfoMessage li,
+#content .staticQuestionMessage li,
+#content .staticWarningMessage li {
+    line-height: 1.2em;
+}
+
+.staticInfoMessage ol, .staticInfoMessage ul,
+.staticQuestionMessage ol, .staticQuestionMessage ul,
+.staticWarningMessage ol, .staticWarningMessage ul,
+#content .staticInfoMessage .enumList, #content .staticInfoMessage .bulletList,
+#content .staticQuestionMessage .enumList, #content .staticQuestionMessage .bulletList,
+#content .staticWarningMessage .enumList, #content .staticWarningMessage .bulletList {
+    margin-bottom: 1em;
+}
+
+/* [4. Form Elements]
+-------------------------------------------------------------------*/
+
+/* [4.1. Fieldset]
+-------------------------------------------------------------------*/
+
+fieldset {
+    position: relative;
+    margin-top: 3px;
+    margin-bottom: 12px;
+    border: none;
+    border-top: 1px solid #E6E6E6;
+    margin-left: 0px;
+    background: white;
+    padding: 0 0 6px 0;
+}
+
+fieldset.styledFieldset {
+    background: #F5FAFD;
+    border-bottom: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    margin-bottom: 18px;
+}
+
+fieldset.nonStyledFieldset {
+    border: none;
+    margin-top: 0px;
+}
+
+fieldset ul,
+fieldset ol {
+    padding: 6px 0 0 225px;
+}
+
+fieldset ul ul,
+fieldset ol ul,
+fieldset ol ol,
+fieldset ul ol{
+    padding: 0px;
+}
+
+legend {
+    padding: 0 0 2px 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: block;
+    width: 100%;
+    color: #494949;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+fieldset.styledFieldset legend,
+fieldset.tableFilter legend{
+    background: white;
+}
+
+fieldset li {
+    color: #494949;
+    margin: 9px 0;
+    position: relative;
+    line-height: 1.4em;
+}
+
+fieldset li label:first-child {
+    width: 195px;
+    min-height: 1px;
+    padding-right: 30px;
+    margin-left: -225px;
+    margin-bottom: 3px;
+    display: block;
+    text-align: right;
+    position: relative;
+    float: left;
+    vertical-align: top;
+    line-height: 16px;
+    word-wrap: break-word;
+}
+
+fieldset li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+fieldset li li:after {
+    display: none;
+    clear: none;
+}
+
+fieldset li label.required:after {
+    content: "*";
+    display: inline;
+    position: relative;
+    font-weight: bold;
+    margin-left: 0.1em;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 10px;
+    color: #004f77;
+}
+fieldset li label.required:after {
+    *display: inline; /* =Hack */
+}
+
+fieldset li label.required:first-child:after {
+    position: absolute;
+}
+
+.fieldDescription {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formLabel {  /* =Note for 2ndary labels i.e Semester  from to */
+    margin: 0 .5em;
+}
+
+.requiredStyle {
+    font-weight: bold;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 10px;
+    color: #004f77;
+}
+
+.invalid {
+    color: #ea1818;
+    font-weight: bold;
+    display: block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.problematic {
+  color: #f0bc33;
+  font-weight: bold;
+  display: block;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+
+/* [4.1.1 LeftBlock fieldset]
+-------------------------------------------------------------------*/
+
+fieldset.leftBlock ul,
+fieldset.leftBlock ol,
+fieldset ul .leftBlock,
+fieldset ol .leftBlock,
+fieldset ul.leftBlock,
+fieldset ol.leftBlock {
+    padding-left: 0px;
+}
+
+fieldset .leftBlock label:first-child{
+    margin-left: 0px;
+    float: none;
+    text-align: left;
+    width: auto;
+}
+
+fieldset .leftBlock label {
+    font-weight: bold;
+}
+
+
+/* [4.1.1 Narrow fieldset]
+
+=Note:    Used for read-only forms
+-------------------------------------------------------------------*/
+
+fieldset.narrow li,
+fieldset li.narrow {
+    margin: 0 0 3px 0;
+}
+
+fieldset.narrow label:first-child,
+fieldset li.narrow label:first-child {
+    margin-bottom: 0;
+}
+
+fieldset.narrow li:first-child,
+fieldset li.narrow:first-child {
+    margin-top: 8px;
+}
+
+
+/* [4.1.3 Two-column fieldset]
+-------------------------------------------------------------------*/
+
+@media all and (min-width: 1190px) {
+
+    .twoCols {
+        clear: both;
+    }
+
+    /* http://nicolasgallagher.com/micro-clearfix-hack/ */
+    .twoCols:before,
+    .twoCols:after {
+        content: " ";
+        display: table;
+    }
+    .twoCols:after {
+        clear: both;
+    }
+    .twoCols {
+        *zoom: 1; /* =Hack */
+    }
+
+    /* Width and floating behavior of twoCols fieldsets */
+    .twoCols fieldset  {
+        width: 48.53% ! important;
+        min-width: 350px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    fieldset.newLine {
+         clear: both;
+    }
+
+    fieldset.ownLine {
+        clear: both;
+        display: block ! important;
+        float: none;
+        margin-right: 0;
+        min-width: 0;
+        width: auto !important;
+    }
+
+    /* Less indentation for twoCols fieldsets */
+    .twoCols fieldset ul,
+    .twoCols fieldset ol{
+        padding-left: 115px;
+    }
+
+    .twoCols fieldset ul ul,
+    .twoCols fieldset ol ul,
+    .twoCols fieldset ol ol,
+    .twoCols fieldset ul ol{
+        padding: 0px;
+    }
+
+    .twoCols fieldset label:first-child  {
+        margin-left: -115px;
+        padding-right: 15px;
+        width: 100px;
+    }
+    .twoCols fieldset.leftBlock ul,
+    .twoCols fieldset.leftBlock ol,
+    .twoCols fieldset ul .leftBlock,
+    .twoCols fieldset ol .leftBlock,
+    .twoCols fieldset ul.leftBlock,
+    .twoCols fieldset ol.leftBlock {
+        margin-left: -115px;
+    }
+
+    /* Less indentation for twoCols commandBox */
+    .twoCols .styledCommandBox,
+    .twoCols .commandBox,
+    .twoCols.styledCommandBox,
+    .twoCols.commandBox {
+        padding-left: 115px;
+    }
+}
+
+
+/* [4.1.4 Table Filter / .tableFilter]
+-------------------------------------------------------------------*/
+.tableFilter {
+    background: #F5FAFD;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    margin-right: 0px;
+}
+
+.tableFilter ol,
+.tableFilter ul {
+    padding: 1px 7px 7px;
+}
+
+.tableFilter li {
+    padding-right: 7px;
+    display: inline-block;
+    margin: 0px;
+    vertical-align: bottom;
+}
+
+.tableFilter li:after {
+	content: "";
+	display: none;
+}
+
+.tableFilter input[type="text"] {
+    padding: 2px 0 2px 3px;
+}
+
+.tableFilter select {
+    margin-bottom: 2px;
+}
+
+.tableFilter li label:first-child{
+    margin-left: 0px !important;
+    width: auto;
+    padding: 0 1px;
+    font-size: 11px;
+    color: rgba(10, 10, 10, 0.5);
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    float: none;
+    letter-spacing: 0.2px;
+}
+
+#content .tableFilter li input[type="button"],
+#content .tableFilter li input[type="submit"],
+#content .tableFilter li input[type="reset"],
+#content .tableFilter li button {
+    font-size: 11px !important;
+    padding: 3px 7px 3px !important;
+    margin-bottom: 2px;
+    /*line-height: 15px; =Note: Firefox ignores this attribute */
+    /* the browsers default "line-height: normal" can't be overwritten */
+}
+
+.tableFilter hr {
+    background: transparent;
+    border-top-color: #ECF1F4;
+    border-bottom-color: #FFFFFF;
+    border-style: solid none solid;
+    border-width: 1px 0 1px;
+    height: 0px;
+    width: 100%;
+}
+
+.tableFilter td { /* =Note: Used for selectManyCheckbox, selectOneRadio */
+    padding-bottom: 2px;
+}
+
+/*=Note use tableFilter in ui-dialog */
+
+.ui-dialog .tableFilter ul, .ui-dialog .tableFilter ol {
+    padding: 0;
+}
+
+.ui-dialog .tableFilter hr {
+    border-top-color: #ccc;
+}
+
+.ui-dialog  fieldset.tableFilter li label:first-child {
+    width: auto;
+}
+
+/* [4.2. CommandBox]
+-------------------------------------------------------------------*/
+.commandPanel {
+    position: relative;
+    margin-top: 15px;
+    padding: 10px 35px 15px 5px;
+}
+
+.styledCommandBox {
+    padding: 10px 35px 15px 225px;
+    background: none;
+    position: relative;
+    line-height: 2.5em;
+    display: block;
+    clear: both;
+}
+.styledCommandBox {
+    *clear: none; /* =Hack */
+}
+
+.commandBox {
+    background: none;
+    position: relative;
+    line-height: 2.5em;
+    display: block;
+    clear: both;
+}
+.commandBox {
+    *clear: none; /* =Hack */
+}
+
+.styledCommandBox li,
+.commandBox li {
+    display: inline-block;
+    margin: 0px;
+}
+
+.styledCommandBox.leftBlock {
+    padding-left: 10px;
+}
+
+/* =Lehre -------------v */
+.lehre .styledCommandBox {
+    background: url('../images/lehre/gradient_top-down.png' ) repeat-x top left;
+}
+
+/* =Forschung ---------v */
+.forschung .styledCommandBox {
+    background: url('../images/forschung/gradient_top-down.png' ) repeat-x top left;
+}
+
+/* =Organisation ------v */
+.organisation .styledCommandBox {
+    background: url('../images/organisation/gradient_top-down.png' ) repeat-x top left;
+}
+
+
+/* [4.3. Input Elements]
+-------------------------------------------------------------------*/
+
+/* [4.3.1. Predefined Dimensions]
+-------------------------------------------------------------------*/
+.xxLargeInput {
+    width: 450px !important;
+}
+
+.xLargeInput {
+    width: 350px !important;
+}
+
+.largeInput {
+    width: 245px !important;
+}
+
+.mediumInput {
+    width: 145px !important;
+}
+
+.smallInput {
+    width: 90px !important;
+}
+
+.xSmallInput {
+    width: 40px !important;
+}
+
+.short {
+    width: 30px !important;
+}
+
+.xshort {
+    width: 20px !important;
+}
+
+/* [4.3.2. Input & Textarea]
+-------------------------------------------------------------------*/
+
+input,
+select,
+textarea {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    margin-right: 5px !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+fieldset li input,
+fieldset li select,
+fieldset li textarea {
+    margin-top: -3px;
+}
+
+select {
+    max-width: 350px;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    margin-right: 10px !important;
+}
+
+input[type=text],
+textarea,
+input[type=password]{
+    color: #494949;
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin-bottom: 2px;
+    background: white url('../images/light_grey_gradient.png' ) repeat-x !important;
+    border: 1px solid silver !important;
+    padding: 3px 2px 2px 3px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: grey !important;
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2) !important;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+input[type=text].ui-state-hover,
+textarea.ui-state-hover,
+input[type=password].ui-state-hover {
+    border: 1px solid silver !important;
+}
+
+input[type=text].ui-state-focus,
+textarea.ui-state-focus,
+input[type=password].ui-state-focus {
+    border: 1px solid grey !important;
+}
+
+input[type=text].invalidInput {
+    background: #ffdddd !important;
+}
+
+input[type=text][disabled=disabled],
+textarea[disabled=disabled],
+input[type=password][disabled=disabled] {
+    background-color: #f7f7f7 !important;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #999;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #999;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #999;
+}
+
+/* [4.3.3. Date, Time & Percent]
+-------------------------------------------------------------------*/
+.ui-inputfield {
+    -moz-box-shadow: 0 2px 2px rgba(90, 90, 90, 0.1) inset !important;
+    -webkit-box-shadow: 0 2px 2px rgba(90, 90, 90, 0.1) inset !important;
+    box-shadow: 0 2px 2px rgba(90, 90, 90, 0.1) inset !important;
+}
+
+input.hasDatepicker {
+    width: 88px;
+    background: white url('../icons/calendar-day.png' ) no-repeat right 1px !important;
+}
+
+input.time {
+    width: 56px;
+    background: white url('../icons/clock.png' ) no-repeat right 1px !important;
+}
+
+input.percent {
+    width: 45px;
+    background: white url('../icons/percent.png' ) no-repeat right 1px !important;
+}
+
+input.euro {
+    background: white url('../icons/euro.png' ) no-repeat right 1px !important;
+    padding-right: 16px;
+}
+
+
+/* [4.4. Buttons]
+-------------------------------------------------------------------*/
+button {
+    font-weight: normal !important;
+    font-size: 98% !important;
+}
+
+button span {
+    padding: 0 !important;
+}
+
+.noButtonMargin {
+    margin-left: 0 !important;
+}
+
+/* [4.4.1. Secondary Button / .secondaryButton]
+-------------------------------------------------------------------*/
+.fc-header .ui-state-default, /* =Note calendar header */
+.ui-datatable .ui-paginator .ui-state-default, /* =Note datatable paginator in PF2 */
+.ui-paginator .ui-paginator-page, /* =Note datatable paginator in PF3 */
+body button.ui-button, /* =Note ui-button */
+body .ui-dialog-buttonpane input[type=button]:first-child.secondaryButton,
+body .ui-dialog-buttonpane input[type=submit]:first-child.secondaryButton,
+body .ui-dialog-buttonpane input[type=reset]:first-child.secondaryButton,
+body .ui-dialog-buttonpane button:first-child.secondaryButton,
+body .commandBox li:first-child input[type=button].secondaryButton, body .styledCommandBox li:first-child input[type=button].secondaryButton,
+body .commandBox li:first-child input[type=submit].secondaryButton, body .styledCommandBox li:first-child input[type=submit].secondaryButton,
+body .commandBox li:first-child input[type=reset].secondaryButton, body .styledCommandBox li:first-child input[type=reset].secondaryButton,
+body .commandBox li:first-child button.secondaryButton, body .styledCommandBox li:first-child button.secondaryButton,
+body fieldset ol li input[type=button]:first-child.secondaryButton,
+body fieldset ol li input[type=submit]:first-child.secondaryButton,
+body fieldset ol li input[type=reset]:first-child.secondaryButton,
+body fieldset ol li button:first-child.secondaryButton,
+body input[type=button],
+body input[type=submit],
+body input[type=reset],
+body button {
+    padding: 5px 10px 4px 10px;
+    background-image: url('../images/button_secondary.png' ) !important;
+    background-position: top left;
+    background-repeat: repeat-x;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-weight: bold !important;
+    -moz-text-shadow: 0px 1px 0px white;
+    -webkit-text-shadow: 0px 1px 0px white;
+    text-shadow: 0px 1px 0px white;
+    cursor: pointer;
+    font-size: 12px !important;
+    line-height: 15px;
+}
+
+.fc-header .ui-state-default:hover, /* =Note calendar header */
+.ui-datatable .ui-paginator .ui-state-default:hover, /* =Note datatable paginator in PF2 */
+.ui-paginator .ui-paginator-page:hover, /* =Note datatable paginator in PF3 */
+body input[type=button]:hover, body input[type=button]:focus,
+body input[type=submit]:hover, body input[type=submit]:focus,
+body input[type=reset]:hover, body input[type=reset]:focus,
+body button:hover, body button:focus {
+    background-position: 0px -50px !important;
+}
+
+/* =Lehre -------------v */
+.lehre .fc-header .ui-state-default, /* =Note calendar header */
+.lehre .ui-datatable .ui-paginator .ui-state-default, /* =Note datatable paginator in PF2 */
+.lehre .ui-paginator .ui-paginator-page, /* =Note datatable paginator in PF3 */
+.lehre button.ui-button, /* =Note ui-button */
+.lehre .ui-dialog-buttonpane input[type=button]:first-child.secondaryButton,
+.lehre .ui-dialog-buttonpane input[type=submit]:first-child.secondaryButton,
+.lehre .ui-dialog-buttonpane input[type=reset]:first-child.secondaryButton,
+.lehre .ui-dialog-buttonpane button:first-child.secondaryButton,
+.lehre .commandBox li:first-child input[type=button].secondaryButton, .lehre .styledCommandBox li:first-child input[type=button].secondaryButton,
+.lehre .commandBox li:first-child input[type=submit].secondaryButton, .lehre .styledCommandBox li:first-child input[type=submit].secondaryButton,
+.lehre .commandBox li:first-child input[type=reset].secondaryButton, .lehre .styledCommandBox li:first-child input[type=reset].secondaryButton,
+.lehre .commandBox li:first-child button.secondaryButton, .lehre .styledCommandBox li:first-child button.secondaryButton,
+.lehre fieldset ol li input[type=button]:first-child.secondaryButton,
+.lehre fieldset ol li input[type=submit]:first-child.secondaryButton,
+.lehre fieldset ol li input[type=reset]:first-child.secondaryButton,
+.lehre fieldset ol li button:first-child.secondaryButton,
+.lehre input[type=button],
+.lehre input[type=submit],
+.lehre input[type=reset],
+.lehre button {
+    background-color: #f2c998;
+    border: 1px solid #c48941;
+    color: #804600;
+    -moz-text-shadow: 0px 1px 0px white;
+    -webkit-text-shadow: 0px 1px 0px white;
+    text-shadow: 0px 1px 0px white;
+}
+
+.lehre .fc-header .ui-state-default:focus, /* =Note calendar header */
+.lehre .ui-datatable .ui-paginator .ui-state-default:focus, /* =Note datatable paginator in PF2 */
+.lehre .ui-paginator .ui-paginator-page:focus, /* =Note datatable paginator in PF3 */
+.lehre input[type=button]:focus,
+.lehre input[type=submit]:focus,
+.lehre input[type=reset]:focus,
+.lehre button:focus {
+    -moz-box-shadow: 0 0 5px 2px #f2c998;
+    -webkit-box-shadow: 0 0 5px 2px #f2c998;
+    box-shadow: 0 0 5px 2px #f2c998;
+
+}
+
+/* =Forschung ---------v */
+.forschung .fc-header .ui-state-default, /* =Note calendar header */
+.forschung .ui-datatable .ui-paginator .ui-state-default, /* =Note datatable paginator in PF2 */
+.forschung .ui-paginator .ui-paginator-page, /* =Note datatable paginator in PF3 */
+.forschung button.ui-button, /* =Note ui-button */
+.forschung .ui-dialog-buttonpane input[type=button]:first-child.secondaryButton,
+.forschung .ui-dialog-buttonpane input[type=submit]:first-child.secondaryButton,
+.forschung .ui-dialog-buttonpane input[type=reset]:first-child.secondaryButton,
+.forschung .ui-dialog-buttonpane button:first-child.secondaryButton,
+.forschung .commandBox li:first-child input[type=button].secondaryButton, .forschung .styledCommandBox li:first-child input[type=button].secondaryButton,
+.forschung .commandBox li:first-child input[type=submit].secondaryButton, .forschung .styledCommandBox li:first-child input[type=submit].secondaryButton,
+.forschung .commandBox li:first-child input[type=reset].secondaryButton, .forschung .styledCommandBox li:first-child input[type=reset].secondaryButton,
+.forschung .commandBox li:first-child button.secondaryButton, .forschung .styledCommandBox li:first-child button.secondaryButton,
+.forschung fieldset ol li input[type=button]:first-child.secondaryButton,
+.forschung fieldset ol li input[type=submit]:first-child.secondaryButton,
+.forschung fieldset ol li input[type=reset]:first-child.secondaryButton,
+.forschung fieldset ol li button:first-child.secondaryButton,
+.forschung input[type=button],
+.forschung input[type=submit],
+.forschung input[type=reset],
+.forschung button {
+    background-color: #c6e58b;
+    border: 1px solid #96c441;
+    color: #538000;
+    -moz-text-shadow: 0px 1px 0px white;
+    -webkit-text-shadow: 0px 1px 0px white;
+    text-shadow: 0px 1px 0px white;
+}
+
+.forschung .fc-header .ui-state-default:focus, /* =Note calendar header */
+.forschung .ui-datatable .ui-paginator .ui-state-default:focus, /* =Note datatable paginator in PF2 */
+.forschung .ui-paginator .ui-paginator-page:focus, /* =Note datatable paginator in PF3 */
+.forschung input[type=button]:focus,
+.forschung input[type=submit]:focus,
+.forschung input[type=reset]:focus,
+.forschung button:focus {
+    -moz-box-shadow: 0 0 5px 2px #c6e58b;
+    -webkit-box-shadow: 0 0 5px 2px #c6e58b;
+    box-shadow: 0 0 5px 2px #c6e58b;
+}
+
+/* =Organisation ------v */
+.organisation .fc-header .ui-state-default, /* =Note calendar header */
+.organisation .ui-datatable .ui-paginator .ui-state-default, /* =Note datatable paginator in PF2 */
+.organisation .ui-paginator .ui-paginator-page, /* =Note datatable paginator in PF3 */
+.organisation button.ui-button, /* =Note ui-button */
+.organisation .ui-dialog-buttonpane input[type=button]:first-child.secondaryButton,
+.organisation .ui-dialog-buttonpane input[type=submit]:first-child.secondaryButton,
+.organisation .ui-dialog-buttonpane input[type=reset]:first-child.secondaryButton,
+.organisation .ui-dialog-buttonpane button:first-child.secondaryButton,
+.organisation .commandBox li:first-child input[type=button].secondaryButton, .organisation .styledCommandBox li:first-child input[type=button].secondaryButton,
+.organisation .commandBox li:first-child input[type=submit].secondaryButton, .organisation .styledCommandBox li:first-child input[type=submit].secondaryButton,
+.organisation .commandBox li:first-child input[type=reset].secondaryButton, .organisation .styledCommandBox li:first-child input[type=reset].secondaryButton,
+.organisation .commandBox li:first-child button.secondaryButton, .organisation .styledCommandBox li:first-child button.secondaryButton,
+.organisation fieldset ol li input[type=button]:first-child.secondaryButton,
+.organisation fieldset ol li input[type=submit]:first-child.secondaryButton,
+.organisation fieldset ol li input[type=reset]:first-child.secondaryButton,
+.organisation fieldset ol li button:first-child.secondaryButton,
+.organisation input[type=button],
+.organisation input[type=submit],
+.organisation input[type=reset],
+.organisation button {
+    background-color: #c299f2;
+    border: 1px solid #7e41c4;
+    color: #3c0080;
+    -moz-text-shadow: 0px 1px 0px white;
+    -webkit-text-shadow: 0px 1px 0px white;
+    text-shadow: 0px 1px 0px white;
+}
+/* TinyMCE 4 im Editor*/
+.organisation .mce-panel button {
+    background-color: transparent;
+    background-image: none !important;
+    background: none;
+    border: 0;
+}
+
+
+/* TinyMCE 4 Content */
+li.tinymce ul, div.tinymce ul {
+    list-style: initial;
+    margin: initial;
+    padding: 0 0 0 40px;
+}
+
+li.tinymce li, div.tinymce li {
+    display: list-item;
+}
+
+li.tinymce ol, div.tinymce ol {
+    list-style: initial;
+    margin: initial;
+    padding: 0 0 0 40px;
+    list-style-type: decimal;
+}
+
+.organisation .fc-header .ui-state-default:focus, /* =Note calendar header */
+.organisation .ui-datatable .ui-paginator .ui-state-default:focus, /* =Note datatable paginator in PF2 */
+.organisation .ui-paginator .ui-paginator-page:focus, /* =Note datatable paginator in PF3 */
+.organisation input[type=button]:focus,
+.organisation input[type=submit]:focus,
+.organisation input[type=reset]:focus,
+.organisation button:focus {
+    -moz-box-shadow: 0 0 5px 2px #c299f2;
+    -webkit-box-shadow: 0 0 5px 2px #c299f2;
+    box-shadow: 0 0 5px 2px #c299f2;
+}
+
+/* [4.4.2. Primary Button / .primaryButton]
+-------------------------------------------------------------------*/
+body .fc-header .ui-state-default.ui-state-active, /* =Note datatable paginator */
+body .ui-datatable .ui-paginator .ui-state-default.ui-paginator-current-page, /* =Note datatable paginator in PF2 */
+body .ui-paginator .ui-paginator-page.ui-state-active, /* =Note datatable paginator in PF3 */
+body input[type=button].primaryButton,
+body input[type=submit].primaryButton,
+body input[type=reset].primaryButton,
+body button.primaryButton,
+body .ui-dialog-buttonpane input[type=button]:first-child,
+body .ui-dialog-buttonpane input[type=submit]:first-child,
+body .ui-dialog-buttonpane input[type=reset]:first-child,
+body .ui-dialog-buttonpane button:first-child,
+body .commandBox li:first-child input[type=button], .styledCommandBox li:first-child input[type=button],
+body .commandBox li:first-child input[type=submit], .styledCommandBox li:first-child input[type=submit],
+body .commandBox li:first-child input[type=reset], .styledCommandBox li:first-child input[type=reset],
+body .commandBox li:first-child button, .styledCommandBox li:first-child button,
+body fieldset ol li input[type=button]:first-child,
+body fieldset ol li input[type=submit]:first-child,
+body fieldset ol li input[type=reset]:first-child,
+body .commandBox li:first-child button.ui-button, .styledCommandBox li:first-child button.ui-button, /* =Note ui-button */
+body fieldset ol li button.ui-button:first-child, /* =Note ui-button */
+body fieldset ol li button:first-child {
+    -moz-text-shadow: none;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    background-image: url('../images/button_primary.png' ) !important;
+}
+
+/* =Lehre -------------v */
+.lehre .fc-header .ui-state-default.ui-state-active, /* =Note datatable paginator */
+.lehre .ui-datatable .ui-paginator .ui-state-default.ui-paginator-current-page, /* =Note datatable paginator in PF2 */
+.lehre .ui-paginator .ui-paginator-page.ui-state-active, /* =Note datatable paginator in PF3 */
+.lehre input[type=button].primaryButton,
+.lehre input[type=submit].primaryButton,
+.lehre input[type=reset].primaryButton,
+.lehre button.primaryButton,
+.lehre .ui-dialog-buttonpane input[type=button]:first-child,
+.lehre .ui-dialog-buttonpane input[type=submit]:first-child,
+.lehre .ui-dialog-buttonpane input[type=reset]:first-child,
+.lehre .ui-dialog-buttonpane button:first-child,
+.lehre .commandBox li:first-child input[type=button], .lehre .styledCommandBox li:first-child input[type=button],
+.lehre .commandBox li:first-child input[type=submit], .lehre .styledCommandBox li:first-child input[type=submit],
+.lehre .commandBox li:first-child input[type=reset], .lehre .styledCommandBox li:first-child input[type=reset],
+.lehre .commandBox li:first-child button, .lehre .styledCommandBox li:first-child button,
+.lehre fieldset ol li input[type=button]:first-child,
+.lehre fieldset ol li input[type=submit]:first-child,
+.lehre fieldset ol li input[type=reset]:first-child,
+.lehre .commandBox li:first-child button.ui-button, .lehre .styledCommandBox li:first-child button.ui-button, /* =Note ui-button */
+.lehre fieldset ol li button.ui-button:first-child, /* =Note ui-button */
+.lehre fieldset ol li button:first-child {
+    background-color: #CD6A00;
+    border-color: #9d5601;
+    -moz-text-shadow: 0px -1px 0px #9d5601;
+    -webkit-text-shadow: 0px -1px 0px #9d5601;
+    text-shadow: 0px -1px 0px #9d5601;
+    color: white;
+}
+
+/* =Forschung ---------v */
+.forschung .fc-header .ui-state-default.ui-state-active, /* =Note datatable paginator */
+.forschung .ui-datatable .ui-paginator .ui-state-default.ui-paginator-current-page, /* =Note datatable paginator in PF2 */
+.forschung .ui-paginator .ui-paginator-page.ui-state-active, /* =Note datatable paginator in PF3 */
+.forschung input[type=button].primaryButton,
+.forschung input[type=submit].primaryButton,
+.forschung input[type=reset].primaryButton,
+.forschung button.primaryButton,
+.forschung .ui-dialog-buttonpane input[type=button]:first-child,
+.forschung .ui-dialog-buttonpane input[type=submit]:first-child,
+.forschung .ui-dialog-buttonpane input[type=reset]:first-child,
+.forschung .ui-dialog-buttonpane button:first-child,
+.forschung .commandBox li:first-child input[type=button], .forschung .styledCommandBox li:first-child input[type=button],
+.forschung .commandBox li:first-child input[type=submit], .forschung .styledCommandBox li:first-child input[type=submit],
+.forschung .commandBox li:first-child input[type=reset], .forschung .styledCommandBox li:first-child input[type=reset],
+.forschung .commandBox li:first-child button, .forschung .styledCommandBox li:first-child button,
+.forschung fieldset ol li input[type=button]:first-child,
+.forschung fieldset ol li input[type=submit]:first-child,
+.forschung fieldset ol li input[type=reset]:first-child,
+.forschung .commandBox li:first-child button.ui-button, .forschung .styledCommandBox li:first-child button.ui-button, /* =Note ui-button */
+.forschung fieldset ol li button.ui-button:first-child, /* =Note ui-button */
+.forschung fieldset ol li button:first-child {
+    background-color: #639900;
+    border-color: #538000;
+    -moz-text-shadow: 0px -1px 0px #538000;
+    -webkit-text-shadow: 0px -1px 0px #538000;
+    text-shadow: 0px -1px 0px #538000;
+    color: white;
+}
+
+/* =Organisation ------v */
+.organisation .fc-header .ui-state-default.ui-state-active, /* =Note datatable paginator */
+.organisation .ui-datatable .ui-paginator .ui-state-default.ui-paginator-current-page, /* =Note datatable paginator in PF2 */
+.organisation .ui-paginator .ui-paginator-page.ui-state-active, /* =Note datatable paginator in PF3 */
+.organisation input[type=button].primaryButton,
+.organisation input[type=submit].primaryButton,
+.organisation input[type=reset].primaryButton,
+.organisation button.primaryButton,
+.organisation .ui-dialog-buttonpane input[type=button]:first-child,
+.organisation .ui-dialog-buttonpane input[type=submit]:first-child,
+.organisation .ui-dialog-buttonpane input[type=reset]:first-child,
+.organisation .ui-dialog-buttonpane button:first-child,
+.organisation .commandBox li:first-child input[type=button], .organisation .styledCommandBox li:first-child input[type=button],
+.organisation .commandBox li:first-child input[type=submit], .organisation .styledCommandBox li:first-child input[type=submit],
+.organisation .commandBox li:first-child input[type=reset], .organisation .styledCommandBox li:first-child input[type=reset],
+.organisation .commandBox li:first-child button, .organisation .styledCommandBox li:first-child button,
+.organisation fieldset ol li input[type=button]:first-child,
+.organisation fieldset ol li input[type=submit]:first-child,
+.organisation fieldset ol li input[type=reset]:first-child,
+.organisation .commandBox li:first-child button.ui-button, .organisation .styledCommandBox li:first-child button.ui-button, /* =Note ui-button */
+.organisation fieldset ol li button.ui-button:first-child, /* =Note ui-button */
+.organisation fieldset ol li button:first-child {
+    background-color: #450099;
+    border-color: #3c0080;
+    -moz-text-shadow: 0px -1px 0px #3c0080;
+    -webkit-text-shadow: 0px -1px 0px #3c0080;
+    text-shadow: 0px -1px 0px #3c0080;
+    color: white;
+}
+
+/* [4.4.3. Disabled Button]
+-------------------------------------------------------------------*/
+.fc-header .ui-state-default.ui-state-disabled, /* =Note datatable paginator */
+.ui-datatable .ui-paginator .ui-state-default.ui-state-disabled, /* =Note datatable paginator in PF2 */
+.ui-paginator .ui-paginator-page.ui-state-disabled, /* =Note datatable paginator in PF3 */
+body input[type=button][disabled=disabled],
+body input[type=submit][disabled=disabled],
+body input[type=submit][disabled],
+body input[type=submit].disabled,
+body input[type=reset][disabled=disabled],
+body button[disabled=disabled],
+body input[type=button][disabled=disabled]:hover,
+body input[type=submit][disabled=disabled]:hover,
+body input[type=reset][disabled=disabled]:hover
+body button[disabled=disabled]:hover,
+body .commandBox li:first-child input[type=button][disabled=disabled], /* =Note overwrite first-child in commandBoxes */
+body .commandBox li:first-child input[type=submit][disabled=disabled],
+body .commandBox li:first-child input[type=submit][disabled],
+body .commandBox li:first-child input[type=submit].disabled,
+body .commandBox li:first-child input[type=reset][disabled=disabled],
+body .commandBox li:first-child button[disabled=disabled],
+body .commandBox li:first-child input[type=button][disabled=disabled]:hover,
+body .commandBox li:first-child input[type=submit][disabled=disabled]:hover,
+body .commandBox li:first-child input[type=reset][disabled=disabled]:hover
+body .commandBox li:first-child button[disabled=disabled]:hover,
+body .styledCommandBox li:first-child input[type=button][disabled=disabled],
+body .styledCommandBox li:first-child input[type=submit][disabled=disabled],
+body .styledCommandBox li:first-child input[type=submit][disabled],
+body .styledCommandBox li:first-child input[type=submit].disabled,
+body .styledCommandBox li:first-child input[type=reset][disabled=disabled],
+body .styledCommandBox li:first-child button[disabled=disabled],
+body .styledCommandBox li:first-child input[type=button][disabled=disabled]:hover,
+body .styledCommandBox li:first-child input[type=submit][disabled=disabled]:hover,
+body .styledCommandBox li:first-child input[type=reset][disabled=disabled]:hover
+body .styledCommandBox li:first-child button[disabled=disabled]:hover,
+body input[type=button][disabled=disabled].primaryButton, /* =Note overwrite primary buttons */
+body input[type=submit][disabled=disabled].primaryButton,
+body input[type=submit][disabled].primaryButton,
+body input[type=submit].disabled.primaryButton,
+body input[type=reset][disabled=disabled].primaryButton,
+body button[disabled=disabled].primaryButton,
+body input.primaryButton[type=button][disabled=disabled]:hover,
+body input.primaryButton[type=submit][disabled=disabled]:hover,
+body input.primaryButton[type=reset][disabled=disabled]:hover
+body button.primaryButton[disabled=disabled]:hover,
+body .ui-button-disabled.primaryButton,  /* =Note overwrite primary p:commandButtons */
+body .ui-button-disabled.primaryButton:hover,
+body .ui-button-disabled,  /* =Note for p:commandButtons */
+body .ui-button-disabled:hover,
+body .commandBox li:first-child button.ui-button-disabled,
+body .commandBox li:first-child button.ui-button-disabled:hover,
+body .styledCommandBox li:first-child button.ui-button-disabled,
+body .styledCommandBox li:first-child button.ui-button-disabled:hover,
+body .ui-dialog-buttonpane input[type=button][disabled=disabled]:first-child, /* =Note for JSF primaryButtons in dialogs */
+body .ui-dialog-buttonpane input[type=submit][disabled=disabled]:first-child,
+body .ui-dialog-buttonpane input[type=reset][disabled=disabled]:first-child,
+body .ui-dialog-buttonpane button[disabled=disabled]:first-child {
+    background-color: #ddd !important;
+    color: #AAAAAA !important;
+    border-color: #AAAAAA !important;
+    font-weight: bold !important;
+    background-image: url('../images/button_secondary.png') !important;
+    background-position: top left !important;
+    -moz-text-shadow: 0px 1px 0px white !important;
+    -webkit-text-shadow: 0px 1px 0px white !important;
+    text-shadow: 0px 1px 0px white !important;
+    cursor: default !important;
+    opacity: .6 !important
+}
+
+/* =Note: Rebodys border from buttons in FF */
+body .fc-header .ui-state-default::-moz-focus-inner, /* =Note calendar header */
+body .ui-paginator .ui-state-default::-moz-focus-inner, /* =Note datatable paginator */
+body submit::-moz-focus-inner,
+body input[type=button]::-moz-focus-inner,
+body input[type=submit]::-moz-focus-inner,
+body input[type=reset]::-moz-focus-inner,
+body button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    margin-top: -1px;
+}
+
+
+/* [4.5. TinyMCE]
+-------------------------------------------------------------------*/
+
+/* [4.5.1 TinyMCE Editor]
+-------------------------------------------------------------------*/
+.organisation .mce-panel button {
+    background-color: transparent;
+    background-image: none !important;
+    background: none;
+    border: 0;
+}
+
+/* [4.5.1 TinyMCE Content]
+-------------------------------------------------------------------*/
+li.tinymce ul, div.tinymce ul, td.tinymce ul{
+    list-style: initial;
+    margin: initial;
+    padding: 0 0 0 40px;
+}
+
+li.tinymce li, div.tinymce li, td.tinymce li {
+    display: list-item;
+}
+
+li.tinymce ol, div.tinymce ol, td.tinymce ol {
+    list-style: initial;
+    margin: initial;
+    padding: 0 0 0 40px;
+    list-style-type: decimal;
+}

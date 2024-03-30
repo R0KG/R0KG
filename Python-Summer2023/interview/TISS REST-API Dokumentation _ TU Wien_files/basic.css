@@ -1,0 +1,705 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[Basic]
+
+Primary use:	Layout and Styling of Elements outside the content
+				(Ground and Background Layout, Header, 
+				Primary- and Secondary Navigation, Footer)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+1.1 Basic Styles
+2. Header / #header
+2.1. Header Left / #headerLeft
+2.2. Header Center / #headerCenter
+2.3. Header Right / #headerRight
+3. Primary Navigation / #mainNav
+4. Secondary Navigation / #supNav
+5. Content / #content
+6. Footer / #footer
+7. Mouse Cursor
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Typography]
+
+html:	font: 62.5% Arial, Helvetica, sans-serif;
+		(The font size set to 62.5% creates an environment in which
+		1em is equal to 10px; e.g 1.4em == 14px, 2.4em == 24px etc.)
+-------------------------------------------------------------------*/
+
+
+/* [1. Body]
+-------------------------------------------------------------------*/
+html {
+    background: #002d45;
+    font: 62.5% Arial, Helvetica, sans-serif; /* =Note: == 10px => e.g 1.2em == 12px */
+    color: #494949;
+    position: relative; 
+    min-height: 100%;
+    overflow-y: auto;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+	min-height: 100%; 
+    border-collapse: separate;
+    width: auto;
+}
+
+#glow_left, 
+#glow_right {
+	position: absolute;
+	top: -20px;
+	/* =Note to be change to width: 1.25%; after applying new template to all sites */
+	width: 5%;
+	min-height: 100%;
+	z-index: -2;
+}
+
+#glow_left {
+	left: 0;
+    /* =Note to be changed to padding-right: 85px; after applying new template to all sites */	
+    padding-right: 93px;
+	padding-bottom: 20px;
+	background: url('../images/glow_left.png' ) no-repeat;
+	background-position: top right;
+}
+
+#glow_right {
+	right: 0;
+    /* =Note to be changed to padding-left: 147px; after applying new template to all sites */
+    padding-left: 143px;
+    padding-bottom: 20px;
+	background-position: top left;
+	background: url('../images/glow_right.png' ) no-repeat;
+}
+
+#wrapper {
+    min-width: 950px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+    position: relative;
+   /* =Note to be changed to max-width: 97.5%; after applying new template to all sites */
+    max-width: 90%;
+}
+
+#contentWrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* =Lehre -------------v */
+.lehre #contentWrapper {
+    background: url('../images/lehre/sup_nav.png' ) top left repeat-y;
+}
+
+/* =Forschung ---------v */
+.forschung #contentWrapper {
+    background: url('../images/forschung/sup_nav.png' ) top left repeat-y;
+}
+
+/* =Organisation ------v */
+.organisation #contentWrapper {
+    background: url('../images/organisation/sup_nav.png' ) top left repeat-y;
+}
+
+/* [1.1 Basic Styles]
+-------------------------------------------------------------------*/
+a {
+    text-decoration: none;
+    color: #494949;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.inline {
+    display: inline; /* =Hack for IE */
+	display: inline-block;
+}
+
+
+/* [2. Header / #header]
+-------------------------------------------------------------------*/
+#header {
+    width: 100%;
+    background: transparent url('../images/header_border-left.png' ) top left repeat-y;
+    position: relative;
+}
+
+#headerInnerWrapper {
+    background: transparent url('../images/header_background.png' ) no-repeat top right;
+    margin-left: 9px;
+    height: 101px;
+}
+
+#headerInner {
+    height: 100%;
+    background: transparent url('../images/header_glow.png' ) no-repeat 0px 4px;
+}
+
+/* [2.1. Header Left / #headerLeft]
+-------------------------------------------------------------------*/
+#headerLeft {
+    left: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 210px;
+    height: 100%;
+}
+
+#headerLeftInside {
+    position: relative;
+    margin-left: 8px;
+    height: 100%;
+    border-bottom: 1px solid #2c5a72;
+    margin-top: -1px;
+}
+
+#logo {
+    position: absolute;
+    width: 100%;
+    top: 35px;
+}
+
+#logo h1 a {
+    margin-left: 50px;
+    display: block;
+    background: url('../images/tiss_logo.png' ) top left;
+    height: 75px;
+    width: 100px;
+}
+
+/* [2.2. Header Center / #headerCenter]
+-------------------------------------------------------------------*/
+#headerCenter {
+    position: relative;
+    margin-left: 201px;
+    margin-right: 51px;
+    height: 100%;
+    z-index: 1;
+}
+
+#headerCenterInside {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    bottom: 0;
+}
+
+#paperHead {
+    position: relative;
+    border-bottom: 1px solid #ccdce6;
+    background: #f5fafd;
+    height: 100%;
+    top: -1px;
+    background: #f5fafd;
+}
+
+.toolNav{
+    padding: 0.8em 35px 0;
+}
+
+.toolNav li{
+    float: left;
+    font: 1.1em Arial,Helvetica,sans-serif;
+    margin-right: 2em;
+}
+
+.toolNav li.rightAlign{
+    float: right;
+    margin-right: 0;
+    margin-left: 2em;
+}
+
+.toolNav li a,
+.toolNav li span{
+    position: relative;
+    display: inline-block;
+    color: #80a0b1;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.toolNav li a:hover,
+.toolNav li a span:hover{
+    color: #024162;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.toolHome {
+    font-weight: bold;
+    padding-left: 20px;
+    background: url('../images/home.png') left top no-repeat;
+}
+
+.toolLogout {
+    font-weight: bold;
+    padding-right: 25px;
+    background: url('../images/logout.png') right top no-repeat;
+}
+
+.toolLogin {
+    font-weight: bold;
+    padding-right: 25px;
+    background: url('../images/login.png') right top no-repeat;
+}
+
+a span.toolHome:hover {
+    background-position: left bottom;
+}
+
+a span.toolLogout:hover,
+a span.toolLogin:hover {
+    background-position: right bottom;
+}
+
+/* [2.3. Header Right / #headerRight]
+-------------------------------------------------------------------*/
+#headerRight {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 51px;
+    height: 100%;
+}
+
+#tuLogo {
+  background:url('../images/tu_logo_cap.png') no-repeat scroll 0 0 transparent;
+  width:100px;
+  height:100px;
+  position:absolute;
+  right:3px;
+  top:3px;
+  bottom: auto !important;
+  left: auto !important;
+}
+
+#tuLogo a {
+  background:none repeat scroll 0 0 transparent !important;
+  display:block;
+  height:40px;
+  position:absolute;
+  right:7px;
+  top:7px;
+  width:40px;
+}
+
+
+/* [3. Primary Navigation / #mainNav]
+-------------------------------------------------------------------*/
+#mainNav {
+    position: absolute;
+    right: 0px;
+    width: 51px;
+    height: 100%;
+}
+
+#mainNav div {
+    position: relative;
+    background: url('../images/organisation/main_nav.png' ) top left no-repeat;
+    height: 470px;
+    width: 50px;
+}
+
+/* =Lehre -------------v */
+.lehre #mainNav {
+    background: transparent url('../images/lehre/content_bg.png' ) top left repeat-y;
+}
+
+.lehre #mainNav div {
+    background: url('../images/lehre/main_nav.png' ) top left no-repeat;
+}
+
+.lehre.en #mainNav div {
+    background: url('../images/lehre/main_nav_en.png' ) top left no-repeat;
+}
+
+#lehreLink {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 25px;
+    height: 80px;
+    display: block;
+    text-indent: -9999px;
+    outline-style:none;
+}
+
+.en #lehreLink {
+    height: 105px;
+}
+
+/* =Forschung ---------v */
+.forschung #mainNav {
+    background: transparent url('../images/forschung/content_bg.png' ) top left repeat-y;
+}
+
+.forschung #mainNav div {
+    background: url('../images/forschung/main_nav.png' ) top left no-repeat;
+}
+
+.forschung.en #mainNav div {
+    background: url('../images/forschung/main_nav_en.png' ) top left no-repeat;
+}
+
+#forschungLink {
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    width: 25px;
+    height: 110px;
+    display: block;
+    text-indent: -9999px;
+    outline-style:none;
+}
+
+.en #forschungLink {
+    top: 150px;
+    height: 105px;
+}
+
+/* =Organisation ------v */
+.organisation #mainNav {
+    background: transparent url('../images/organisation/content_bg.png' ) top left repeat-y;
+}
+
+.organisation #mainNav div {
+    background: url('../images/organisation/main_nav.png' ) top left no-repeat;
+}
+
+.organisation.en #mainNav div {
+    background: url('../images/organisation/main_nav_en.png' ) top left no-repeat;
+}
+
+#organisationLink {
+    position: absolute;
+    top: 300px;
+    left: 15px;
+    width: 25px;
+    height: 130px;
+    display: block;
+    text-indent: -9999px;
+    outline-style:none;
+}
+
+.en #organisationLink {
+    top: 288px;
+    height: 130px;
+}
+
+
+/* [4. Secondary Navigation / #supNav]
+-------------------------------------------------------------------*/
+#supNav {
+    float: left;
+    left: 0px;
+    width: 210px;
+    position: relative;
+    z-index: 1;
+}
+
+#supNavHeaderWrapper {
+    position: absolute;
+    width: 100%;
+    height: 38px;
+    left: 0px;
+}
+
+#shadow_top {
+    position: absolute;
+    right: 1px;
+    top: 39px;
+    width: 15px;
+    height: 239px;
+    background: url('../images/shadow_top.png' ) top left;
+    z-index: 9999;
+}
+
+#supNavHeader {
+    position: relative;
+    margin-left: 14px;
+    height: 100%;
+}
+
+#supNavHeading {
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    left: 20px;
+    background-position: 0px 12px !important;
+}
+
+#supNavHeaderStroke {
+    position: absolute;
+    top: -1px;
+    left: -6px;
+    height: 1px;
+    width: 6px;
+    background: #8b66b7;
+}
+
+/* =Lehre -------------v */
+.lehre #supNavHeader {
+    background: transparent url('../images/lehre/sup_nav_header.png' ) top right no-repeat;
+    border-top: 1px solid #feb45d;
+    border-bottom: 1px solid #995300;
+}
+
+.lehre #supNavHeaderStroke {
+    background: #feb45d;
+}
+
+.lehre #supNavHeading {
+    background: transparent url('../images/lehre/sup_nav_text.png' ) no-repeat;
+}
+
+.lehre.en #supNavHeading {
+    background: transparent url('../images/lehre/sup_nav_text_en.png' ) no-repeat;
+}
+
+/* =Forschung ---------v */
+.forschung #supNavHeader {
+    background: transparent url('../images/forschung/sup_nav_header.png' ) top right no-repeat;
+    border-top: 1px solid #a3c562;
+    border-bottom: 1px solid #446701;
+}
+
+.forschung #supNavHeaderStroke {
+    background: #a3c562;
+}
+
+.forschung #supNavHeading {
+    background: transparent url('../images/forschung/sup_nav_text.png' ) no-repeat;
+}
+
+.forschung.en #supNavHeading {
+    background: transparent url('../images/forschung/sup_nav_text_en.png' ) no-repeat;
+}
+
+/* =Organisation ------v */
+.organisation #supNavHeader {
+    background: transparent url('../images/organisation/sup_nav_header.png' ) top right no-repeat;
+    border-top: 1px solid #8b66b7;
+    border-bottom: 1px solid #391761;
+}
+
+.organisation #supNavHeaderStroke {
+    background: #8b66b7;
+}
+
+.organisation #supNavHeading {
+    background: transparent url('../images/organisation/sup_nav_text.png' ) no-repeat;
+}
+
+#supNavBody {
+    position: relative;
+    padding: 6em 0 2em 1.5em;
+}
+
+#supNavBody li{
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+.supNavMenuHeader {
+    padding-left: 1.5em;
+    display: block;
+    color: #343637 !important;
+    font-size: 1.2em;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+#supNav .linkBlock li{
+    margin-bottom: 0;
+}
+
+#supNav .linkBlock a {
+    font-size: 1.2em;
+    font-weight: normal;
+    display: block;
+    line-height: 18px;
+    color: #333333 !important;
+    padding-left: 2.5em;
+}
+
+#supNav a:hover{
+    text-decoration: none;
+}
+
+/* =Lehre -------------v */
+.lehre #supNav a:hover,
+.lehre #supNav .currentPageItem > span > a {
+    color: #AC5E00 !important;
+}
+
+/* =Forschung ---------v */
+.forschung #supNav a:hover,
+.forschung #supNav .currentPageItem > span > a {
+    color: #669c00 !important;
+}
+
+/* =Organisation ------v */
+.organisation #supNav a:hover,
+.organisation #supNav .currentPageItem > span > a {
+    color: #57228a !important;
+}
+
+
+/* [5. Content / #content]
+--------------------------------------------------------------------
+=Notes:		For more content styling see 'content.css'
+-------------------------------------------------------------------*/
+#content {
+    margin-left: 210px;
+    margin-right: 51px;
+    position: relative;
+    background: white;
+    min-height: 470px;
+    font-size: 1.2em;
+}
+
+
+/* [6. Footer / #footer]
+-------------------------------------------------------------------*/
+#footer {
+    position: relative;
+    margin: 0 42px 0px 10px;
+}
+
+#footerContent {
+	position: relative;
+	padding-bottom: 5px;
+    background: #004063;
+    height: 44px;
+}
+
+#footer-left,
+#footer-right {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 100%;
+    top: 0;
+}
+
+#footer-left {
+    left: -10px;
+    background: transparent url('../images/footer_background_left.png' ) top left repeat-y;
+}
+
+#footer-right {
+    right: -10px;
+    background: transparent url('../images/footer_background_right.png' ) top left repeat-y;
+}
+
+#pageEnd {
+    height: 30px;
+    margin-left: 200px;
+    margin-right: 9px;
+    background: white;
+}
+
+#siteLinks {
+    padding: 15px 0 29px 200px;
+    font-size: 1.2em;
+    color: white;
+    line-height: 1.3em;
+}
+
+.siteLinksSection {
+    float: left;
+    width: 200px;
+    margin: 0 10px 0 0;
+}
+
+#siteLinks a {
+    color: white;
+    display: block;
+    color: #c4c4c4;
+}
+
+#siteLinks b {
+    color: white;
+}
+
+#footerShadow {
+    width: 100%;
+    position: relative;
+    height: 69px;
+    text-align: center;
+    color: #61899e;
+    background: transparent url('../images/footer_shadow.png' ) top left repeat-x;
+    padding-bottom: 5px;
+}
+
+#footerShadow-left,
+#footerShadow-right {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    top: 0px;
+}
+
+#footerShadow-left {
+    left: -10px;
+    background: transparent url('../images/footer_shadow_left.png' ) top left no-repeat;
+}
+
+#footerShadow-right {
+    right: -10px;
+    background: transparent url('../images/footer_shadow_right.png' ) top left no-repeat;
+}
+
+#baseLinks {
+    font-size: 1.1em;
+    padding: 23px 0 5px 0px;
+}
+
+#baseLinks a {
+    color: #61899E;    
+}
+
+#legalInfo {
+    font-size: 1.1em;
+    padding: 0px 0 15px 0px;
+}
+
+/* [7. Mouse Cursor]
+--------------------------------------------------------------------
+=Notes:  Mouse cursor 'wait' while an ajax request is running.
+         See the busyCursor.js Javascript.
+-------------------------------------------------------------------*/
+
+body.waiting {
+    cursor: wait !important;
+}
+body.waiting input {
+    cursor: wait !important;
+}
+body.waiting a {
+    cursor: wait !important;
+}

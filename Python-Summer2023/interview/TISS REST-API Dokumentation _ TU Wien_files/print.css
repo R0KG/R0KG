@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[Print]
+
+Primary use:	Print styles for JTiss, RTiss and FTiss
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+
+1. Basic
+
+2. JQuery-UI styles (for JTiss and RTiss)
+2.1 Data Table
+
+3. Icefaces styles (for FTiss)
+
+4. Other styles
+4.1 Room scheduler
+
+5. Calendar
+
+-------------------------------------------------------------------*/
+
+
+/* [1. Basic]
+-------------------------------------------------------------------*/
+html {
+    background: none;
+    font-size: 14px;
+}
+
+body { 
+	background: none;
+}
+
+#wrapper {
+    max-width: 100%;
+    padding: 0px; 
+}
+
+#header {
+    display:none;
+}
+
+#supNav {
+    display:none;
+}
+
+#mainNav {
+    display:none;
+}
+
+#content {
+    margin:0 !important;
+    font-size: 14px !important; 
+}
+
+#contentInnerWrapper {
+    margin: 0px !important; 
+}
+
+#contentInner {
+	float: none !important; /* to fix firefox printing of long tables */
+}
+
+#footer {
+    margin:0 !important;
+}
+
+#footer #baseLinks,
+#footer #legalInfo {
+     font-size:12px;
+}
+
+#footerContent,
+#footerShadow {
+    background: none;    
+}
+
+#footerShadow-left,
+#footerShadow-right,
+#footer-left,
+#footer-right  {
+    display: none;   
+} 
+
+#content h1 {
+    border-bottom: 1px dotted #000;   
+    width: 100% !important; 
+    background: none;
+    padding-top: 22px;
+}
+
+#glow-left,
+#glow-right {
+    display: none;
+}
+
+.ui-helper-hidden,
+.ui-tabs-hide,
+*[aria-hidden="true"],
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+
+
+
+/* [2. JQuery-UI styles]
+-------------------------------------------------------------------*/
+
+/* [2.1. Data Table]
+-------------------------------------------------------------------*/
+
+.ui-datatable table{
+    width: 100%;    
+}
+
+.ui-datatable tr {
+    border: none;    
+}
+
+.ui-datatable th {
+    font-size: 16px !important;
+}
+
+.ui-datatable td {
+    border: 1px solid #D3D3D3;
+    padding: 4px 10px; 
+    border-collapse: collapse;
+    font-size: 14px !important;
+}
+
+.ui-datatable .ui-selection-column .ui-widget.ui-chkbox,
+.ui-datatable .ui-selection-column .ui-widget.ui-radiobutton {
+    margin: 0;
+}
+
+.ui-selection-column .ui-widget.ui-chkbox .ui-chkbox-box,
+.ui-selection-column .ui-widget.ui-radiobutton .ui-radiobutton-box {
+    display: none !important;
+}
+
+.ui-selection-column .ui-widget.ui-chkbox .ui-helper-hidden-accessible,
+.ui-selection-column .ui-widget.ui-radiobutton .ui-helper-hidden-accessible {
+    display: block !important; /* =Hack for IE */
+    display: inline-block !important;
+}
+
+
+
+/* [3. Icefaces styles]
+-------------------------------------------------------------------*/
+/* to be done */
+
+
+
+/* [4. Other styles]
+-------------------------------------------------------------------*/
+
+/* [4.1 Room scheduler]
+-------------------------------------------------------------------*/
+
+.fc-agenda-body {
+overflow:visible !important;
+height:auto !important;
+}
+
+.fc-agenda-bg {
+height:auto !important;
+}
+
+.fc-agenda {
+overflow:visible !important;
+}
+
+.fc_view {
+overflow:visible !important;
+}
+
+/* [5. Calendar]
+-------------------------------------------------------------------*/
+
+.ui-overlay-hidden {
+    visibility: hidden;
+}
+
+.ui-resizable-handle {
+    visibility:hidden;
+}
+
+
+.fc-event-bg {
+    background-color: #fff;
+}
+
+.fc-event-time, .fc-event-title {
+    padding:0 1px;
+}
+
+.fc-event {
+    border: 1px solid #000000;
+    font-size:10px !important;
+    color:black;
+}
+
+.fc-other-month {
+    color: #fafad2;
+}
+
+.fc-grid .fc-day-number {
+    float: right;
+    padding: 0 2px;
+}
+
+.fc td, .fc th {
+    padding: 0;
+    vertical-align: top;
+}
+
+

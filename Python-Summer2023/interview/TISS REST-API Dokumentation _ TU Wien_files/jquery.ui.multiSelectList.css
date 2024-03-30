@@ -1,0 +1,23 @@
+.multiSelectList {
+    position: relative;
+}
+
+.multiSelectList select.mslAvailable,
+.multiSelectList select.mslChosen {
+    vertical-align: top;
+}
+
+.multiSelectList .mslButtons {
+    display: inline-block;
+    background-color: red;
+    margin-right: 5px;
+}
+
+.multiSelectList .mslButton {
+    margin-bottom: 5px;   
+}
+
+.multiSelectList button {
+    padding: 3px 3px 4px;
+    width: 36px;
+}

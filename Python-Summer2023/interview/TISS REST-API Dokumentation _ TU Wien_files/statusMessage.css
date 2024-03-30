@@ -1,0 +1,35 @@
+/**
+  * Status message CSS
+  * 
+  * This CSS style is used for the statusMessage.js script, which improves the visibility 
+  * of status messages, i.e., of error or success messages displayed to the user. 
+  */
+
+.fixedMessagePanel { 
+    -webkit-box-shadow: 1px 0px 21px #050505;	/* webkit browser*/ 
+    -moz-box-shadow: 1px 0px 10px #050505;	/* firefox */ 
+    box-shadow: 1px 0px 10px #050505; 
+    left:0px; 
+    margin:0; 
+    padding:0; 
+    position:fixed; 
+    width:100%;
+    z-index:255; 
+}
+
+.fixedMessagePanel li { 
+    margin:0 !important; 
+}
+
+.fixedMessagePanel .infoMessage,
+.fixedMessagePanel .errorMessage,
+.fixedMessagePanel .warnMessage,
+.fixedMessagePanel .successMessage {
+    background-position: 14px 7px;
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 8px 0;
+    padding: 11px 10px 11px 49px;
+}

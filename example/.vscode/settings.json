@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.rmd": "markdown",
+        "xstring": "cpp",
+        "php.executablePath": "C:\\php-8.3.1-Win32-vs16-x64\\php.exe"
+
+    }
+}
