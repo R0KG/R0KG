@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "scheme": "Mus_app",
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "name": "Mus_app",
+    "slug": "Mus_app"
+  }
+}
