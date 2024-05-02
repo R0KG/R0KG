@@ -14,6 +14,12 @@ const Popularjobs = () => {
   const { data, isLoading, error} = useFetch(
       '', {}
   );
+  const [activeParam, setactiveParam] = useState();
+
+  const handleCardPress = (item) => {
+    router.push(`/art_details/${item.id}`);
+    setactiveParam(item.id);
+  };
 
   return (
     <View style = {styles.container}>
@@ -35,6 +41,8 @@ const Popularjobs = () => {
             renderItem={ ({item}) => (
               <PopularJobCard 
                 item = {item}
+                setactiveParam={setactiveParam}
+                handleCardPress={handleCardPress}
               />
               
             )}
