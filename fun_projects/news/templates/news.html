@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your News Preferences</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Select Your News Preferences</h1>
+    <form method="POST">
+        {% for title in news_titles %}
+            <div class="checkbox-container">
+                <input type="checkbox" name="selected_news" value="{{ title }}">
+                <label>{{ title }}</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Save Preferences</button>
+    </form>
+    <script>
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.parentElement.style.backgroundColor = '#e0f7fa';
+                } else {
+                    this.parentElement.style.backgroundColor = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

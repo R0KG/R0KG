@@ -1,2 +1,3 @@
-Time:        61     67     75     71
-Distance:   430   1036   1307   1150
+version https://git-lfs.github.com/spec/v1
+oid sha256:b9374cec9c52bd2307157aa7798acdce6c444c202d7b2e2e17277fb1a68878d6
+size 181

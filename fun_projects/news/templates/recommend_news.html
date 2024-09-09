@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended News</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+            font-size: 2em;
+            text-align: center;
+            transition: color 0.3s ease-in-out;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        li span {
+            font-weight: bold;
+            color: #007BFF;
+            transition: color 0.3s ease-in-out;
+        }
+
+        li:hover span {
+            color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .empty-message {
+            font-size: 1.2em;
+            color: #888;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recommended News for You</h1>
+
+    {% if news %}
+        <ul>
+            {% for title in news %}
+                <li>
+                    <span>{{ title }}</span>
+                    <button onclick="saveForLater('{{ title }}')">Save for Later</button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty-message">No recommendations available at this time.</p>
+    {% endif %}
+
+    <a href="{{ url_for('profile') }}">Go back to your profile</a>
+
+    <script>
+        function saveForLater(title) {
+            alert(`Saved "${title}" for later!`);
+        }
+    </script>
+</body>
+</html>
